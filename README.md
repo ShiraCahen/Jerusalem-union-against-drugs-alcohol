@@ -1,8 +1,8 @@
-# project-template
+# Jerusalem union against drugs and alcohol
 
-A template repository with wiki for a team project at JCE's software engineering course (replace with the mission of your project).
+The app create for "Jerusalem union against drugs and alcohol" - Our application will serve a organization who are responsible for teenager that use drugs and alcohol at Jerusalem. The aforementioned organization will use our applicatoin to manage patrol data document, to fill patrol document and follow for teens which the organization help them. The app comes ease the volunteers and the organization collecting the data and analyzing it afterwards to see where the hot early.
 
-(See also:rRecommended [checklist](https://github.com/ddbeck/readme-checklist/blob/master/checklist.md) for a README) 
+this project developed at Azrieli College of Engineering for a social project.
 
 ![project logo (this one for is taken from basecamp - a project management service)](https://www.klipfolio.com/sites/default/files/integrations/basecamp.png)
 
