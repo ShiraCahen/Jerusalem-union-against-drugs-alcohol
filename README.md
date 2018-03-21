@@ -1,8 +1,10 @@
 # Parents Patrol
 ## Jerusalem-union-against-drugs-alcohol
 
-Our application will serve the organization that are responsible for teenager who use drugs and alcohol at Jerusalem. 
-The aforementioned organization will use our applicatoin to manage parents patrol data document, to fill patrol documents and follow for teens which the organization help. 
+Parents patrols are neighborhood organizations of volunteers who go on patrols at times when youth go out to spend time outdoors. 
+This is due to the understanding that today the streets in each neighborhood are a place of entertainment for large sections of the youth.
+The aforementioned organization will use our applicatoin to manage parents patrol data documents, to fill patrol documents, and follow  teens whom the organization help. 
+
 this project developed at Azrieli College of Engineering for a social project.
 
 
@@ -11,7 +13,7 @@ this project developed at Azrieli College of Engineering for a social project.
 
 
 ## Hosting
-**link will be here soon**
+http://www.igudjr.org.il/
 
 ## Tools & Practices
 We're trying to use the best tools and practices in order to produce a quality enginneered product.
