@@ -5,6 +5,8 @@ The app create for "Jerusalem union against drugs and alcohol" - Our application
 this project developed at Azrieli College of Engineering for a social project.
 
 ![project logo (this one for is taken from basecamp - a project management service)](https://static.wixstatic.com/media/00de82_2038740ff78f497c8cc89cd7a564926b.png/v1/fill/w_364,h_144,al_c,usm_0.66_1.00_0.01/00de82_2038740ff78f497c8cc89cd7a564926b.png)
+(http://static.wixstatic.com/media/00de82_6f35d7d805de4b989e7d29e16acb31d0.gif)
+
 
 ## Tools & Practices
 We're trying to use the best tools and practices in order to produce a quality enginneered product.
