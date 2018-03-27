@@ -23,6 +23,7 @@ We're trying to use the best tools and practices in order to produce a quality e
 |---|---|
 
 | Group Chat | [![Join the chat at https://gitter.im/jce-il/project-template](https://badges.gitter.im/jce-il/project-template.svg)](https://gitter.im/Parents-Patrol/Lobby) |
+
 | Issues | [![GitHub issues](https://img.shields.io/github/issues/jce-il/project-template.svg?style=flat)](https://github.com/ShiraCahen/Parents-Patrol/issues) |
 
 
