@@ -4,26 +4,46 @@
 
   <ion-navbar>
     <ion-title>
-     הזנת טופס
+     דו"ח סיור
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <ion-grid text-wrap>
       <ion-row>
          <ion-col>
     <h2>צוות:</h2>
-
     <ion-item>
-      
-       <h2>מוקדים ציבוריים שחשוב לבקר בהם: (אנא סמנו היכן ביקרתם) </h2> 
-     
-    </ion-item>
+        <ion-label>תאריך</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+      </ion-item>
     <ion-item>
+        <ion-label>שעת התחלה</ion-label>
+        <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
+      </ion-item>       
+        <ion-item>
+            <ion-label>שעת סיום</ion-label>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
+          </ion-item>  
+          <ion-item>
+                <ion-label floating>מספר צוות</ion-label>
+                <ion-input type="number"></ion-input>
+              </ion-item>     
+              <ion-item>
+                    <ion-label floating>שמות מתנדבים</ion-label>
+                    <ion-input type="text"></ion-input>
+                  </ion-item> 
+          <ion-item>
        
-        <ion-input type="number" placeholder=" מספר אנשים בצוות"></ion-input>
-    </ion-item>
+            <ion-input type="number" placeholder=" מספר אנשים בצוות"></ion-input>
+          </ion-item>
+        <ion-item>
+            
+            <h2>מוקדים ציבוריים שחשוב לבקר בהם: (אנא סמנו היכן ביקרתם) </h2> 
+     
+         </ion-item>
+ 
     <ion-item>
         <ion-label>מתחם המתנ"ס- מתחת למדרגות של טיפת חלב ובצד המתנ"ס.</ion-label>
         <ion-checkbox color="dark"></ion-checkbox>
@@ -131,10 +151,40 @@
              <ion-label>פארק ברחוב זלץ</ion-label>
              <ion-checkbox color="dark"></ion-checkbox>
       </ion-item> 
+      <ion-item>           
+            <ion-input type="text" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
+       </ion-item>
+       <ion-item>           
+            <ion-input type="text" placeholder="תיאור הסיור ומהלכו:"></ion-input>
+       </ion-item>
+       <ion-item>           
+            <ion-input type="number" placeholder="מספר מדויק של בני נוער שיכורים:"></ion-input>
+       </ion-item>
+       <ion-item>           
+            <ion-input type="number" placeholder="מספר מדויק של מקרי אלימות (מולכם או בין בני הנוער):"></ion-input>
+       </ion-item>
+       <ion-item>           
+            <ion-input type="text" placeholder="מספר בני נוער אשר הגיעו משכונות אחרות ומאיפה:"></ion-input>
+       </ion-item>
+       <ion-item>           
+            <ion-input type="number" placeholder="מספר מדויק של מקרי הטרדה מינית:"></ion-input>
+       </ion-item>
+       <ion-item>           
+            <ion-input type="text" placeholder="אירועים חריגים ומקרי טיפול"></ion-input>
+       </ion-item>
+       <ion-item>           
+            <ion-input type="text" placeholder="דילמות שעלו במהלך הסיור"></ion-input>
+       </ion-item>
+       <ion-item>           
+            <ion-input type="text" placeholder="תחושת הצוות"></ion-input>
+       </ion-item>
     </ion-col>
 
     
-    </ion-row>         
+    </ion-row>   
+    <ion-row>
+            <button ion-button block>שלח</button>
+    </ion-row>      
   </ion-grid>
 </ion-content>
 </body>

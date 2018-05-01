@@ -1,5 +1,6 @@
 page-home {
 
+<<<<<<< HEAD
 .button {
    text-align: center;
    width: 20%;
@@ -8,6 +9,16 @@ page-home {
    background-color:rgb(255, 255, 255); /* Green */
     color: rgb(0, 0, 0);
 }
+=======
+.homePage.button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 10px; 
+    background-color:rgb(182, 98, 98); /* Green */
+    font-family: "David", Times, serif;
+    font-size: 15px;
+    height: 50px;
+>>>>>>> 5987f7bd759cf04c3604d1a3aa50d075371b77b1
 
 #hot {
     background-color:rgb(233, 16, 16); /* Green */
