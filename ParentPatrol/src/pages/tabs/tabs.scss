@@ -1,8 +1,8 @@
 .main_tab .tabbar{
-    background-color: rgb(162, 161, 238);
+    background-color: rgb(140, 118, 236);
 }
 .tabbar a[aria-selected=true]{
-    background: plum;
+    background: rgb(255, 255, 255);
 }
 .tabbar .tab-button-text{
     color: black;
@@ -10,5 +10,5 @@
     font-family: Arial, Helvetica, sans-serif; 
 }
 .tabbar .icon{
-    color: azure;
+    color: rgb(255, 255, 255);
 }
