@@ -6,7 +6,9 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'contact.html'
 })
 export class ContactPage {
-
+  startTime: String;
+ myDate: String;
+ endTime: String;
   constructor(public navCtrl: NavController) {
 
   }
