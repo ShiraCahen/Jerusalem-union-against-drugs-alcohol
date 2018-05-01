@@ -1,27 +1,67 @@
 page-home {
+    ion-content {
+        position: absolute;
+        left: 32%;
+        width: 100%;
+    }
+   
+    h1 {
+        text-align: center;
+        font-size: 45px;
+        font-family: 'david';
+        font-weight: bold;
+    }
 
-<<<<<<< HEAD
-.button {
-   text-align: center;
-   width: 20%;
-   height: 30%;
-   border: black;
-   background-color:rgb(255, 255, 255); /* Green */
-    color: rgb(0, 0, 0);
-}
-=======
-.homePage.button {
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    border-radius: 10px; 
-    background-color:rgb(182, 98, 98); /* Green */
-    font-family: "David", Times, serif;
-    font-size: 15px;
-    height: 50px;
->>>>>>> 5987f7bd759cf04c3604d1a3aa50d075371b77b1
+    img {
+        width: 300px;
+        height: 100px;
+    }
 
-#hot {
-    background-color:rgb(233, 16, 16); /* Green */
-}
+    .button {
+        border: 1px solid black;
+        text-align: center;
+        font-size: 20px;
+        font-family: david;
+        width: 150px;
+        height: 150px;
+        color: rgb(0, 0, 0);
+    }
 
+    #hot {
+        background-color:rgb(255, 2, 2);
+        border-radius: 100px; 
+    }
+
+    #hot:hover {
+        background-color:rgb(255, 151, 151);
+    }
+
+    #cold {
+        background-color:rgb(20, 114, 255);
+        border-radius: 100px; 
+    }
+
+    #cold:hover {
+        background-color:rgb(168, 153, 255);
+    }
+
+    #moadonit {
+        background-color:rgb(0, 211, 46);
+        border-radius: 100px; 
+    }
+
+    #moadonit:hover {
+        background-color:rgb(125, 221, 146);
+    }
+
+    .a {
+        width: 170px;
+        height: 70px;
+        background-color: rgb(180, 180, 180);
+        margin-left: 11%;
+    }
+
+    .a:hover {
+        background-color: rgb(10, 4, 4);
+    }
 }
