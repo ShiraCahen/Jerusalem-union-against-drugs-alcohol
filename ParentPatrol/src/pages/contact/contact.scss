@@ -1,18 +1,17 @@
 page-contact{
-.button {
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    border-radius: 10px; 
-    background-color:rgb(129, 134, 201);
-    font-family: "David", Times, serif;
-    font-size: 15px;
-    height: 50px;
-
-}
-
-.button:hover {
-    background-color:rgb(125, 125, 134); /* Green */
-    color: white;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+    .button {
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        border-radius: 10px; 
+        background-color:rgb(129, 134, 201);
+        font-family: "David", Times, serif;
+        font-size: 15px;
+        height: 50px;        
+    }
+    .button:hover {
+        background-color:rgb(184, 181, 179)  !important; /* Green */
+        color: white;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
+    }
+    
 }
