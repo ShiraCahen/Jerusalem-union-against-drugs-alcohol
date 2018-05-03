@@ -1,32 +1,49 @@
 page-login {
-
-
-.title{
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+img{
+    margin-left: auto;
+margin-right: auto;
+display: block !important;
 }
-.list{
-    text-align: center;
-    padding: 20px;
+h1{
+    font-weight: bold;
+    font-size: 40px;
+    text-shadow: 2px 2px #c4cad3;
 }
-.h2{
-    font-size: 5px;
+
+#upper{
+    margin-top: 50px;
+}
+
+.list1{
+    background-color:rgba(5, 12, 73, 0.705) ;
+    border-radius: 5px; 
+    margin-bottom: 2px;
+text-align: center;
+width: 70%; 
+margin-left: auto;
+margin-right: auto;
+display: block !important;
+
 }
 
 .button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    border-radius: 10px; 
-    background-color:rgb(223, 223, 253); /* Green */
-    font-family: "David", Times, serif;
+    border-radius: 7px; 
+    background-color:rgba(170, 175, 180, 0.87); 
     font-size: 15px;
     height: 50px;
-
+    padding-left:25px;
+    padding-right: 25px; 
+    width: 70%; 
 }
 
 .button:hover {
-    background-color:rgb(171, 171, 247); /* Green */
-    color: white;
+    background-color:rgb(223, 223, 253); /* Green */
+    color: rgb(192, 192, 192);
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
