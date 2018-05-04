@@ -14,3 +14,22 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+@font-face{
+
+    font-family: suezone;
+    src: url('../assets/fonts/taiJGmd_EZ6rqscQgOFOmos.woff2');
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-img{
+    background-image: url('../assets/imgs/tj.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.95;
+    
+}

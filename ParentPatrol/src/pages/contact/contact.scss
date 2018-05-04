@@ -1,10 +1,13 @@
 page-contact{
+    .title{
+        text-align: center;
+        padding: 50px;
+    }
     .button {
         -webkit-transition-duration: 0.4s; /* Safari */
         transition-duration: 0.4s;
         border-radius: 10px; 
         background-color:rgb(129, 134, 201);
-        font-family: "David", Times, serif;
         font-size: 15px;
         height: 50px;        
     }

@@ -1,35 +1,40 @@
 page-home {
-    ion-content {
-        position: absolute;
-        left: 32%;
-        width: 100%;
+    .title{
+        text-align: center;
     }
    
     h1 {
+        display: inline-block;
         text-align: center;
-        font-size: 45px;
-        font-family: 'david';
+        font-size: 30px;
         font-weight: bold;
+        color: rgb(42, 42, 70);        
     }
 
-    img {
-        width: 300px;
-        height: 100px;
-    }
+.homePage.button {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 10px; 
+    background-color:rgb(182, 98, 98); /* Green */
+    font-family: "David", Times, serif;
+    font-size: 15px;
+    height: 50px;
+}
+#hot {
+    background-color:rgb(233, 16, 16); /* Green */
+}
 
-    .button {
-        border: 1px solid black;
+    .round {
         text-align: center;
-        font-size: 20px;
-        font-family: david;
-        width: 150px;
-        height: 150px;
         color: rgb(0, 0, 0);
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+        font-size: 17px;
     }
 
     #hot {
         background-color:rgb(255, 2, 2);
-        border-radius: 100px; 
     }
 
     #hot:hover {
@@ -38,7 +43,10 @@ page-home {
 
     #cold {
         background-color:rgb(20, 114, 255);
-        border-radius: 100px; 
+        border-radius: 50%; 
+        margin-left:auto;
+        margin-right: auto;
+
     }
 
     #cold:hover {
@@ -47,21 +55,31 @@ page-home {
 
     #moadonit {
         background-color:rgb(0, 211, 46);
-        border-radius: 100px; 
+        border-radius: 50%; 
     }
 
     #moadonit:hover {
         background-color:rgb(125, 221, 146);
     }
 
-    .a {
-        width: 170px;
-        height: 70px;
-        background-color: rgb(180, 180, 180);
-        margin-left: 11%;
-    }
 
-    .a:hover {
-        background-color: rgb(10, 4, 4);
+    .a {
+        margin-left: 11%;
+        margin-right: auto;
+        display: block !important;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        border-radius: 7px; 
+        background-color:rgba(58, 59, 66, 0.87); 
+        font-size: 15px;
+        height: 50px;
+        padding-left:25px;
+        padding-right: 25px; 
+    }
+    
+    .a {
+        background-color:rgb(223, 223, 253); /* Green */
+        color: rgb(192, 192, 192);
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     }
 }
