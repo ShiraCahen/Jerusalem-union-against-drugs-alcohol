@@ -27,9 +27,15 @@ export class AddUserPage {
     let alert = this.alertCtrl.create({
       title: 'Add User',
       subTitle: 'User successfully added',
-      buttons: ['OK']
+      buttons: [
+        {
+          text: "OK",
+          handler: () => {
+            this.navCtrl.pop();
+          }
+        }
+      ]
     });
     alert.present();
   }
-
 }
