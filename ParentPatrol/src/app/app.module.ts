@@ -12,6 +12,8 @@ import { LoginPage } from '../pages/login/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AddUserPage } from '../pages/add-user/add-user';
+import { MoadonitPage } from '../pages/moadonit/moadonit';
+
 
 import { ReproviderProvider } from '../providers/reprovider/reprovider';
 
@@ -25,7 +27,8 @@ import { ReproviderProvider } from '../providers/reprovider/reprovider';
     HomePage,
     LoginPage,
     TabsPage,
-    AddUserPage
+    AddUserPage,
+    MoadonitPage
    
   ],
   imports: [
@@ -40,7 +43,8 @@ import { ReproviderProvider } from '../providers/reprovider/reprovider';
     HomePage,
     LoginPage,
     TabsPage,
-    AddUserPage
+    AddUserPage,
+    MoadonitPage
   ],
   providers: [
     StatusBar,
