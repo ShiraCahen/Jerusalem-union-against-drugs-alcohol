@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>addUser</ion-title>
+    <ion-title>הוספת משתמש</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,18 +16,18 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <ion-label color="primary">User Name: </ion-label>
-      <ion-input placeholder="Text Input"></ion-input>
+      <ion-label color="primary">שם משתמש:</ion-label>
+      <ion-input placeholder="שם משתמש"></ion-input>
     </ion-item>
   
     <ion-item>
-      <ion-label color="primary">number Phone: </ion-label>
-      <ion-input type="number" placeholder="Number Input with no label"></ion-input>
+      <ion-label color="primary">מס' פלאפון: </ion-label>
+      <ion-input type="number" placeholder="מס' פלאפון"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label color="primary">ID: </ion-label>
-      <ion-input type="number" placeholder="Number Input with no label"></ion-input>
+      <ion-label color="primary">תעודת זהות: </ion-label>
+      <ion-input type="number" placeholder="תעודת זהות"></ion-input>
     </ion-item>
   
     <ion-item>
@@ -36,20 +36,20 @@
     </ion-item>
 
     <ion-item>
-        <ion-label color="primary">Which Kind:</ion-label>
+        <ion-label color="primary">סוג המשתמש:</ion-label>
     </ion-item>  
 
     <ion-list radio-group [(ngModel)]="relationship">
         <ion-item>
-          <ion-label>Admin</ion-label>
+          <ion-label>מנהל</ion-label>
           <ion-radio value="admin" checked></ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>Coordinetor</ion-label>
+          <ion-label>רכז</ion-label>
           <ion-radio value="coordinetor"></ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>Team</ion-label>
+          <ion-label>צוות</ion-label>
           <ion-radio value="team" [disabled]="isDisabled"></ion-radio>
         </ion-item>
     </ion-list>
