@@ -12,6 +12,9 @@ import { ReitemPage } from '../pages/reitem/reitem';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AddUserPage } from '../pages/add-user/add-user';
+import { ReproviderProvider } from '../providers/reprovider/reprovider';
+
+
 
 @NgModule({
   declarations: [
@@ -42,7 +45,8 @@ import { AddUserPage } from '../pages/add-user/add-user';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ReproviderProvider
   ]
 })
 export class AppModule {}
