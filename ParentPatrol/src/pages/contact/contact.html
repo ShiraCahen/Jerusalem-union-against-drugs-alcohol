@@ -16,28 +16,28 @@
          <ion-col>
     <h2>צוות:</h2>
     <ion-item>
-        <ion-label >תאריך</ion-label>
+        <ion-label color="white" >תאריך</ion-label>
         <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
       </ion-item>
     <ion-item>
-        <ion-label>שעת התחלה</ion-label>
+        <ion-label color="white">שעת התחלה</ion-label>
         <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
       </ion-item>       
         <ion-item>
-            <ion-label>שעת סיום</ion-label>
+            <ion-label color="white">שעת סיום</ion-label>
             <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
           </ion-item>  
           <ion-item>
-                <ion-label floating>מספר צוות</ion-label>
+                <ion-label floating color="white">מספר צוות</ion-label>
                 <ion-input type="number"></ion-input>
               </ion-item>     
               <ion-item>
-                    <ion-label floating>שמות מתנדבים</ion-label>
+                    <ion-label floating color="white">שמות מתנדבים</ion-label>
                     <ion-input type="text"></ion-input>
                </ion-item> 
           <ion-item >
-       
-            <ion-input type="number" placeholder=" מספר אנשים בצוות"></ion-input>
+            <ion-label color="white">מספר אנשים בצוות </ion-label>
+            <ion-input  type="number" placeholder=" מספר אנשים בצוות"></ion-input>
           </ion-item>
         <ion-item>
             
@@ -51,32 +51,41 @@
                 </ion-item>
           </ion-list>
  
-      <ion-item>           
-            <ion-input type="text" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
+      <ion-item>       
+          <ion-label color="white">מקומות נוספים בהם ביקרתם </ion-label>    
+            <ion-input  type="text" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
        </ion-item>
-       <ion-item>           
-            <ion-input type="text" placeholder="תיאור הסיור ומהלכו:"></ion-input>
+       <ion-item>   
+          <ion-label color="white">תיאור הסיור ומהלכו </ion-label>
+          <ion-input  type="text" placeholder="תיאור הסיור ומהלכו:"></ion-input>
        </ion-item>
-       <ion-item>           
+       <ion-item>   
+          <ion-label color="white">מספר מדויק של בני נוער שיכורים </ion-label>        
             <ion-input type="number" placeholder="מספר מדויק של בני נוער שיכורים:"></ion-input>
        </ion-item>
-       <ion-item>           
+       <ion-item>     
+          <ion-label color="white">מספר מדויק של מקרי אלימות (מולכם או בין בני נוער) </ion-label>      
             <ion-input type="number" placeholder="מספר מדויק של מקרי אלימות (מולכם או בין בני הנוער):"></ion-input>
        </ion-item>
-       <ion-item>           
-            <ion-input type="text" placeholder="מספר בני נוער אשר הגיעו משכונות אחרות ומאיפה:"></ion-input>
+       <ion-item>  
+          <ion-label color="white">מספר בני נוער אשר הגיעו משכונות אחרות ומאיפה </ion-label>         
+            <ion-input  type="text" placeholder="מספר בני נוער אשר הגיעו משכונות אחרות ומאיפה:"></ion-input>
        </ion-item>
-       <ion-item>           
+       <ion-item>     
+          <ion-label color="white">מספר מדויק של מקרי הטרדה מינית </ion-label>      
             <ion-input type="number" placeholder="מספר מדויק של מקרי הטרדה מינית:"></ion-input>
        </ion-item>
-       <ion-item>           
-            <ion-input type="text" placeholder="אירועים חריגים ומקרי טיפול"></ion-input>
+       <ion-item> 
+          <ion-label color="white">איורעים חריגים ומקרי טיפול </ion-label>          
+            <ion-input  type="text" placeholder="אירועים חריגים ומקרי טיפול"></ion-input>
        </ion-item>
-       <ion-item>           
+       <ion-item>    
+          <ion-label color="white">דילמות שעלו במהלך הסיור </ion-label>       
             <ion-input type="text" placeholder="דילמות שעלו במהלך הסיור"></ion-input>
        </ion-item>
-       <ion-item>           
-            <ion-input type="text" placeholder="תחושת הצוות"></ion-input>
+       <ion-item>    
+          <ion-label color="white">תחושת הצוות </ion-label>       
+            <ion-input  type="text" placeholder="תחושת הצוות"></ion-input>
        </ion-item>
        <ion-item>
             <button ion-button full>שלח</button>

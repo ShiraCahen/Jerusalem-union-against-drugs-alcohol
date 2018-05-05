@@ -12,6 +12,7 @@ export class ContactPage {
  endTime: String;
 
   constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider ) {
+    
 
   }
   ionViewDidLoad(){
