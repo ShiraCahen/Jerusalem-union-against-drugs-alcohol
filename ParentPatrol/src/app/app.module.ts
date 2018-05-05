@@ -8,7 +8,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
-
+import { ReitemPage } from '../pages/reitem/reitem';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AddUserPage } from '../pages/add-user/add-user';
@@ -21,7 +21,8 @@ import { AddUserPage } from '../pages/add-user/add-user';
     HomePage,
     LoginPage,
     TabsPage,
-    AddUserPage
+    AddUserPage,
+    ReitemPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +36,8 @@ import { AddUserPage } from '../pages/add-user/add-user';
     HomePage,
     LoginPage,
     TabsPage,
-    AddUserPage
+    AddUserPage,
+    ReitemPage
   ],
   providers: [
     StatusBar,
