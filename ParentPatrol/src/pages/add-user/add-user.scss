@@ -1,28 +1,21 @@
-page-contact{
+page-add-user {
+    .item{
+        background-color: rgb(149, 168, 182) !important; 
+        color:white !important;
+    }
     .title{
         text-align: center;
     }
     h1{
         text-align: center;
-        font-size: 35px;
+        font-size: 45px;
+        padding-bottom: 10px;
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
-        text-shadow: 3px 3px 3px rgb(187, 187, 187);
+        text-shadow: 5px 5px 5px rgb(187, 187, 187);
         color: rgb(28, 56, 107);
-        align-items: center;
-    }
-    h2{
-        color: white;
-    }
-   .ion-lable{
-        color:black !important;
-        
-    }
-    .ion-checkbox{
-        background-color: rgb(129, 134, 201)!important;
     }
     .button {
-        width: 40%;
         margin-left: auto;
         margin-right: auto;
         display: block !important;
@@ -30,6 +23,7 @@ page-contact{
         transition-duration: 0.4s;
         font-size: 15px;
         height: 50px;
+        width: 40%; 
         padding: 10px;
         background-color: #004381;
         color: white;
@@ -46,9 +40,4 @@ page-contact{
         border: 1px solid gray !important;
         border-radius: 5px !important;
     }
-    .item{
-        background-color: rgb(149, 168, 182) !important; 
-        color:white !important;
-    }
-    
 }

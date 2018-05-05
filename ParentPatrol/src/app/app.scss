@@ -32,6 +32,10 @@
     background-size: contain;
     opacity: 0.95;  
 }
-.bg-color{
+.bg-color1{
     background-color: rgb(149, 168, 182); 
+}
+
+.bg-color{
+    background: radial-gradient(rgb(149, 168, 182) 20%, white 100%); 
 }

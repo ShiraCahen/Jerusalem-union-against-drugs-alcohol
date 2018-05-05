@@ -1,17 +1,19 @@
 
 <ion-content padding class="bg-color">
-    <img src="./assets/imgs/logo1.gif"/>
+    <h1>התחברות</h1>
     <p>
         <ion-list > 
-          <ion-item class="list1" id="upper">
-            <ion-label floating>שם משתמש <ion-icon ios="ios-contact" md="md-contact"></ion-icon></ion-label>
+          <ion-item class="list1">
+            <ion-label floating><ion-icon ios="ios-contact" md="md-contact"> </ion-icon>  שם משתמש </ion-label>
             <ion-input type="text"></ion-input>
           </ion-item>
       
           <ion-item class="list1" >
-            <ion-label floating>סיסמא <ion-icon ios="ios-lock" md="md-lock"></ion-icon></ion-label>
+            <ion-label floating><ion-icon ios="ios-lock" md="md-lock"></ion-icon>  סיסמא </ion-label>
             <ion-input type="password"></ion-input>
           </ion-item>   
         </ion-list>
         <button class="button" ion-button [navPush]="home">התחברות</button>
+        <p>לא רשום? פנה לרכז האחראי </p>
+        <img src="./assets/imgs/new.png"/>
 </ion-content>

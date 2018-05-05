@@ -4,183 +4,92 @@
 
   <ion-navbar>
     <ion-title>
-     דו"ח סיור
+     <h1>דו"ח סיור</h1>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="bg-color">
-  <ion-grid text-wrap>
+  
+  <ion-grid  text-wrap>
       <ion-row>
          <ion-col>
     <h2>צוות:</h2>
     <ion-item>
-        <ion-label>תאריך</ion-label>
+        <ion-label color="white" >תאריך</ion-label>
         <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
       </ion-item>
     <ion-item>
-        <ion-label>שעת התחלה</ion-label>
+        <ion-label color="white">שעת התחלה</ion-label>
         <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
       </ion-item>       
         <ion-item>
-            <ion-label>שעת סיום</ion-label>
+            <ion-label color="white">שעת סיום</ion-label>
             <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
           </ion-item>  
           <ion-item>
-                <ion-label floating>מספר צוות</ion-label>
+                <ion-label floating color="white">מספר צוות</ion-label>
                 <ion-input type="number"></ion-input>
               </ion-item>     
               <ion-item>
-                    <ion-label floating>שמות מתנדבים</ion-label>
+                    <ion-label floating color="white">שמות מתנדבים</ion-label>
                     <ion-input type="text"></ion-input>
-                  </ion-item> 
+               </ion-item> 
           <ion-item >
-       
-            <ion-input type="number" placeholder=" מספר אנשים בצוות"></ion-input>
+            <ion-label color="white">מספר אנשים בצוות </ion-label>
+            <ion-input  type="number" placeholder=" מספר אנשים בצוות"></ion-input>
           </ion-item>
         <ion-item>
             
             <h2>מוקדים ציבוריים שחשוב לבקר בהם: (אנא סמנו היכן ביקרתם) </h2> 
      
          </ion-item>
+         <ion-list>
+                <ion-item *ngFor="let post of postsProvider.posts">
+                    <ion-label>{{post.title}}</ion-label>
+                    <ion-checkbox  color="dark"></ion-checkbox>
+                </ion-item>
+          </ion-list>
  
-    <ion-item>
-        <ion-label>מתחם המתנ"ס- מתחת למדרגות של טיפת חלב ובצד המתנ"ס.</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-    </ion-item>
-      
-    <ion-item>
-        <ion-label>המגרשים האחוריים של ביה"ס ממ"ד תורני ברחוב שאול אביגור.</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-        <ion-label>המרכזון ברחוב שאול אביגור11- בחנייה ובגג.</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-        <ion-label> הגן הציבורי של אביגור וסול ליפצין, הגנים בסול ליפצין.</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-        <ion-label> שביל האופנים והפארק מתחת לרחוב הרב יצחק ניסים.</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-        <ion-label>מגדל המים ובטיילת הסמוכה לו.</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-        <ion-label>מגרש החנייה מתחת למרכז המסחרי ברחוב ליכטנשטיין.</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-    </ion-item>    
-    <ion-item>
-        <ion-label>הגן בסוף רחוב ליכטנשטיין ובבר לביא.</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-    </ion-item> 
-    <ion-item>
-        <ion-label>גן המשחקים שבסוף רחוב זאב פלק אפשר לרדת אליו במדרגות שבתחילת רח' שלמה באום</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-    </ion-item>        
-    <ion-item>
-        <ion-label>שלב ג'- אתרי בנייה- להסתכל מבחוץ- אסור לנו להיכנס!</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-        <ion-label>חניות של מבנים חדשים.</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-     </ion-item> 
-     <ion-item>
-        <ion-label>החנייה של המרכז באליהו קורן- חצר עמיטל.</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item> 
-      <ion-item>
-         <ion-label>החנייה מתחת לרחוב הבאבא סלה- רחוב המהרל סמפארג.</ion-label>
-         <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-      <ion-item> 
-         <ion-label>הפארק ומגרשי הספורט ברחוב ברש רועי.</ion-label>
-         <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item> 
-      <ion-item> 
-          <ion-label> רחוב גרלנטר.</ion-label>
-          <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>      
-      <ion-item> 
-        <ion-label>החנייה של אוטובוסי אגד.</ion-label>
-        <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-       <ion-item> 
-          <ion-label>הפארק מתחת לרחוב הרב אריה בינה והטיילת.</ion-label>
-          <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item> 
-      <ion-item> 
-          <ion-label>הגן הציבורי בסוף מנחם ברש רועי ושבילי הטיילת.</ion-label>
-          <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>      
-      <ion-item> 
-          <ion-label>לאורך השביל שמוביל למנזר מר אליאס.</ion-label>
-          <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>   
-      <ion-item> 
-           <ion-label>בכניסה לשכונה, ברחבה של תחנת האוטובוס.</ion-label>
-          <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>  
-      <ion-item> 
-            <ion-label>הגן בסוף רחוב נחמה.</ion-label>
-            <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>   
-       <ion-item> 
-           <ion-label>גן ברחוב אריה ורשבסקי.</ion-label>
-           <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-      <ion-item> 
-            <ion-label>נקודת הגיחון.</ion-label>
-            <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>   
-      <ion-item> 
-            <ion-label>שלושת בתי הספר- להיכנס פנימה:
-                   ביה"ס אילן רמון- טריבונות, מתחת לסלים, מאחורי היוטה הירוקה.
-             </ion-label>
-             <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item>
-      <ion-item> 
-             <ion-label>פארק ברחוב נתן זך</ion-label>
-             <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item> 
-      <ion-item> 
-             <ion-label>פארק ברחוב זלץ</ion-label>
-             <ion-checkbox color="dark"></ion-checkbox>
-      </ion-item> 
-      <ion-item>           
-            <ion-input type="text" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
+      <ion-item>       
+          <ion-label color="white">מקומות נוספים בהם ביקרתם </ion-label>    
+            <ion-input  type="text" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
        </ion-item>
-       <ion-item>           
-            <ion-input type="text" placeholder="תיאור הסיור ומהלכו:"></ion-input>
+       <ion-item>   
+          <ion-label color="white">תיאור הסיור ומהלכו </ion-label>
+          <ion-input  type="text" placeholder="תיאור הסיור ומהלכו:"></ion-input>
        </ion-item>
-       <ion-item>           
+       <ion-item>   
+          <ion-label color="white">מספר מדויק של בני נוער שיכורים </ion-label>        
             <ion-input type="number" placeholder="מספר מדויק של בני נוער שיכורים:"></ion-input>
        </ion-item>
-       <ion-item>           
+       <ion-item>     
+          <ion-label color="white">מספר מדויק של מקרי אלימות (מולכם או בין בני נוער) </ion-label>      
             <ion-input type="number" placeholder="מספר מדויק של מקרי אלימות (מולכם או בין בני הנוער):"></ion-input>
        </ion-item>
-       <ion-item>           
-            <ion-input type="text" placeholder="מספר בני נוער אשר הגיעו משכונות אחרות ומאיפה:"></ion-input>
+       <ion-item>  
+          <ion-label color="white">מספר בני נוער אשר הגיעו משכונות אחרות ומאיפה </ion-label>         
+            <ion-input  type="text" placeholder="מספר בני נוער אשר הגיעו משכונות אחרות ומאיפה:"></ion-input>
        </ion-item>
-       <ion-item>           
+       <ion-item>     
+          <ion-label color="white">מספר מדויק של מקרי הטרדה מינית </ion-label>      
             <ion-input type="number" placeholder="מספר מדויק של מקרי הטרדה מינית:"></ion-input>
        </ion-item>
-       <ion-item>           
-            <ion-input type="text" placeholder="אירועים חריגים ומקרי טיפול"></ion-input>
+       <ion-item> 
+          <ion-label color="white">איורעים חריגים ומקרי טיפול </ion-label>          
+            <ion-input  type="text" placeholder="אירועים חריגים ומקרי טיפול"></ion-input>
        </ion-item>
-       <ion-item>           
+       <ion-item>    
+          <ion-label color="white">דילמות שעלו במהלך הסיור </ion-label>       
             <ion-input type="text" placeholder="דילמות שעלו במהלך הסיור"></ion-input>
        </ion-item>
-       <ion-item>           
-            <ion-input type="text" placeholder="תחושת הצוות"></ion-input>
+       <ion-item>    
+          <ion-label color="white">תחושת הצוות </ion-label>       
+            <ion-input  type="text" placeholder="תחושת הצוות"></ion-input>
        </ion-item>
-       <ion-item>
+       
             <button ion-button full>שלח</button>
-        </ion-item>
+        
     </ion-col>
 
     

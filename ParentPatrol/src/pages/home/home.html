@@ -2,31 +2,38 @@
   <ion-navbar>
     
     <ion-title text-center class = "title">
+       
+      <h1>
         האיגוד הירושלמי
         <br/>
         למאבק בסמים ואלכוהול
-        <br/>
-      <img src="./assets/imgs/logo1.gif"/>
+      </h1>
+  
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding class="bg-color">
+  <div class="row">
+    <div class="col">
     <button class="round" ion-button icon-left id = "hot" [navPush]="contact">
         <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
       נקודה  חמה  
     </button>
-
+  </div>
+  <div class="col">
     <button class="round" ion-button icon-left id = "cold">
         <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
       נקודה קרה
     </button>
-
+  </div>
+  <div class="col">
     <button class="round" ion-button icon-left id = "moadonit">
         <ion-icon ios="ios-game-controller-b" md="md-game-controller-b"></ion-icon>
       מועדונית  
     </button>
-
+    </div>
+  </div>
     <p>
 
     <button class = "a" ion-button icon-left [navPush]="addUser">
@@ -40,5 +47,5 @@
       <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
         צפייה בדו"חות
     </button>
-
+    <img src="./assets/imgs/new.png"/>
 </ion-content>
