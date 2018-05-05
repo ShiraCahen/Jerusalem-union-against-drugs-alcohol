@@ -25,8 +25,8 @@ export class AddUserPage {
 
   presentAlert() {
     let alert = this.alertCtrl.create({
-      title: 'Add User',
-      subTitle: 'User successfully added',
+      title: 'הוספת משתמש',
+      subTitle: 'המתמש הוסף בהצלחה',
       buttons: [
         {
           text: "OK",
