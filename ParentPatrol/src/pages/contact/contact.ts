@@ -5,7 +5,7 @@ import { NavController } from 'ionic-angular';
   selector: 'page-contact',
   templateUrl: 'contact.html'
 })
-export class ContactPage {
+export class MoadonitPage {
   startTime: String;
  myDate: String;
  endTime: String;

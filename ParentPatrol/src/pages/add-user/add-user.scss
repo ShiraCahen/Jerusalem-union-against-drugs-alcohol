@@ -1,3 +1,43 @@
 page-add-user {
-
+    .item{
+        background-color: rgb(149, 168, 182) !important; 
+        color:white !important;
+    }
+    .title{
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+        font-size: 45px;
+        padding-bottom: 10px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 5px 5px 5px rgb(187, 187, 187);
+        color: rgb(28, 56, 107);
+    }
+    .button {
+        margin-left: auto;
+        margin-right: auto;
+        display: block !important;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        font-size: 15px;
+        height: 50px;
+        width: 40%; 
+        padding: 10px;
+        background-color: #004381;
+        color: white;
+        border-radius: 5px;
+        border: 1px solid gray;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    
+    .button:hover{
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19) !important;
+        color: #004381 !important;
+        padding: 10px !important;
+        background-color: gainsboro !important;
+        border: 1px solid gray !important;
+        border-radius: 5px !important;
+    }
 }
