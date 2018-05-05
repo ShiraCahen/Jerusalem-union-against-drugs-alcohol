@@ -1,14 +1,15 @@
 .main_tab .tabbar{
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(170, 175, 180);
 }
 .tabbar a[aria-selected=true]{
-    background: rgb(255, 255, 255);
+    background: rgb(227, 245, 255);
 }
 .tabbar .tab-button-text{
     color: black;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 20px;
 }
 .tabbar .icon{
-    color: rgb(104, 84, 218);
+    color:rgb(227, 245, 255);
 }
+$tabs-md-tab-icon-color-active: black;

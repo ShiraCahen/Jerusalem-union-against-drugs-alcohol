@@ -1,16 +1,8 @@
 page-home {
-    ion-content {
-        position: absolute;
-        left: 32%;
-        width: 100%;
-    }
-   
-    h1 {
+    .title{
         text-align: center;
-        font-size: 45px;
-        font-family: 'david';
-        font-weight: bold;
     }
+<<<<<<< HEAD
 
     img {
         width: 300px;
@@ -19,49 +11,58 @@ page-home {
 
     .button {
         border: 1px solid black;
+=======
+    
+    .round {
+>>>>>>> 415c96dc320bedd1f16e92a279155819e3441424
         text-align: center;
-        font-size: 20px;
-        font-family: david;
-        width: 150px;
-        height: 150px;
         color: rgb(0, 0, 0);
+        border-radius: 30%;
+        height: 100px;
+        width: 110px;
+        font-size: 17px;
+        font-family: "David", Times, serif;
     }
 
     #hot {
-        background-color:rgb(255, 2, 2);
-        border-radius: 100px; 
+        background-color:rgb(253, 124, 124);
     }
 
     #hot:hover {
-        background-color:rgb(255, 151, 151);
+        background-color:rgb(184, 178, 178);
     }
 
     #cold {
-        background-color:rgb(20, 114, 255);
-        border-radius: 100px; 
+        background-color:rgb(157, 196, 255);
+        margin-left:auto;
+        margin-right: auto;
     }
 
     #cold:hover {
-        background-color:rgb(168, 153, 255);
+        background-color:rgb(184, 178, 178);
     }
 
     #moadonit {
-        background-color:rgb(0, 211, 46);
-        border-radius: 100px; 
+        background-color:rgb(111, 255, 142);
     }
 
     #moadonit:hover {
-        background-color:rgb(125, 221, 146);
+        background-color:rgb(184, 178, 178);
     }
+
 
     .a {
-        width: 170px;
-        height: 70px;
-        background-color: rgb(180, 180, 180);
-        margin-left: 11%;
-    }
+       // display: flex!important;
+        align-content: center!important;
+        align-items: center!important;
 
-    .a:hover {
-        background-color: rgb(10, 4, 4);
+        border-radius: 7px; 
+        color: rgb(0, 0, 0);
+       background-color:rgb(184, 178, 178);
+        font-size: 17px;
+        font-family: "David", Times, serif;
+        height: 50px;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        
     }
 }
