@@ -6,7 +6,7 @@ import { ReproviderProvider } from '../../providers/reprovider/reprovider';
   selector: 'page-contact',
   templateUrl: 'contact.html'
 })
-export class MoadonitPage {
+export class ContactPage {
   startTime: String;
  myDate: String;
  endTime: String;
