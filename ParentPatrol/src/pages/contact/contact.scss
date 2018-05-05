@@ -3,9 +3,16 @@ page-contact{
         text-align: center;
     }
     h1{
+        text-align: center;
+        font-size: 35px;
         font-weight: bold;
-        font-size: 40px;
-        text-shadow: 2px 2px #c4cad3;
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 3px 3px 3px rgb(187, 187, 187);
+        color: rgb(28, 56, 107);
+        align-items: center;
+    }
+    h2{
+        color: white;
     }
    .ion-lable{
         color:black !important;
@@ -15,6 +22,7 @@ page-contact{
         background-color: rgb(129, 134, 201)!important;
     }
     .button {
+        width: 40%;
         margin-left: auto;
         margin-right: auto;
         display: block !important;
