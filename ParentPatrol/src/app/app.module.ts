@@ -45,6 +45,8 @@ import { ReproviderProvider } from '../providers/reprovider/reprovider';
     TabsPage,
     AddUserPage,
     MoadonitPage
+
+
   ],
   providers: [
     StatusBar,
