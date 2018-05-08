@@ -1,20 +1,54 @@
 page-contact{
     .title{
         text-align: center;
-        padding: 50px;
+    }
+    h1{
+        text-align: center;
+        font-size: 35px;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 3px 3px 3px rgb(187, 187, 187);
+        color: rgb(28, 56, 107);
+        align-items: center;
+    }
+    h2{
+        color: white;
+    }
+   .ion-lable{
+        color:black !important;
+        
+    }
+    .ion-checkbox{
+        background-color: rgb(129, 134, 201)!important;
     }
     .button {
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block !important;
         -webkit-transition-duration: 0.4s; /* Safari */
         transition-duration: 0.4s;
-        border-radius: 10px; 
-        background-color:rgb(129, 134, 201);
         font-size: 15px;
-        height: 50px;        
-    }
-    .button:hover {
-        background-color:rgb(184, 181, 179)  !important; /* Green */
+        height: 50px;
+        padding: 10px;
+        background-color: #004381;
         color: white;
-        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
+        border-radius: 5px;
+        border: 1px solid gray;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+    
+    .button:hover{
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19) !important;
+        color: #004381 !important;
+        padding: 10px !important;
+        background-color: gainsboro !important;
+        border: 1px solid gray !important;
+        border-radius: 5px !important;
+    }
+    .item{
+        background-color: rgb(149, 168, 182) !important; 
+        color:white !important;
     }
     
 }
