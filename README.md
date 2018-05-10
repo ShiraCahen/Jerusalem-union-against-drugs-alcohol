@@ -27,8 +27,8 @@ We're trying to use the best tools and practices in order to produce a quality e
 
 
 
-## Please visit our [live application](https://demo.reactstarterkit.com/)
-- Alright, currently only a landing page...
+## Please visit our [live application](https://parentpatrol-b3347.firebaseapp.com/)
+- Alright, currently app in progress
 
 
 ## Disclaimer
