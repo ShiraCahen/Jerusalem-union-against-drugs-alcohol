@@ -19,6 +19,11 @@
       <ion-label color="white">שם משתמש:</ion-label>
       <ion-input placeholder="שם משתמש"></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label color="white">סיסמא:</ion-label>
+      <ion-input type="text" [(ngModel)] = "user.password" placeholder="Password Input"></ion-input>
+    </ion-item>
   
     <ion-item>
       <ion-label color="white">מס' פלאפון: </ion-label>
@@ -33,7 +38,7 @@
   
     <ion-item>
       <ion-label color="white">Email:</ion-label>
-      <ion-input type="email" placeholder="Email Input"></ion-input>
+      <ion-input type="text" [(ngModel)] = "user.email" placeholder="Email Input"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -56,7 +61,7 @@
     </ion-list>
 
     
-    <button ion-button  (click) ="presentAlert()" >הוסף משתמש</button>
+    <button ion-button  (click) ="register(user)" >הוסף משתמש</button>
     
 
   </ion-list>
