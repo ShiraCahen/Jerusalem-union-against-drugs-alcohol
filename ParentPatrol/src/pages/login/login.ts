@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Platform } from 'ionic-angular';
 import { HomePage } from '../home/home';
 
 /**
@@ -18,7 +18,15 @@ export class LoginPage {
   @ViewChild('user') user;
   @ViewChild('password') password;
   home= HomePage;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  browserSize;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public platform: Platform) {
+    if(this.platform.is('core')){ 
+      //if it's from computer web browser, not a mobile web/native.
+      this.browserSize = "desktop-card"
+    }
+    else{
+      this.browserSize = "mobile-card"
+    }
   }
 
   ionViewDidLoad() {

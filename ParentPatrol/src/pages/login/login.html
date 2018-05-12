@@ -19,5 +19,7 @@
         </ion-list>
         <button class="button" ion-button [navPush]="home">התחברות</button>
         <p>לא רשום? פנה לרכז האחראי </p>
-        <img src="./assets/imgs/new.png"/>
+        <div [ngClass]="browserSize" >
+          <img src="./assets/imgs/new.png" />
+        </div>
 </ion-content>
