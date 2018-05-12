@@ -1,31 +1,16 @@
 page-home {
-    img{
-        margin-left: auto;
-        margin-right: auto;
-        display: block !important;
-        width: 35%;
-        height: 150px;
-        margin-bottom: 2%;
+    .gallery {
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
     }
-    h1{
-        text-align: center;
-        font-size: 35px;
+   
+    h1 {
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
         text-shadow: 3px 3px 3px rgb(187, 187, 187);
         color: rgb(28, 56, 107);
-        align-items: center;
     }
-    .row{
-        margin-right: 18%;;
-        margin-bottom: 5%;
-    }
-    .col{
-        display: inline-block !important;
-        width: 30%;
-        padding: 0%;
-        margin: 0%;
-    }
+    
     .round {
         text-align: center;
         color: rgb(0, 0, 0);

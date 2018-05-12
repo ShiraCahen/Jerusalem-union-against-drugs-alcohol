@@ -27,8 +27,8 @@ We're trying to use the best tools and practices in order to produce a quality e
 
 
 
-## Please visit our [live application](https://demo.reactstarterkit.com/)
-- Alright, currently only a landing page...
+## Please visit our [live application](https://parentpatrol-b3347.firebaseapp.com/)
+- Alright, currently app in progress
 
 
 ## Disclaimer
@@ -48,7 +48,7 @@ Please visit our wiki for furthur project info:
 
 ### Iteration Pages
 - [Iteration 0 - ZFR](https://github.com/ShiraCahen/Parents-Patrol/wiki/Iteration-0-ZFR)
-- [Iteration 1 - MVP]()
+- [Iteration 1 - MVP](https://github.com/ShiraCahen/Parents-Patrol/wiki/iteration-1-MVP)
 - [Iteration 2 - Feature X]()
 - [Iteration 3 - Feature Y]()
 - [Iteration 4 - Feature Z]()
