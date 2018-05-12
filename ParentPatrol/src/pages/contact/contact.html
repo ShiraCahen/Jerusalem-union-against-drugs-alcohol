@@ -14,85 +14,88 @@
   <ion-grid  text-wrap>
       <ion-row>
          <ion-col>
-    <h2>צוות:</h2>
-    <ion-item>
-        <ion-label color="white" >תאריך</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
-      </ion-item>
-    <ion-item>
-        <ion-label color="white">שעת התחלה</ion-label>
-        <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
-      </ion-item>       
-        <ion-item>
-            <ion-label color="white">שעת סיום</ion-label>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
-          </ion-item>  
-          <ion-item>
-                <ion-label floating color="white">מספר צוות</ion-label>
-                <ion-input type="number"></ion-input>
-              </ion-item>     
-              <ion-item>
-                    <ion-label floating color="white">שמות מתנדבים</ion-label>
-                    <ion-input type="text"></ion-input>
-               </ion-item> 
-          <ion-item >
-            <ion-label color="white">מספר אנשים בצוות </ion-label>
-            <ion-input  type="number" placeholder=" מספר אנשים בצוות"></ion-input>
-          </ion-item>
-        <ion-item>
+            <ion-item>
+                <ion-label floating color="white" class="small">צוות:</ion-label>
+                 <ion-input type="text"></ion-input>
+              </ion-item>
+            <ion-item>
+                <ion-label color="white" >תאריך</ion-label>
+                <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+              </ion-item>
+            <ion-item>
+                <ion-label color="white">שעת התחלה</ion-label>
+                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
+              </ion-item>       
+                <ion-item>
+                    <ion-label color="white">שעת סיום</ion-label>
+                    <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
+                  </ion-item>  
+                  <ion-item>
+                        <ion-label floating color="white">מספר צוות</ion-label>
+                        <ion-input type="number"></ion-input>
+                      </ion-item>     
+                      <ion-item>
+                            <ion-label floating color="white">שמות מתנדבים</ion-label>
+                            <ion-input type="text"></ion-input>
+                      </ion-item> 
+                  <ion-item >
+                    <ion-label color="white">מספר אנשים בצוות </ion-label>
+                    <ion-input  type="number" placeholder=" מספר אנשים בצוות"></ion-input>
+                  </ion-item>
+                <ion-item>
+                    
+                    <h2>מוקדים ציבוריים שחשוב לבקר בהם: (אנא סמנו היכן ביקרתם) </h2> 
             
-            <h2>מוקדים ציבוריים שחשוב לבקר בהם: (אנא סמנו היכן ביקרתם) </h2> 
-     
-         </ion-item>
-         <ion-list>
-                <ion-item *ngFor="let post of postsProvider.posts">
-                    <ion-label>{{post.title}}</ion-label>
-                    <ion-checkbox  color="dark"></ion-checkbox>
                 </ion-item>
-          </ion-list>
- 
-      <ion-item>       
-          <ion-label color="white">מקומות נוספים בהם ביקרתם </ion-label>    
-            <ion-input  type="text" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
-       </ion-item>
-       <ion-item>   
-          <ion-label color="white">תיאור הסיור ומהלכו </ion-label>
-          <ion-input  type="text" placeholder="תיאור הסיור ומהלכו:"></ion-input>
-       </ion-item>
-       <ion-item>   
-          <ion-label color="white">	מספר חברות שנצפו</ion-label>        
-            <ion-input type="number" ></ion-input>
-       </ion-item>
-       <ion-item>     
-          <ion-label color="white">מספר הנערים/ות בכל  חבורה </ion-label>      
-            <ion-input type="number" ></ion-input>
-       </ion-item>
-       <ion-item>  
-          <ion-label color="white">ממוצע הגילאים </ion-label>         
-            <ion-input  type="text" ></ion-input>
-       </ion-item>
-       <ion-item>     
-          <ion-label color="white">אם נתקלנו באלכוהול/ סמים- כמה שיכורים/ מעשנים </ion-label>      
-            <ion-input type="number" ></ion-input>
-       </ion-item>
-       <ion-item> 
-          <ion-label color="white">איורעים חריגים ומקרי טיפול </ion-label>          
-            <ion-input  type="text"></ion-input>
-       </ion-item>
-       <ion-item>    
-          <ion-label color="white">פרטי הנער/ נערה, במידה ויצטרכו ליצור קשר או להעביר הלאה לגורמי טיפול </ion-label>       
-            <ion-input type="text"></ion-input>
-       </ion-item>
-       <ion-item>    
-        <ion-label color="white">דרכי טיפול</ion-label>       
-          <ion-input  type="text" ></ion-input>
-     </ion-item>
-       <ion-item>    
-          <ion-label color="white">הערות</ion-label>       
-            <ion-input  type="text" ></ion-input>
-       </ion-item>
-       
-            <button ion-button full>שלח</button>
+                <ion-list>
+                        <ion-item *ngFor="let post of postsProvider.posts">
+                            <ion-label>{{post.title}}</ion-label>
+                            <ion-checkbox  color="dark"></ion-checkbox>
+                        </ion-item>
+                  </ion-list>
+        
+              <ion-item>       
+                  <ion-label color="white">מקומות נוספים בהם ביקרתם </ion-label>    
+                    <ion-input  type="text" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
+              </ion-item>
+              <ion-item>   
+                  <ion-label color="white">תיאור הסיור ומהלכו </ion-label>
+                  <ion-input  type="text" placeholder="תיאור הסיור ומהלכו:"></ion-input>
+              </ion-item>
+              <ion-item>   
+                  <ion-label color="white">	מספר חברות שנצפו</ion-label>        
+                    <ion-input type="number" ></ion-input>
+              </ion-item>
+              <ion-item>     
+                  <ion-label color="white">מספר הנערים/ות בכל  חבורה </ion-label>      
+                    <ion-input type="number" ></ion-input>
+              </ion-item>
+              <ion-item>  
+                  <ion-label color="white">ממוצע הגילאים </ion-label>         
+                    <ion-input  type="text" ></ion-input>
+              </ion-item>
+              <ion-item>     
+                  <ion-label color="white">אם נתקלנו באלכוהול/ סמים- כמה שיכורים/ מעשנים </ion-label>      
+                    <ion-input type="number" ></ion-input>
+              </ion-item>
+              <ion-item> 
+                  <ion-label color="white">איורעים חריגים ומקרי טיפול </ion-label>          
+                    <ion-input  type="text"></ion-input>
+              </ion-item>
+              <ion-item>    
+                  <ion-label color="white">פרטי הנער/ נערה, במידה ויצטרכו ליצור קשר או להעביר הלאה לגורמי טיפול </ion-label>       
+                    <ion-input type="text"></ion-input>
+              </ion-item>
+              <ion-item>    
+                <ion-label color="white">דרכי טיפול</ion-label>       
+                  <ion-input  type="text" ></ion-input>
+            </ion-item>
+              <ion-item>    
+                  <ion-label color="white">הערות</ion-label>       
+                    <ion-input  type="text" ></ion-input>
+              </ion-item>
+              
+                    <button ion-button full>שלח</button>
         
     </ion-col>
 
