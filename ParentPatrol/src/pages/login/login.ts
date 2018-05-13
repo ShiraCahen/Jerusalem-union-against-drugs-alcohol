@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController,ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController,ToastController, Platform} from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { User } from '../../models/user';
 import { AngularFireAuth } from "angularfire2/auth"
@@ -23,7 +23,7 @@ export class LoginPage {
   @ViewChild('user') user;
   @ViewChild('password') password;
   //home= HomePage;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private alertCtrl: AlertController,private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private alertCtrl: AlertController,private toastCtrl: ToastController, public platform: Platform) {
   }
 
   async login(user1: User){

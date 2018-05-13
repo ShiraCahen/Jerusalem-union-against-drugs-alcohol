@@ -1,9 +1,9 @@
 page-login {
-img{
-    margin-left: auto;
-    margin-right: auto;
-    display: block !important;
-    width: 35%;
+.mobile-card{
+    display: block !important;      
+    width: 100%  !important;
+    margin: auto;  
+    background-color: rgb(149, 168, 182) !important; 
 }
 h1{
         text-align: center;
@@ -61,6 +61,12 @@ p{
     color: white;
     font-family: Arial, Helvetica, sans-serif; 
 }
-
+.desktop-card{
+   
+    width: 35% !important;
+    display: block !important;
+    background-color: rgb(149, 168, 182) !important; 
+    margin: auto; 
+}
 
 }
