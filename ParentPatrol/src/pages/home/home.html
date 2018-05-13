@@ -49,8 +49,8 @@
       </button>
 
       <div class="row gallery">
-          <div class="col col-50" ng-repeat="img in gallery">
-            <img src="./assets/imgs/new.png"><img/>
-          </div>
+          <div [ngClass]="browserSize" >
+              <img src="./assets/imgs/new.png" />
+            </div>
       </div>
   </ion-content>
