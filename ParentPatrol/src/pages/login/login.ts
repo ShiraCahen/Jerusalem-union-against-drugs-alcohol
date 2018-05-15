@@ -29,7 +29,7 @@ export class LoginPage {
 
   async login(user1: User){
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(user1.email==undefined && user1.password==undefined || !re.test(user1.email) && user1.password==undefined ){
+    if(user1.email==undefined || user1.password==undefined || !re.test(user1.email) && user1.password==undefined ){
       let alert = this.alertCtrl.create({
         title: 'שגיאה',
         subTitle: 'נא להזין שם משתמש וסיסמה תקינים',
