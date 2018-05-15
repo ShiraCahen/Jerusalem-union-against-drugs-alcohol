@@ -8,6 +8,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ColdPage } from '../pages/cold/cold';
 import { AngularFireAuthModule } from "angularfire2/auth";
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -22,6 +23,7 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
 
 
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,6 +31,7 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     ContactPage,
     HomePage,
     TabsPage,
+    ColdPage,
    
   ],
   imports: [
@@ -48,7 +51,7 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     ContactPage,
     HomePage,
     TabsPage,
-
+    ColdPage,
 
   ],
   providers: [
