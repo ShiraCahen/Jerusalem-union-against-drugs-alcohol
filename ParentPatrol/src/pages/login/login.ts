@@ -4,22 +4,13 @@ import { HomePage } from '../home/home';
 import { User } from '../../models/user';
 import { AngularFireAuth } from "angularfire2/auth"
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
  user1 = {} as User;
-
   @ViewChild('user') user;
   @ViewChild('password') password;
   //home= HomePage;
@@ -30,7 +21,11 @@ export class LoginPage {
       //if it's from computer web browser, not a mobile web/native.
       this.browserSize = "desktop-card"
     }
+<<<<<<< HEAD
     else{
+=======
+    else {
+>>>>>>> 1bd89b835a26bfdb5acd8e5310c0a4e9b76e3b63
       this.browserSize = "mobile-card"
     }
   }
@@ -38,20 +33,19 @@ export class LoginPage {
   async login(user1: User){
       await this.afAuth.auth.signInWithEmailAndPassword(user1.email, user1.password)
       .then(
-        () => { this.presentAlert() }).catch((error) => this.displayErrorAlert(error))
-     
+        () => { this.presentAlert() }).catch((error) => this.displayErrorAlert(error)
+      )
     }
   
   presentAlert() {
-    let toast = this.toastCtrl.create({
+    /*let toast = this.toastCtrl.create({
       message: 'Wellcome to our app :)',
       duration: 3000,
       position: 'top'
     });
-    toast.present();
+    toast.present();*/
     this.navCtrl.push(HomePage);
   }
-
 
  displayErrorAlert(error){
         var errorMessage: string = error.message;
@@ -67,13 +61,10 @@ export class LoginPage {
         alert.present();
   }
 
-
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
-  signIn(){
-
+  signIn() {
   }
 
 }
