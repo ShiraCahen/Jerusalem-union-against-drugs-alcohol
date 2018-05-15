@@ -12,7 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AddUserPage } from '../pages/add-user/add-user';
 import { MoadonitPage } from '../pages/moadonit/moadonit';
-
+import { ColdPage } from '../pages/cold/cold';
 
 import { ReproviderProvider } from '../providers/reprovider/reprovider';
 
@@ -27,7 +27,8 @@ import { ReproviderProvider } from '../providers/reprovider/reprovider';
     LoginPage,
     TabsPage,
     AddUserPage,
-    MoadonitPage
+    MoadonitPage,
+    ColdPage
    
   ],
   imports: [
@@ -43,7 +44,8 @@ import { ReproviderProvider } from '../providers/reprovider/reprovider';
     LoginPage,
     TabsPage,
     AddUserPage,
-    MoadonitPage
+    MoadonitPage,
+    ColdPage
 
 
   ],

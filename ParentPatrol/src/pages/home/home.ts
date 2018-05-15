@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { AddUserPage } from '../add-user/add-user';
 import { ContactPage } from '../contact/contact';
 import { MoadonitPage } from '../moadonit/moadonit';
-
+import {ColdPage } from '../cold/cold';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -12,7 +12,7 @@ export class HomePage {
   addUser = AddUserPage;
   contact = ContactPage;
   moadonit = MoadonitPage;
-
+  cold = ColdPage;
   constructor(public navCtrl: NavController) {
       
   }
