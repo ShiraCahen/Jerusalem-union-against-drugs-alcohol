@@ -9,15 +9,17 @@
         <ion-list > 
           <ion-item class="list1">
             <ion-label floating><ion-icon ios="ios-contact" md="md-contact"> </ion-icon>  שם משתמש </ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)] = "user1.email"></ion-input>
           </ion-item>
       
           <ion-item class="list1" >
             <ion-label floating><ion-icon ios="ios-lock" md="md-lock"></ion-icon>  סיסמא </ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-input type="password" [(ngModel)] = "user1.password"></ion-input>
           </ion-item>   
         </ion-list>
-        <button class="button" ion-button [navPush]="home">התחברות</button>
+        <button class="button" (click) ="login(user1)">התחברות</button>
         <p>לא רשום? פנה לרכז האחראי </p>
-        <img src="./assets/imgs/new.png"/>
+        <div [ngClass]="browserSize" >
+          <img src="./assets/imgs/new.png" />
+        </div>
 </ion-content>
