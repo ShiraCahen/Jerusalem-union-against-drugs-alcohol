@@ -23,7 +23,16 @@ export class LoginPage {
   @ViewChild('user') user;
   @ViewChild('password') password;
   //home= HomePage;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private afAuth: AngularFireAuth, private alertCtrl: AlertController,private toastCtrl: ToastController, public platform: Platform) {
+  browserSize;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams , public platform: Platform, private afAuth: AngularFireAuth, private alertCtrl: AlertController,private toastCtrl: ToastController) {
+    if(this.platform.is('core')){ 
+      //if it's from computer web browser, not a mobile web/native.
+      this.browserSize = "desktop-card"
+    }
+    else{
+      this.browserSize = "mobile-card"
+    }
   }
 
   async login(user1: User){

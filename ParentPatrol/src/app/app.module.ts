@@ -13,7 +13,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { AddUserPageModule } from '../pages/add-user/add-user.module'
+import { AddUserPageModule } from '../pages/add-user/add-user.module';
 
 import { ReproviderProvider } from '../providers/reprovider/reprovider';
 import { LoginPageModule } from '../pages/login/login.module';
