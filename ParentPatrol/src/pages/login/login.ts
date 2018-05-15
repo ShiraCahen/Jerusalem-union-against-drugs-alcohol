@@ -21,11 +21,7 @@ export class LoginPage {
       //if it's from computer web browser, not a mobile web/native.
       this.browserSize = "desktop-card"
     }
-<<<<<<< HEAD
     else{
-=======
-    else {
->>>>>>> 1bd89b835a26bfdb5acd8e5310c0a4e9b76e3b63
       this.browserSize = "mobile-card"
     }
   }

@@ -12,6 +12,7 @@ import { AngularFireAuthModule } from "angularfire2/auth";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 import { AddUserPageModule } from '../pages/add-user/add-user.module';
 
@@ -52,6 +53,7 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
   ],
   providers: [
     StatusBar,
+    EmailComposer,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider
