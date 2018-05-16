@@ -1,18 +1,84 @@
-<!--
-  Generated template for the MoadonitPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title><h1>דו"ח מועדונית</h1></ion-title>
+    <ion-title text-center>
+      <h1>דו"ח מועדונית</h1>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class="bg-color">
+    <ion-grid  text-wrap>
+        <ion-row>
+           <ion-col>
+             <ion-item>
+                <ion-label floating color="white" class="small">צוות:</ion-label>
+                 <ion-input type="text"></ion-input>
+              </ion-item>
+      <ion-item>
+          <ion-label color="white" >תאריך</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+        </ion-item>
+      <ion-item>
+          <ion-label color="white"> שעת הפעלת המועדון</ion-label>
+          <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
+        </ion-item>       
+          <ion-item>
+              <ion-label color="white"> שעת סגירת המועדון</ion-label>
+              <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
+            </ion-item>  
+            <ion-item>
+                  <ion-label floating color="white">מספר צוות</ion-label>
+                  <ion-input type="number"></ion-input>
+                </ion-item>     
+                <ion-item>
+                      <ion-label floating color="white">שמות מתנדבים</ion-label>
+                      <ion-input type="text"></ion-input>
+                 </ion-item>           
+   
+         <ion-item>   
+            <ion-label floating color="white">מספר הנערים\ות שהגיעו:</ion-label>        
+              <ion-input type="number" ></ion-input>
+         </ion-item>
+         <ion-item>     
+            <ion-label floating color="white">ממוצע הגילאים </ion-label>      
+              <ion-input type="number" ></ion-input>
+         </ion-item>
+         <ion-item>  
+            <ion-label floating color="white">מספר בני נוער שיכורים\ מעשנים:</ion-label>         
+              <ion-input  type="number" ></ion-input>
+         </ion-item>
+         
+         <ion-item> 
+            <ion-label floating color="white">אירועים חריגים-יש להודיע לרכז בנוסף</ion-label>          
+              <ion-input  type="text"></ion-input>
+         </ion-item>
+         <ion-item>    
+            <ion-label floating color="white">פרטי הנער/ נערה, במידה ויצטרכו ליצור קשר או להעביר הלאה לגורמי טיפול </ion-label>       
+              <ion-input type="text"></ion-input>
+         </ion-item>
+         <ion-item>    
+            <ion-label floating color="white">דילמות שעלו</ion-label>       
+              <ion-input  type="text" ></ion-input>
+         </ion-item>
+         <ion-item>    
+          <ion-label floating color="white">דרכי טיפול</ion-label>       
+            <ion-input  type="text" ></ion-input>
+       </ion-item>
+         <ion-item>    
+            <ion-label floating color="white">הערות</ion-label>       
+              <ion-input  type="text" ></ion-input>
+         </ion-item>
+         <ion-item>
+              <button ion-button full (click) ="presentAlert()">שלח</button>
+            </ion-item>
+      </ion-col>
+  
+      
+      </ion-row>   
+          
+    </ion-grid>
 
 </ion-content>

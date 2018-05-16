@@ -1,13 +1,9 @@
-<!--
-  Generated template for the AddUserPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title><h1>הוספת משתמש</h1></ion-title>
+    <ion-title text-center>
+      <h1>הוספת משתמש</h1>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,6 +14,11 @@
     <ion-item>
       <ion-label color="white">שם משתמש:</ion-label>
       <ion-input placeholder="שם משתמש"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="white">סיסמא:</ion-label>
+      <ion-input type="text" [(ngModel)] = "user.password" placeholder="Password Input"></ion-input>
     </ion-item>
   
     <ion-item>
@@ -33,7 +34,7 @@
   
     <ion-item>
       <ion-label color="white">Email:</ion-label>
-      <ion-input type="email" placeholder="Email Input"></ion-input>
+      <ion-input type="text" [(ngModel)] = "user.email" placeholder="Email Input"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -56,7 +57,7 @@
     </ion-list>
 
     
-    <button ion-button  (click) ="presentAlert()" >הוסף משתמש</button>
+    <button ion-button  (click) ="register(user)" >הוסף משתמש</button>
     
 
   </ion-list>
