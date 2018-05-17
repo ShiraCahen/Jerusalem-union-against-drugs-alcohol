@@ -15,7 +15,6 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'moadonit.html',
 })
 export class MoadonitPage {
-
   constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
   }
 
