@@ -13,16 +13,18 @@ import { HomePage } from '../pages/home/home';
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+<<<<<<< HEAD
+=======
 
 import { EmailComposer } from '@ionic-native/email-composer';
 
+>>>>>>> bdaa27611129db47c49c30514d278cb89a8f4623
 import { AddUserPageModule } from '../pages/add-user/add-user.module';
 import { ReproviderProvider } from '../providers/reprovider/reprovider';
 import { LoginPageModule } from '../pages/login/login.module';
 import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
 import { ColdPage } from '../pages/cold/cold';
-
-
+import { EmailComposer } from '@ionic-native/email-composer';
 
 
 @NgModule({
@@ -52,7 +54,7 @@ import { ColdPage } from '../pages/cold/cold';
   ],
   providers: [
     StatusBar,
-    EmailComposer,
+    /*EmailComposer,*/
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider

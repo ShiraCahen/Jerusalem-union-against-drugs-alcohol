@@ -26,7 +26,7 @@ export class ContactPage {
   handle: string ="";
   notes: String ="";
 
-  constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, /*public emailComposer:EmailComposer*/ ) {
+  constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider/*, public emailComposer:EmailComposer*/ ) {
 
   }
   makeMessage() {
