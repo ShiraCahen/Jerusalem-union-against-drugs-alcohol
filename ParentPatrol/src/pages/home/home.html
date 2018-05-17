@@ -1,56 +1,56 @@
 <ion-header>
-    <ion-navbar>
-      
-      <ion-title class = "title" text-center> 
-          <h1>
-            האיגוד הירושלמי
-          <br/>
-          למאבק בסמים ואלכוהול
-          </h1>
-    </ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding class="bg-color">
-    <ion-grid text-center>
-      <ion-row wrap>
-        <ion-col width-25>
-           <button ion-button class="round" icon-left id = "hot" [navPush]="contact">
-              <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
-              נקודה  חמה  
-           </button>
-        </ion-col>
-        <ion-col width-25>
-          <button ion-button class="round" icon-left id = "cold">
-            <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
-              נקודה קרה
-          </button>
-        </ion-col>
-        <ion-col width-25>
-          <button ion-button class="round" icon-left id = "moadonit" [navPush]="moadonit">
-            <ion-icon ios="ios-game-controller-b" md="md-game-controller-b"></ion-icon>
-              מועדונית  
-          </button>
-        </ion-col> 
-      </ion-row>
-   </ion-grid>
-      
-  <p>
-      <button class = "a" ion-button icon-left [navPush]="addUser">
-          <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
-        הוספת משתמש
-      </button>
-   
-      <p>
-        
-      <button class = "a" ion-button icon-left >
-        <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
-          צפייה בדו"חות
-      </button>
+  <ion-navbar>
+    
+    <ion-title class = "title" text-center> 
+        <h1>
+          האיגוד הירושלמי
+        <br/>
+        למאבק בסמים ואלכוהול
+        </h1>
+  </ion-title>
+  </ion-navbar>
+</ion-header>
 
-      <div class="row gallery">
-          <div [ngClass]="browserSize" >
-              <img src="./assets/imgs/new.png" />
-            </div>
-      </div>
-  </ion-content>
+<ion-content padding class="bg-color">
+  <ion-grid text-center>
+    <ion-row wrap>
+      <ion-col width-25>
+         <button ion-button class="round" icon-left id = "hot" [navPush]="contact">
+            <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
+            נקודה  חמה  
+         </button>
+      </ion-col>
+      <ion-col width-25>
+        <button ion-button class="round" icon-left id = "cold" [navPush]="cold">
+          <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
+            נקודה קרה
+        </button>
+      </ion-col>
+      <ion-col width-25>
+        <button ion-button class="round" icon-left id = "moadonit" [navPush]="moadonit">
+          <ion-icon ios="ios-game-controller-b" md="md-game-controller-b"></ion-icon>
+            מועדונית  
+        </button>
+      </ion-col> 
+    </ion-row>
+ </ion-grid>
+    
+<p>
+    <button class = "a" ion-button icon-left [navPush]="addUser">
+        <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
+      הוספת משתמש
+    </button>
+ 
+    <p>
+      
+    <button class = "a" ion-button icon-left >
+      <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
+        צפייה בדו"חות
+    </button>
+
+    <div class="row gallery">
+        <div [ngClass]="browserSize" >
+            <img src="./assets/imgs/new.png" />
+          </div>
+    </div>
+</ion-content>

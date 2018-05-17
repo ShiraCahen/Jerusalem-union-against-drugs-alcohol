@@ -6,14 +6,6 @@ import { User } from '../../models/user';
 import { AngularFireAuth } from "angularfire2/auth"
 
 
-/**
- * Generated class for the AddUserPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-
 @Component({
   selector: 'page-add-user',
   templateUrl: 'add-user.html',
@@ -21,15 +13,14 @@ import { AngularFireAuth } from "angularfire2/auth"
 export class AddUserPage {
   user = {} as User;
   home = HomePage;
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private afAuth: AngularFireAuth) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, 
+    private afAuth: AngularFireAuth) {
   }
-
-  
 
   presentAlert() {
     let alert = this.alertCtrl.create({
       title: 'הוספת משתמש',
-      subTitle: 'המתמש הוסף בהצלחה',
+      subTitle: 'המשתמש הוסף בהצלחה',
       buttons: [
         {
           text: "OK",
@@ -45,7 +36,8 @@ export class AddUserPage {
   async register(user: User){
     await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
     .then(
-        () => { this.presentAlert() }).catch((error) => this.displayErrorAlert(error))
+        () => { this.presentAlert() }).catch((error) => this.displayErrorAlert(error)
+      )
  }
 
  displayErrorAlert(error){
@@ -61,7 +53,6 @@ export class AddUserPage {
         });
         alert.present();
   }
-    
 }
 
 
