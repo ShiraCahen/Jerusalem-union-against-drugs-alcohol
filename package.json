@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/jce-il/project-template/issues"
   },
-  "homepage": "https://github.com/jce-il/project-template#readme"
+  "homepage": "https://github.com/jce-il/project-template#readme",
+  "dependencies": {
+    "@ionic-native/fcm": "^4.7.0",
+    "@ionic-native/firebase": "^4.7.0",
+    "angularfire2": "^5.0.0-rc.8.0",
+    "firebase": "^5.0.2",
+    "promise-polyfill": "^7.1.2"
+  }
 }

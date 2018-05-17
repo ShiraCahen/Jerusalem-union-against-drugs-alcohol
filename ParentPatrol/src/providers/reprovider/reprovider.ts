@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 export class ReproviderProvider {
   posts: any =[];
   constructor() {
-    console.log('Hello ReproviderProvider Provider');
+    //console.log('Hello ReproviderProvider Provider');
   }
   load(){
     this.posts=[
