@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AngularFireModule } from "angularfire2"
+import { AngularFireDatabaseModule } from "angularfire2/database"
+import { AngularFireStorageModule } from "angularfire2/storage"
+
 import { FIREBASE_CONFIG } from "./app.firebase.config";
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
