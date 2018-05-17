@@ -3,8 +3,12 @@ import { NavController,Platform } from 'ionic-angular';
 import { AddUserPage } from '../add-user/add-user';
 import { ContactPage } from '../contact/contact';
 import { MoadonitPage } from '../moadonit/moadonit';
+<<<<<<< HEAD
+import {ColdPage } from '../cold/cold';
+=======
 import { ColdPage } from '../cold/cold';
 
+>>>>>>> 4bb2f060b2111fe7ce0dc2bd425aed98751ab50d
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -14,6 +18,10 @@ export class HomePage {
   contact = ContactPage;
   moadonit = MoadonitPage;
   cold = ColdPage;
+<<<<<<< HEAD
+  
+=======
+>>>>>>> 4bb2f060b2111fe7ce0dc2bd425aed98751ab50d
   browserSize;
   
   constructor(public navCtrl: NavController,public platform: Platform) {
