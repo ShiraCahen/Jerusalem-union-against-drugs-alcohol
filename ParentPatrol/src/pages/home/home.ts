@@ -3,6 +3,7 @@ import { NavController,Platform } from 'ionic-angular';
 import { AddUserPage } from '../add-user/add-user';
 import { ContactPage } from '../contact/contact';
 import { MoadonitPage } from '../moadonit/moadonit';
+import { ColdPage } from '../cold/cold';
 
 @Component({
   selector: 'page-home',
@@ -12,6 +13,7 @@ export class HomePage {
   addUser = AddUserPage;
   contact = ContactPage;
   moadonit = MoadonitPage;
+  cold = ColdPage;
   browserSize;
   constructor(public navCtrl: NavController,public platform: Platform) {
     if(this.platform.is('core')){ 

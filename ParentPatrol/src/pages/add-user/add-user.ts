@@ -13,13 +13,14 @@ import { AngularFireAuth } from "angularfire2/auth"
 export class AddUserPage {
   user = {} as User;
   home = HomePage;
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private afAuth: AngularFireAuth) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, 
+    private afAuth: AngularFireAuth) {
   }
 
   presentAlert() {
     let alert = this.alertCtrl.create({
       title: 'הוספת משתמש',
-      subTitle: 'המתמש הוסף בהצלחה',
+      subTitle: 'המשתמש הוסף בהצלחה',
       buttons: [
         {
           text: "OK",

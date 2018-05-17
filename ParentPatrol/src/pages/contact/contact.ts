@@ -12,24 +12,22 @@ export class ContactPage {
   checked : boolean = false;
   msg: String;
   str: String = "";
-  team: String;
-  myDate: String;
-  startTime: String;
-  endTime: String;
-  teamNumber: Number;
-  volenteersName: String;
-  description: String;
-  alcoholOrDrugs: String;
-  exeptions: String;
-  details: String;
-  handle: string;
-  notes: String;
+  team: String ="";
+  myDate: String ="";
+  startTime: String ="";
+  endTime: String ="";
+  teamNumber: Number = 0;
+  volenteersName: String ="";
+  description: String ="";
+  alcoholOrDrugs: String ="";
+  exeptions: String ="";
+  details: String ="";
+  handle: string ="";
+  notes: String ="";
 
   constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider ) {
 
   }
-
-
   makeMessage() {
       for(var i = 0 ; i < this.postsProvider.posts.length ; i++) {
         if(this.selected[i].checked == true) {
@@ -42,6 +40,9 @@ export class ContactPage {
       + "\r\n במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
       + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
       + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes;
+
+      console.log(this.msg);
+      return this.msg;
     }
   
   ionViewDidLoad(){

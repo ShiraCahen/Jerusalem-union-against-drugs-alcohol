@@ -16,7 +16,7 @@
          <ion-col>
             <ion-item>
                 <ion-label floating color="white" class="small">צוות:</ion-label>
-                 <ion-input type="text"></ion-input>
+                 <ion-input type="text" [(ngModel)]="team"></ion-input>
               </ion-item>
             <ion-item>
                 <ion-label color="white" >תאריך</ion-label>
@@ -32,15 +32,15 @@
                   </ion-item>  
                   <ion-item>
                         <ion-label floating color="white">מספר צוות</ion-label>
-                        <ion-input type="number"></ion-input>
+                        <ion-input type="number" [(ngModel)]="teamNumber" ></ion-input>
                       </ion-item>     
                       <ion-item>
                             <ion-label floating color="white">שמות מתנדבים</ion-label>
-                            <ion-input type="text"></ion-input>
+                            <ion-input type="text" [(ngModel)]="volenteersName"></ion-input>
                       </ion-item> 
                   <ion-item >
                     <ion-label color="white">מספר אנשים בצוות </ion-label>
-                    <ion-input  type="number" placeholder=" מספר אנשים בצוות"></ion-input>
+                    <ion-input placeholder=" מספר אנשים בצוות"></ion-input>
                   </ion-item>
                 <ion-item>
                     
@@ -48,22 +48,22 @@
             
                 </ion-item>
                 <ion-list>
-                        <ion-item *ngFor="let post of postsProvider.posts">
+                        <ion-item *ngFor="let post of postsProvider.posts; let i = index">
                             <ion-label>{{post.title}}</ion-label>
-                            <ion-checkbox  color="dark"></ion-checkbox>
+                            <ion-checkbox (click)="addValue($event)" [(ngModel)]="selected[i]" color="dark"></ion-checkbox>
                         </ion-item>
                   </ion-list>
         
               <ion-item>       
                   <ion-label color="white">מקומות נוספים בהם ביקרתם </ion-label>    
-                    <ion-input  type="text" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
+                    <ion-input type="text" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
               </ion-item>
               <ion-item>   
                   <ion-label color="white">תיאור הסיור ומהלכו </ion-label>
-                  <ion-input  type="text" placeholder="תיאור הסיור ומהלכו:"></ion-input>
+                  <ion-input type="text" [(ngModel)]="description" placeholder="תיאור הסיור ומהלכו:"></ion-input>
               </ion-item>
               <ion-item>   
-                  <ion-label color="white">	מספר חברות שנצפו</ion-label>        
+                  <ion-label color="white">	מספר חבורות שנצפו</ion-label>        
                     <ion-input type="number" ></ion-input>
               </ion-item>
               <ion-item>     
@@ -76,23 +76,23 @@
               </ion-item>
               <ion-item>     
                   <ion-label color="white">אם נתקלנו באלכוהול/ סמים- כמה שיכורים/ מעשנים </ion-label>      
-                    <ion-input type="number" ></ion-input>
+                    <ion-input type="number" [(ngModel)]="alcoholOrDrugs"></ion-input>
               </ion-item>
               <ion-item> 
-                  <ion-label color="white">איורעים חריגים ומקרי טיפול </ion-label>          
-                    <ion-input  type="text"></ion-input>
+                  <ion-label color="white">אירועים חריגים </ion-label>          
+                    <ion-input  type="text" [(ngModel)]="exeptions"></ion-input>
               </ion-item>
               <ion-item>    
                   <ion-label color="white">פרטי הנער/ נערה, במידה ויצטרכו ליצור קשר או להעביר הלאה לגורמי טיפול </ion-label>       
-                    <ion-input type="text"></ion-input>
+                    <ion-input type="text" [(ngModel)]="details"></ion-input>
               </ion-item>
               <ion-item>    
                 <ion-label color="white">דרכי טיפול</ion-label>       
-                  <ion-input  type="text" ></ion-input>
+                  <ion-input  type="text" [(ngModel)]="handle"></ion-input>
             </ion-item>
               <ion-item>    
                   <ion-label color="white">הערות</ion-label>       
-                    <ion-input  type="text" ></ion-input>
+                    <ion-input  type="text" [(ngModel)]="notes"></ion-input>
               </ion-item>
               
                     <button ion-button full>שלח</button>
