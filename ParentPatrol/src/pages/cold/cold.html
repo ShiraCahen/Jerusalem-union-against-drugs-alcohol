@@ -8,15 +8,13 @@
   </ion-navbar>
 
 </ion-header>
-
 <ion-content padding class="bg-color">
-  
   <ion-grid  text-wrap>
       <ion-row>
          <ion-col>
             <ion-item>
                 <ion-label floating color="white" >צוות</ion-label>
-                 <ion-input type="text"></ion-input>
+                 <ion-input type="text" [(ngModel)]="team"></ion-input>
               </ion-item>
             <ion-item>
                 <ion-label color="white" >תאריך</ion-label>
@@ -28,23 +26,24 @@
             </ion-item>        
             <ion-item>
                   <ion-label color="white">מספר צוות</ion-label>
-                  <ion-input type="number"></ion-input>
+                  <ion-input type="number" [(ngModel)]="teamNumber"></ion-input>
             </ion-item>     
             <ion-item>
                 <h2>מיקום:</h2> 
             </ion-item>
-            <ion-list>
-                    <ion-item *ngFor="let post of postsProvider.posts">
-                        <ion-label>{{post.title}}</ion-label>
-                        <ion-checkbox  color="dark"></ion-checkbox>
-                    </ion-item>
-            </ion-list>
+                <ion-list>
+                        <ion-item *ngFor="let post of postsProvider.posts; let i = index">
+                            <ion-label>{{post.title}}</ion-label>
+                            <ion-checkbox  [(ngModel)]="selected[i]" color="dark"></ion-checkbox>
+                            <!--(click)="addValue($event)"  not in use--> 
+                        </ion-item>
+                  </ion-list>
             <ion-item>    
                     <ion-label color="white">הערות</ion-label>       
-                    <ion-input  type="text" ></ion-input>
+                    <ion-input  type="text" [(ngModel)]="notes"></ion-input>
             </ion-item>
-            <button ion-button full (click)="send()">שלח</button>
-        
+            <button ion-button full (click)="storeInfoToDatabase()">שלח</button>
+            <!--(click)="send()"not in use- bug-->
     </ion-col>
 
     

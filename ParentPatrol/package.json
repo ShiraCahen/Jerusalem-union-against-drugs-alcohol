@@ -21,7 +21,7 @@
     "@angular/http": "5.2.10",
     "@angular/platform-browser": "5.2.10",
     "@angular/platform-browser-dynamic": "5.2.10",
-    "@ionic-native/core": "4.7.0",
+    "@ionic-native/core": "^4.7.0",
     "@ionic-native/email-composer": "^4.7.0",
     "@ionic-native/fcm": "^4.7.0",
     "@ionic-native/firebase": "^4.7.0",
