@@ -15,6 +15,7 @@ export class HomePage {
   moadonit = MoadonitPage;
   cold = ColdPage;
   browserSize;
+  
   constructor(public navCtrl: NavController,public platform: Platform) {
     if(this.platform.is('core')){ 
       //if it's from computer web browser, not a mobile web/native.
