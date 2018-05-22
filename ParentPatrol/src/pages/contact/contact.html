@@ -50,7 +50,8 @@
                 <ion-list>
                         <ion-item *ngFor="let post of postsProvider.posts; let i = index">
                             <ion-label>{{post.title}}</ion-label>
-                            <ion-checkbox (click)="addValue($event)" [(ngModel)]="selected[i]" color="dark"></ion-checkbox>
+                            <ion-checkbox [(ngModel)]="selected[i]" color="dark"></ion-checkbox>
+                            <!--(click)="addValue($event)"-->.36**
                         </ion-item>
                   </ion-list>
         

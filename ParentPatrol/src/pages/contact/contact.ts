@@ -60,6 +60,8 @@ export class ContactPage {
 
   }
 /*this.emailComposer.open(email);*/
+
+
 }
   ionViewDidLoad(){
     this.postsProvider.load();
