@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ReproviderProvider } from '../../providers/reprovider/reprovider';
-<<<<<<< HEAD
-=======
 import { DataProvider } from '../../providers/data/data';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { AlertController } from 'ionic-angular';
->>>>>>> 97f98b8ca09f67eb8f3ef2b444c2f110137c6b16
 import { EmailComposer } from '@ionic-native/email-composer';
 
 @Component({
@@ -39,34 +36,20 @@ export class ContactPage {
   handle: string ="";
   notes: String ="";
 
-<<<<<<< HEAD
-  constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, public emailComposer:EmailComposer ) {
-=======
   
->>>>>>> 97f98b8ca09f67eb8f3ef2b444c2f110137c6b16
 
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,private db:AngularFireDatabase) {
   }
 
   makeMessage() {
-<<<<<<< HEAD
-   /*   for(var i = 0 ; i < this.postsProvider.posts.length ; i++) {
-        if(this.selected[i].ischecked == true) {
-            this.str += this.postsProvider.posts[i];
-=======
       for(var i = 0 ; i < this.postsProvider.posts.length ; i++) {
         if(this.selected[i] == true) {
             this.str +="\r\n"+ this.postsProvider.posts[i].title;
->>>>>>> 97f98b8ca09f67eb8f3ef2b444c2f110137c6b16
         }
-      }*/
+      }
 
       this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.volenteersName
-<<<<<<< HEAD
-      + "\r\n תאריך: " + this.myDate + "\r\n מיקום: "+/*+this.str*/ "\r\n תיאור כללי: " + this.description 
-=======
       + "\r\n תאריך: " + this.myDate + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
->>>>>>> 97f98b8ca09f67eb8f3ef2b444c2f110137c6b16
       + "\r\n במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
       + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
       + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes;
@@ -85,11 +68,7 @@ export class ContactPage {
     //  app:"Gmail"
 
   }
-<<<<<<< HEAD
-this.emailComposer.open(email);
-=======
   this.emailComposer.open(email);
->>>>>>> 97f98b8ca09f67eb8f3ef2b444c2f110137c6b16
 }
 
 
