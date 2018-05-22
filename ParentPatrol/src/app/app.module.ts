@@ -17,6 +17,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { AddUserPageModule } from '../pages/add-user/add-user.module';
 import { ReproviderProvider } from '../providers/reprovider/reprovider';
+import { DataProvider } from '../providers/data/data';
 import { LoginPageModule } from '../pages/login/login.module';
 import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
 
@@ -35,6 +36,8 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE_CONFIG),
     AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
     AddUserPageModule,
     LoginPageModule,
     MoadonitPageModule
@@ -54,7 +57,8 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     EmailComposer,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ReproviderProvider
+    ReproviderProvider,
+    DataProvider
   ]
 })
 export class AppModule {}
