@@ -7,13 +7,14 @@ import { AngularFireStorage } from 'angularfire2/storage';
 import { AlertController } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 
+
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
 
 })
 export class ContactPage {
-  data = DataProvider;
+  data : any;
   selected= [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,];  
   checked : boolean = false;
   msg: String;
@@ -39,6 +40,7 @@ export class ContactPage {
   
 
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,private db:AngularFireDatabase) {
+ 
   }
 
   makeMessage() {
@@ -124,9 +126,7 @@ export class ContactPage {
         TwentyThree: this.selected[22],
         TwentyFour: this.selected[23],
         TwentyFive: this.selected[24],
-        TwentySix: this.selected[25],
-
-        
+        TwentySix: this.selected[25],        
     }
     this.presentAlert();
     return this.db.list('hotSpot:').push(toSave);
@@ -147,5 +147,10 @@ presentAlert() {
   });
   alert.present();
 }
+
+
+
+
+
  
 }
