@@ -5,7 +5,6 @@ import { User } from '../../models/user';
 import { AngularFireAuth } from "angularfire2/auth"
 import { isEmpty } from 'rxjs/operator/isEmpty';
 
-
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -15,7 +14,7 @@ export class LoginPage {
  user1 = {} as User;
   @ViewChild('user') user;
   @ViewChild('password') password;
-  home= HomePage;//כניסה זמנית
+  home = HomePage;//כניסה זמנית
   browserSize;
 
   constructor(public navCtrl: NavController, public navParams: NavParams , public platform: Platform, private afAuth: AngularFireAuth, private alertCtrl: AlertController,private toastCtrl: ToastController) {

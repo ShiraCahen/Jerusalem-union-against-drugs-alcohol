@@ -3,7 +3,9 @@ import { NavController,Platform } from 'ionic-angular';
 import { AddUserPage } from '../add-user/add-user';
 import { ContactPage } from '../contact/contact';
 import { MoadonitPage } from '../moadonit/moadonit';
-import {ColdPage } from '../cold/cold';
+import { ColdPage } from '../cold/cold';
+import {AboutPage} from '../about/about'
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -13,8 +15,9 @@ export class HomePage {
   contact = ContactPage;
   moadonit = MoadonitPage;
   cold = ColdPage;
-  
   browserSize;
+  about=AboutPage;
+  
   constructor(public navCtrl: NavController,public platform: Platform) {
     if(this.platform.is('core')){ 
       //if it's from computer web browser, not a mobile web/native.
