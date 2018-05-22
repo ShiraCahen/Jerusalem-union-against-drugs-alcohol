@@ -4,6 +4,7 @@ import { AddUserPage } from '../add-user/add-user';
 import { ContactPage } from '../contact/contact';
 import { MoadonitPage } from '../moadonit/moadonit';
 import { ColdPage } from '../cold/cold';
+import {AboutPage} from '../about/about'
 
 @Component({
   selector: 'page-home',
@@ -15,6 +16,7 @@ export class HomePage {
   moadonit = MoadonitPage;
   cold = ColdPage;
   browserSize;
+  about=AboutPage;
   
   constructor(public navCtrl: NavController,public platform: Platform) {
     if(this.platform.is('core')){ 
