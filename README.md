@@ -1,5 +1,5 @@
 # Parents Patrol
-## Jerusalem-union-against-drugs-alcohol
+## Jerusalem-union-against-drugs-and-alcohol
 
 Parents patrols are neighborhood organizations of volunteers who go on patrols at times when youth go out to spend time outdoors. 
 This is due to the understanding that today the streets in each neighborhood are a place of entertainment for large sections of the youth.
