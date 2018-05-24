@@ -67,7 +67,7 @@ export class ContactPage {
       subject: "",
       body:""+this.str,
       isHtml:true,
-    //  app:"Gmail"
+      app:"Gmail"
 
   }
   this.emailComposer.open(email);
