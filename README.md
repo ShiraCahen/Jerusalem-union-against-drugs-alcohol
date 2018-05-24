@@ -1,5 +1,5 @@
 # Parents Patrol
-## Jerusalem-union-against-drugs-alcohol
+## Jerusalem-union-against-drugs-and-alcohol
 
 Parents patrols are neighborhood organizations of volunteers who go on patrols at times when youth go out to spend time outdoors. 
 This is due to the understanding that today the streets in each neighborhood are a place of entertainment for large sections of the youth.
@@ -22,9 +22,8 @@ We're trying to use the best tools and practices in order to produce a quality e
 |Category|Status|
 |---|---|
 | Group Chat | [![Join the chat at https://gitter.im/jce-il/project-template](https://badges.gitter.im/jce-il/project-template.svg)](https://gitter.im/Parents-Patrol/Lobby) |
-| Issues | [Github issues](https://github.com/ShiraCahen/Parents-Patrol/issues)|
-| Project Management Board| [Board](https://github.com/ShiraCahen/Parents-Patrol/projects/1)|
-
+| Issues | [![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg)](https://github.com/ShiraCahen/Parents-Patrol/issues)|
+| Project Management Board| [![Board](https://github.com/ShiraCahen/Parents-Patrol/blob/master/pic/Project-board-orange.svg)](https://github.com/ShiraCahen/Parents-Patrol/projects/1)|
 
 
 ## Please visit our [live application](https://parentpatrol-b3347.firebaseapp.com/)
