@@ -20,8 +20,10 @@ import { ReproviderProvider } from '../providers/reprovider/reprovider';
 import { DataProvider } from '../providers/data/data';
 import { LoginPageModule } from '../pages/login/login.module';
 import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
-
-
+import { Pedometer } from '@ionic-native/pedometer';
+import { SettingsProvider } from '../providers/settings/settings';
+import { SettingsPage } from '../pages/settings/settings';
+import { CounterPage } from '../pages/counter/counter';
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +31,8 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     ContactPage,
     HomePage,
     ColdPage,
-   
+    SettingsPage,
+    CounterPage,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     ContactPage,
     HomePage,
     ColdPage,
-
+    SettingsPage,
+    CounterPage,
   ],
   providers: [
     StatusBar,
@@ -58,7 +62,9 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider,
-    DataProvider
+    DataProvider,
+    Pedometer,
+    SettingsProvider
   ]
 })
 export class AppModule {}
