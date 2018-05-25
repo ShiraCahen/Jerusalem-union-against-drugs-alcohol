@@ -4,12 +4,6 @@ import { Pedometer } from '@ionic-native/pedometer';
 import { Platform, ModalController } from 'ionic-angular';
 import { SettingsProvider } from '../../providers/settings/settings';
 import { SettingsPage } from '../../pages/settings/settings';
-/**
- * Generated class for the CounterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-counter',

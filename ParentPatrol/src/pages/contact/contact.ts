@@ -37,8 +37,6 @@ export class ContactPage {
   handle: string ="";
   notes: String ="";
 
-  
-
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
               public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,
               private db:AngularFireDatabase) {
@@ -69,9 +67,15 @@ export class ContactPage {
     let email = {
       to: "parentspatroljer@gmail.com",
       subject: "",
+<<<<<<< HEAD
       body:""+this.str,
       isHtml:true,
       app:"Gmail"
+=======
+      body:"" + this.str,
+      isHtml: true,
+    //  app:"Gmail"
+>>>>>>> c11e041309f71128af771b3e4e95349fb914656d
 
   }
   this.emailComposer.open(email);

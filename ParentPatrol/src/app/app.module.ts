@@ -11,6 +11,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { ColdPage } from '../pages/cold/cold';
+import { DetailPage } from '../pages/detail/detail';
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,6 +25,7 @@ import { Pedometer } from '@ionic-native/pedometer';
 import { SettingsProvider } from '../providers/settings/settings';
 import { SettingsPage } from '../pages/settings/settings';
 import { CounterPage } from '../pages/counter/counter';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -32,7 +34,8 @@ import { CounterPage } from '../pages/counter/counter';
     HomePage,
     ColdPage,
     SettingsPage,
-    CounterPage,
+   CounterPage,
+   DetailPage,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { CounterPage } from '../pages/counter/counter';
     HomePage,
     ColdPage,
     SettingsPage,
-    CounterPage,
+   CounterPage,
+   DetailPage,
   ],
   providers: [
     StatusBar,
