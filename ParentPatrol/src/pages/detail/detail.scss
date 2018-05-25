@@ -1,0 +1,57 @@
+page-detail{
+    .title{
+        text-align: center;
+    }
+    h1{
+        text-align: center;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 3px 3px 3px rgb(187, 187, 187);
+        color: rgb(28, 56, 107);
+        align-items: center;
+    }
+    h2{
+        color: white;
+    }
+   .ion-lable{
+        color:black !important;
+        
+    }
+
+    .item{
+        background-color: rgb(149, 168, 182) !important; 
+        color:white !important;
+    }
+    .small{font-size:40px !important;}
+
+    .round {
+        text-align: center;
+        color: rgb(0, 0, 0);
+        border-radius: 30%;
+        height: 100px;
+        width: 110px;
+        font-size: 17px;
+        font-family: "David", Times, serif;
+    }
+
+    #hot {
+        background-color:rgb(253, 124, 124);
+    }
+
+    #hot:hover {
+        background-color:rgb(184, 178, 178);
+        color:rgb(253, 124, 124);;
+    }
+
+    #cold {
+        background-color:rgb(108, 141, 190);
+
+    }
+
+    #cold:hover {
+        background-color:rgb(184, 178, 178);
+        color:rgb(157, 196, 255);
+    }
+
+    
+}
