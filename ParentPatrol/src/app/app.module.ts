@@ -63,8 +63,12 @@ import { CounterPage } from '../pages/counter/counter';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider,
     DataProvider,
+<<<<<<< HEAD
+    DataProvider
+=======
     Pedometer,
     SettingsProvider
+>>>>>>> ba327bc35aa1a15e9476ddf1907a3be3cb22f19c
   ]
 })
 export class AppModule {}

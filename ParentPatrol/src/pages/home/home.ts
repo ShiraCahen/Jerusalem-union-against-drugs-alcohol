@@ -16,9 +16,13 @@ export class HomePage {
   moadonit = MoadonitPage;
   counter = CounterPage;
   cold = ColdPage;
-  browserSize;
   about=AboutPage;
+<<<<<<< HEAD
+  browserSize;
+  
+=======
   isCordova:number =0 
+>>>>>>> ba327bc35aa1a15e9476ddf1907a3be3cb22f19c
   constructor(public navCtrl: NavController,public platform: Platform) {
     if(this.platform.is('core')){ 
       //if it's from computer web browser, not a mobile web/native.

@@ -9,7 +9,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class AboutPage {
   items;
-
   hsdata : any;
   reports: any[];
   team: Text;
@@ -17,7 +16,7 @@ export class AboutPage {
 
   constructor(public navCtrl: NavController,private db:AngularFireDatabase) {
     this.hsdata=this.db.list('hotSpot');
-    console.log(this.hsdata.auth().child);
+   // console.log(this.hsdata.auth().child);
   /*  for (var i=0; i<this.hsdata.length; i++){
       this.reports[i]=this.hsdata.auth().child;
     }
