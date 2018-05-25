@@ -1,3 +1,4 @@
+<meta charset="utf-8" />
 <ion-header>
 
   <ion-navbar>
@@ -10,6 +11,11 @@
 
 
 <ion-content padding class="bg-color">
+
+  <ion-item text-center class="text">
+    *שדות המסומנים בכוכבית הינם שדות חובה
+  </ion-item>
+
   <ion-list>
     <ion-item>
       <ion-label color="white">שם משתמש:</ion-label>
@@ -17,7 +23,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-label color="white">סיסמא:</ion-label>
+      <ion-label color="white">*סיסמא:</ion-label>
       <ion-input type="text" [(ngModel)] = "user.password" placeholder="Password Input"></ion-input>
     </ion-item>
   
@@ -33,30 +39,36 @@
     </ion-item>
   
     <ion-item>
-      <ion-label color="white">Email:</ion-label>
+      <ion-label color="white">*Email:</ion-label>
       <ion-input type="text" [(ngModel)] = "user.email" placeholder="Email Input"></ion-input>
     </ion-item>
 
-    <ion-item>
-        <ion-label color="white">סוג המשתמש:</ion-label>
+    <ion-item text-right>
+        <ion-label color="white">*סוג המשתמש:</ion-label>
     </ion-item>  
 
-    <ion-list radio-group [(ngModel)]="relationship">
+    <ion-list radio-group [(ngModel)]="relationship" float-right text-right>
         <ion-item>
           <ion-label>מנהל</ion-label>
           <ion-radio value="admin" checked color="white"></ion-radio>
         </ion-item>
         <ion-item>
           <ion-label>רכז</ion-label>
-          <ion-radio value="coordinetor" color="white"></ion-radio>
+          <ion-radio item-center value="coordinetor" color="white"></ion-radio>
         </ion-item>
         <ion-item>
           <ion-label>צוות</ion-label>
           <ion-radio value="team" [disabled]="isDisabled" color="white"></ion-radio>
         </ion-item>
     </ion-list>
-
-    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <button ion-button  (click) ="register(user)" >הוסף משתמש</button>
     
 

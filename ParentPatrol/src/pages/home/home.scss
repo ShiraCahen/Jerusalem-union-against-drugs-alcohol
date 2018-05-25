@@ -24,6 +24,7 @@ page-home {
         width: 110px;
         font-size: 17px;
         font-family: "David", Times, serif;
+       margin:3%;
     }
 
     #hot {
@@ -90,4 +91,8 @@ page-home {
         width: 100%  !important;
         margin: auto;  
     }
+    .container {
+        display: flex;
+        justify-content: center;
+      }
 }
