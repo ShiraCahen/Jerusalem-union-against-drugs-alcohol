@@ -23,7 +23,6 @@
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
-        <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
         <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
         <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />
         <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
@@ -84,5 +83,5 @@
     <plugin name="cordova-plugin-email-composer" spec="^0.8.15" />
     <allow-navigation href="http://172.20.10.2:8100" />
     <plugin name="cordova-plugin-pedometer" spec="^0.4.1" />
-    <engine name="android" spec="7.0.0" />
+    <allow-navigation href="http://10.0.0.7:8100" />
 </widget>

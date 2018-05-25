@@ -63,8 +63,6 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-pedometer": {}
     },
-    "platforms": [
-      "android"
-    ]
+    "platforms": []
   }
 }

@@ -32,4 +32,10 @@ export class HomePage {
     }
   }
 
+
+  changePage(){
+    this.navCtrl.setRoot(CounterPage);
+  }
+
+
 }
