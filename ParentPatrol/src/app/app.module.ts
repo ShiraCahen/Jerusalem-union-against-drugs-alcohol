@@ -58,6 +58,7 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider,
+    DataProvider,
     DataProvider
   ]
 })

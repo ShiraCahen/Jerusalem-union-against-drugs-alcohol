@@ -15,8 +15,8 @@ export class HomePage {
   contact = ContactPage;
   moadonit = MoadonitPage;
   cold = ColdPage;
-  browserSize;
   about=AboutPage;
+  browserSize;
   
   constructor(public navCtrl: NavController,public platform: Platform) {
     if(this.platform.is('core')){ 
