@@ -81,6 +81,12 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="1.1.19" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="2.0.5" />
+<<<<<<< HEAD
+=======
+    <plugin name="cordova-plugin-email-composer" spec="^0.8.15" />
+    <allow-navigation href="http://172.20.10.2:8100" />
+    <plugin name="cordova-plugin-pedometer" spec="^0.4.1" />
+>>>>>>> ba327bc35aa1a15e9476ddf1907a3be3cb22f19c
     <engine name="android" spec="7.0.0" />
     <plugin name="cordova-plugin-email-composer" spec="^0.8.15" />
 </widget>

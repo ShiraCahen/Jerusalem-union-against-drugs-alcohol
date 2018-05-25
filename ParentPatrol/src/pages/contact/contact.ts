@@ -69,9 +69,15 @@ export class ContactPage {
     let email = {
       to: "parentspatroljer@gmail.com",
       subject: "",
+<<<<<<< HEAD
       body:"" + this.str,
       isHtml: true,
     //  app:"Gmail"
+=======
+      body:""+this.str,
+      isHtml:true,
+      app:"Gmail"
+>>>>>>> ba327bc35aa1a15e9476ddf1907a3be3cb22f19c
 
   }
   this.emailComposer.open(email);
