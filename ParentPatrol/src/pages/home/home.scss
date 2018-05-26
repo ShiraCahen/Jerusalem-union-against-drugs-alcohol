@@ -24,6 +24,8 @@ page-home {
         width: 110px;
         font-size: 17px;
         font-family: "David", Times, serif;
+        margin-right:4%;
+        margin-left:4%;
     }
 
     #hot {
@@ -69,6 +71,7 @@ page-home {
         border-radius: 5px;
         border: 1px solid gray;
         box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        font-size: 13.5px;
     }
     
     .a:hover{
@@ -90,4 +93,8 @@ page-home {
         width: 100%  !important;
         margin: auto;  
     }
+    .container {
+        display: flex;
+        justify-content: center;
+      }
 }

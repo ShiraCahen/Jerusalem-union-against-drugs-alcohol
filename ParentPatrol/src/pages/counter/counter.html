@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>סופר צעדים</ion-title>
+    <ion-buttons end>
+      <button ion-button block icon-right (tap)="showOptions()">
+        Settings
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-icon name="walk" item-start large></ion-icon>
+      <h2>Step Count</h2>
+      <p>{{steps}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="trophy" item-left large ></ion-icon>
+      <h2>Progress Towards Goal</h2>
+      <p>Goal: {{goal}} Steps / {{percentage.toFixed(1)}} %</p>
+    </ion-item>
+  </ion-card>
+</ion-content>

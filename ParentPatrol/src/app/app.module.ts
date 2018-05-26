@@ -11,6 +11,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { ColdPage } from '../pages/cold/cold';
+import { DetailPage } from '../pages/detail/detail';
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,7 +21,10 @@ import { ReproviderProvider } from '../providers/reprovider/reprovider';
 import { DataProvider } from '../providers/data/data';
 import { LoginPageModule } from '../pages/login/login.module';
 import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
-
+import { Pedometer } from '@ionic-native/pedometer';
+import { SettingsProvider } from '../providers/settings/settings';
+import { SettingsPage } from '../pages/settings/settings';
+import { CounterPage } from '../pages/counter/counter';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     ContactPage,
     HomePage,
     ColdPage,
-   
+    SettingsPage,
+   CounterPage,
+   DetailPage,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +56,9 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     ContactPage,
     HomePage,
     ColdPage,
-
+    SettingsPage,
+   CounterPage,
+   DetailPage,
   ],
   providers: [
     StatusBar,
@@ -58,7 +66,9 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider,
-    DataProvider
+    DataProvider,
+    Pedometer,
+    SettingsProvider
   ]
 })
 export class AppModule {}

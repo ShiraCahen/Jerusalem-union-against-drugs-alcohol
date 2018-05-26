@@ -15,6 +15,7 @@ export class AddUserPage {
   home = HomePage;
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, 
     private afAuth: AngularFireAuth) {
+      
   }
 
   presentAlert() {
@@ -34,6 +35,17 @@ export class AddUserPage {
   }
 
   async register(user: User){
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(user.email==undefined || user.password==undefined || !re.test(user.email) ){
+      let alert = this.alertCtrl.create({
+        title: 'שגיאה',
+        subTitle: 'נא להזין אימייל תקין וסיסמה',
+        buttons: ['OK']
+      });
+      alert.present();
+      return;
+    }
+
     await this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
     .then(
         () => { this.presentAlert() }).catch((error) => this.displayErrorAlert(error)
