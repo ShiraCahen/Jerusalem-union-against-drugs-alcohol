@@ -71,6 +71,7 @@ export class ContactPage {
 
   }
   this.emailComposer.open(email);
+  console.log ("heeeeeeeeyyyyyyy");
 }
 
 
