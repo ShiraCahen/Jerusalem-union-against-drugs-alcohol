@@ -16,7 +16,7 @@ export class DetailPage {
   contact = ContactPage;
   cold = ColdPage;
   data = DataProvider;
-  selected= [false,false,false,false,false,false,false,false,false,false,];
+  selected= [false,false,false,false,false,false,false,false,false,false];
   checked : boolean = false;
   team: String ="";
   myDate: String ="";
@@ -25,20 +25,29 @@ export class DetailPage {
   notes: String ="";
   endTime: String ="";
   volenteersNum: Number = 0;
-
+  str:any[];
+  rates:any[];
   constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, 
                private dataProvider:DataProvider,private alertCtrl: AlertController,
               private db:AngularFireDatabase) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailPage');
+    this.postsProvider.load();
   }
 
   updateState(i) {
     console.log('Cucumbers new state:' + this.selected[i] +" "+i);
   }
 
-  storeInfoToDatabase(){
+ hotClicked() {
+   this.str= this.rates;
+ 
+  console.log(this.str);
+ this.navCtrl.push(ContactPage, {
+    data: this.str
+  });
+ }
+/*  storeInfoToDatabase(){
     let toSave= {
         Team: this.team,
         MyDate: this.myDate,
@@ -60,6 +69,7 @@ export class DetailPage {
     }
 
     return this.db.list('details:').push(toSave);
-}
+}*/
+
 
 }

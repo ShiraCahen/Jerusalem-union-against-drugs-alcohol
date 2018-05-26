@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController ,NavParams,IonicPage} from 'ionic-angular';
 import { ReproviderProvider } from '../../providers/reprovider/reprovider';
 import { DataProvider } from '../../providers/data/data';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -36,11 +36,12 @@ export class ContactPage {
   details: String ="";
   handle: string ="";
   notes: String ="";
-
+  select: any;
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
               public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,
-              private db:AngularFireDatabase) {
- 
+              private db:AngularFireDatabase,public navParams: NavParams) {
+                this.select = navParams.get('data');
+               
   }
 
   makeMessage() {
@@ -69,7 +70,7 @@ export class ContactPage {
       subject: "",
       body:"" + this.str,
       isHtml: true,
-    //  app:"Gmail"
+      app:"Gmail"
 
   }
   this.emailComposer.open(email);
@@ -77,7 +78,16 @@ export class ContactPage {
 }
 
   ionViewDidLoad(){
-    this.postsProvider.load();
+ /*   switch(this.select) {
+      case n:
+          code block
+          break;
+      case n:
+          code block
+          break;
+      default:
+          code block
+  }*/
   }
 
   updateState(i) {
