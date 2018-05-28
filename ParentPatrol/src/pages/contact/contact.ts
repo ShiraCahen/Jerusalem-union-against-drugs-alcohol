@@ -111,16 +111,7 @@ export class ContactPage {
 }*/
 
   ionViewDidLoad(){
- /*   switch(this.select) {
-      case n:
-          code block
-          break;
-      case n:
-          code block
-          break;
-      default:
-          code block
-  }*/
+
   }
 
   updateState(i) {
