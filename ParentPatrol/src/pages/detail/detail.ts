@@ -6,7 +6,7 @@ import { ReproviderProvider } from '../../providers/reprovider/reprovider';
 import { DataProvider } from '../../providers/data/data';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireStorage } from 'angularfire2/storage';
-import { AlertController } from 'ionic-angular';
+import { AlertController,Platform  } from 'ionic-angular';
 
 @Component({
   selector: 'page-detail',
@@ -27,9 +27,19 @@ export class DetailPage {
   volenteersNum: Number = 0;
   str:any;
   rates:any;
+  browserSize;
+
   constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, 
                private dataProvider:DataProvider,private alertCtrl: AlertController,
-              private db:AngularFireDatabase) {}
+              private db:AngularFireDatabase, public platform: Platform) {
+
+      if(this.platform.is('core')){ 
+        this.browserSize = "desktop-card"
+      }
+      else{
+        this.browserSize = "mobile-card"
+      }
+}
 
   ionViewDidLoad() {
     this.postsProvider.load();
