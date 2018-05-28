@@ -55,25 +55,20 @@
                 </ion-col>
               </ion-row>     
             </ion-grid>
-           <ion-grid text-center>
-      <ion-row wrap>
 
-        <ion-col width-25>
-           <button ion-button class="round" icon-left id = "hot" (click)="hotClicked()" >
-              <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
-              נקודה חמה
-            </button>
-        </ion-col>
 
-        <ion-col width-25>
-          <button ion-button class="round" icon-left id = "cold" [navPush]="cold">
-            <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
-              נקודה קרה
-          </button>
-        </ion-col>
-        
-      </ion-row>
-   </ion-grid>
+            <span class="container"  text-center>
+                <button ion-button class="round" icon-left id = "hot" (click)="hotClicked()" >
+                    <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
+                    נקודה חמה
+                  </button>
+               
+                  <button ion-button class="round" icon-left id = "cold" [navPush]="cold">
+                      <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
+                        נקודה קרה
+                    </button>
+              </span>
+
 
   </ion-content>
       
