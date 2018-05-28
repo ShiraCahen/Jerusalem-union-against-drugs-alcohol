@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 import { AngularFireModule } from "angularfire2"
 import { AngularFireDatabaseModule } from "angularfire2/database"
 import { AngularFireStorageModule } from "angularfire2/storage"
+import { AngularFirestoreModule } from "angularfire2/firestore"
 
 import { FIREBASE_CONFIG } from "./app.firebase.config";
 import { AboutPage } from '../pages/about/about';
@@ -44,6 +45,7 @@ import { CounterPage } from '../pages/counter/counter';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule,
+    AngularFirestoreModule,
     AddUserPageModule,
     LoginPageModule,
     MoadonitPageModule

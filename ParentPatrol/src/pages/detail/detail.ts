@@ -25,8 +25,8 @@ export class DetailPage {
   notes: String ="";
   endTime: String ="";
   volenteersNum: Number = 0;
-  str:any[];
-  rates:any[];
+  str:any;
+  rates:any;
   constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, 
                private dataProvider:DataProvider,private alertCtrl: AlertController,
               private db:AngularFireDatabase) {}

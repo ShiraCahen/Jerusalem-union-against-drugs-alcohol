@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController ,NavParams,IonicPage} from 'ionic-angular';
+import { NavController ,NavParams,IonicPage, LoadingController} from 'ionic-angular';
 import { ReproviderProvider } from '../../providers/reprovider/reprovider';
 import { DataProvider } from '../../providers/data/data';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { AlertController } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 
 @Component({
@@ -37,14 +38,46 @@ export class ContactPage {
   handle: string ="";
   notes: String ="";
   select: any;
+  insidePlaces: string[];
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
               public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,
-              private db:AngularFireDatabase,public navParams: NavParams) {
+              private db:AngularFireDatabase,public navParams: NavParams,
+              private afs: AngularFirestore, private loadCtrl: LoadingController) {
                 this.select = navParams.get('data');
+                console.log(this.select)
+
+                const settings = { timestampsInSnapshots: true };
+                afs.firestore.settings(settings);
+
+                let loading = loadCtrl.create();
+                loading.present()
+
+                this.getPlace(this.select).then(locations => {
+                  this.insidePlaces = locations
+                  loading.dismiss()
+      }, err => {
+        console.log(this.insidePlaces)
+                  loading.dismiss()
+                }).catch(err => {
+                  console.log(err)
+                  loading.dismiss()
+                })
+                
                
   }
 
-  makeMessage() {
+  getPlace(name: string): Promise<string[]>{
+    return new Promise<any>((resolve, reject) => {
+      this.afs.collection<any>(name).valueChanges().subscribe(res => {
+        console.log(res)
+        resolve(res[0].location)
+      }, err => {
+        reject(err)
+      })
+    })
+  }
+
+  /*makeMessage() {
       for(var i = 0 ; i < this.postsProvider.posts.length ; i++) {
         if(this.selected[i] == true) {
             this.str +="\r\n"+ this.postsProvider.posts[i].title;
@@ -62,7 +95,7 @@ export class ContactPage {
     }
 
   send() {
-    this.str= this.makeMessage();
+  //  this.str= this.makeMessage();
     console.log (this.str);
     
     let email = {
@@ -75,7 +108,7 @@ export class ContactPage {
   }
   this.emailComposer.open(email);
   console.log ("heeeeeeeeyyyyyyy");
-}
+}*/
 
   ionViewDidLoad(){
  /*   switch(this.select) {
@@ -95,7 +128,7 @@ export class ContactPage {
   }
 
   storeInfoToDatabase(){
-    this.send();
+   // this.send();
     let toSave= {
         Team: this.team,
         MyDate: this.myDate,
@@ -140,7 +173,7 @@ export class ContactPage {
         TwentySix: this.selected[25],        
     }
     this.presentAlert();
-    return this.db.list('hotSpot:').push(toSave);
+  //  return this.db.list('hotSpot:').push(toSave);
 }
 
 presentAlert() {

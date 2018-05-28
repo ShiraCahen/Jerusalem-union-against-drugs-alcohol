@@ -10,16 +10,18 @@ export class ReproviderProvider {
   }
   load(){
     this.posts=[
-      {title:'הר חומה',type:'false'},
-      {title:'פסגת זאב',type:'false'},
-      {title:'יובלים',type:'false'},
-      {title:'קטמונים',type:'false'},
-      {title:'שיכוני תלפיות',type:'false'},
-      {title:'בית הכרם',type:'false'},
-      {title:'גילה',type:'false'},
-      {title:'שמואל הנביא',type:'false'},
-      {title:'מרכז העיר',type:'false'},
-      {title:'עיר גנים',type:'false'}
+      {title:'הר חומה',english:'HarHoma'},
+      {title:'פסגת זאב',english:'PisgatZeev'},
+      {title:'קריית יובל',english:'KiryatYuvalim'},
+      {title:'קטמונים',english:'Katamonim'},
+      {title:'שיכוני תלפיות',english:'Talpiot'},
+      {title:'בית הכרם',english:'BeitHakerem'},
+      {title:'גילה',english:'Gilo'},
+      {title:'שמואל הנביא',english:'ShmuelHanavi'},
+      {title:'מרכז העיר',english:'CityCenter'},
+      {title:'עיר גנים',english:'IrGanim'},
+      {title:'קריית מנחם',english:'KiryatMenachem'},
+      {title:'מלחה' ,english:'Malcha'}
     ]
   }
 }

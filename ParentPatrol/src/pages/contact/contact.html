@@ -14,7 +14,16 @@
   <ion-grid  text-wrap>
       <ion-row>
          <ion-col>
-
+          <ion-list radio-group [(ngModel)]="rates" >
+                  <ion-list-header>
+                      גנים:
+                  </ion-list-header>
+                  <ion-item *ngFor="let place of insidePlaces; let i = index" >
+                      <ion-label> {{place}} </ion-label>
+                      <ion-checkbox></ion-checkbox>
+                      <!--(click)="addValue($event)"  not in use--> 
+                  </ion-item>
+          </ion-list> 
               <ion-item>       
                   <ion-label color="white">מקומות נוספים בהם ביקרתם </ion-label>    
                     <ion-input type="text" [(ngModel)]="morePlaces" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
@@ -65,7 +74,7 @@
                     <ion-input  type="text" [(ngModel)]="notes"></ion-input>
               </ion-item>
               
-              <button ion-button full (click)="storeInfoToDatabase()">שלח</button>
+              <!-- <button ion-button full (click)="storeInfoToDatabase()">שלח</button> -->
         
     </ion-col>    
     </ion-row>           
