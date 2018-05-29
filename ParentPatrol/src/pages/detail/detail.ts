@@ -7,6 +7,7 @@ import { DataProvider } from '../../providers/data/data';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { AlertController,Platform  } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 @Component({
   selector: 'page-detail',
@@ -31,7 +32,7 @@ export class DetailPage {
 
   constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, 
                private dataProvider:DataProvider,private alertCtrl: AlertController,
-              private db:AngularFireDatabase, public platform: Platform) {
+              private db:AngularFireDatabase, public platform: Platform,public emailComposer:EmailComposer) {
 
       if(this.platform.is('core')){ 
         this.browserSize = "desktop-card"
@@ -80,6 +81,22 @@ export class DetailPage {
 
     return this.db.list('details:').push(toSave);
 }*/
+
+sendEmail() {
+  let email = {
+    to: 'parentspatroljer@gmail.com',
+    cc: '',
+    attachments: [
+      //this.currentImage
+    ],
+    subject: 'Test',
+    body: 'testing',
+    isHtml: true
+  };
+
+  this.emailComposer.open(email);
+}
+
 
 
 }

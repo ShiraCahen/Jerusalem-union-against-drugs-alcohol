@@ -178,4 +178,29 @@ presentAlert() {
   });
   alert.present();
 }
+
+sendEmail() {
+  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.volenteersName
+  + "\r\n תאריך: " + this.myDate + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
+  + "\r\n במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
+  + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
+  + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes;
+  let email = {
+    to: 'parentspatroljer@gmail.com',
+    cc: '',
+    attachments: [
+      //this.currentImage
+    ],
+    subject: 'Test',
+    body: this.msg+ '' ,
+    isHtml: true
+  };
+
+  this.emailComposer.open(email);
+}
+
+
+
+
+
 }
