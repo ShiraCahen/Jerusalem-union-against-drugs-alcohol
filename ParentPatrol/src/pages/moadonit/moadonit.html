@@ -15,7 +15,7 @@
            <ion-col>
              <ion-item>
                 <ion-label floating color="white" class="small">צוות:</ion-label>
-                 <ion-input type="text"></ion-input>
+                 <ion-input type="text" [(ngModel)]="team"></ion-input>
               </ion-item>
       <ion-item>
           <ion-label color="white" >תאריך</ion-label>
@@ -31,48 +31,48 @@
             </ion-item>  
             <ion-item>
                   <ion-label floating color="white">מספר צוות</ion-label>
-                  <ion-input type="number"></ion-input>
+                  <ion-input type="number" [(ngModel)]="teamNumber"></ion-input>
                 </ion-item>     
                 <ion-item>
                       <ion-label floating color="white">שמות מתנדבים</ion-label>
-                      <ion-input type="text"></ion-input>
+                      <ion-input type="text" [(ngModel)]="volenteersName"></ion-input>
                  </ion-item>           
    
          <ion-item>   
             <ion-label floating color="white">מספר הנערים\ות שהגיעו:</ion-label>        
-              <ion-input type="number" ></ion-input>
+              <ion-input type="number" [(ngModel)]="numOfYoungsters"></ion-input>
          </ion-item>
          <ion-item>     
             <ion-label floating color="white">ממוצע הגילאים </ion-label>      
-              <ion-input type="number" ></ion-input>
+              <ion-input type="number" [(ngModel)]="averageAge"></ion-input>
          </ion-item>
          <ion-item>  
             <ion-label floating color="white">מספר בני נוער שיכורים\ מעשנים:</ion-label>         
-              <ion-input  type="number" ></ion-input>
+              <ion-input  type="number" [(ngModel)]="alcoholOrDrugs"></ion-input>
          </ion-item>
          
          <ion-item> 
             <ion-label floating color="white">אירועים חריגים-יש להודיע לרכז בנוסף</ion-label>          
-              <ion-input  type="text"></ion-input>
+              <ion-input  type="text" [(ngModel)]="exeptions"></ion-input>
          </ion-item>
          <ion-item>    
             <ion-label floating color="white">פרטי הנער/ נערה, במידה ויצטרכו ליצור קשר או להעביר הלאה לגורמי טיפול </ion-label>       
-              <ion-input type="text"></ion-input>
+              <ion-input type="text" [(ngModel)]="youngsterName"></ion-input>
          </ion-item>
          <ion-item>    
             <ion-label floating color="white">דילמות שעלו</ion-label>       
-              <ion-input  type="text" ></ion-input>
+              <ion-input  type="text" [(ngModel)]="dilemmas"></ion-input>
          </ion-item>
          <ion-item>    
           <ion-label floating color="white">דרכי טיפול</ion-label>       
-            <ion-input  type="text" ></ion-input>
+            <ion-input  type="text" [(ngModel)]="handle"></ion-input>
        </ion-item>
          <ion-item>    
             <ion-label floating color="white">הערות</ion-label>       
-              <ion-input  type="text" ></ion-input>
+              <ion-input  type="text" [(ngModel)]="notes"></ion-input>
          </ion-item>
          <ion-item>
-              <button ion-button full (click) ="presentAlert()">שלח</button>
+              <button ion-button full (click) ="storeInfoToDatabase()">שלח</button>
             </ion-item>
       </ion-col>
   

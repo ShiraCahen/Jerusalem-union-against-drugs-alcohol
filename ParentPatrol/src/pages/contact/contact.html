@@ -40,7 +40,7 @@
                       </ion-item> 
                   <ion-item >
                     <ion-label color="white">מספר אנשים בצוות </ion-label>
-                    <ion-input placeholder=" מספר אנשים בצוות"></ion-input>
+                    <ion-input placeholder=" מספר אנשים בצוות" type="number" [(ngModel)]="volenteersNum"></ion-input>
                   </ion-item>
                 <ion-item>
                     
@@ -50,14 +50,14 @@
                 <ion-list>
                         <ion-item *ngFor="let post of postsProvider.posts; let i = index">
                             <ion-label>{{post.title}}</ion-label>
-                            <ion-checkbox [(ngModel)]="selected[i]" color="dark"></ion-checkbox>
-                            <!--(click)="addValue($event)"-->.36**
+                            <ion-checkbox  [(ngModel)]="selected[i]" color="dark"></ion-checkbox>
+                            <!--(click)="addValue($event)"  not in use--> 
                         </ion-item>
                   </ion-list>
         
               <ion-item>       
                   <ion-label color="white">מקומות נוספים בהם ביקרתם </ion-label>    
-                    <ion-input type="text" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
+                    <ion-input type="text" [(ngModel)]="morePlaces" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
               </ion-item>
               <ion-item>   
                   <ion-label color="white">תיאור הסיור ומהלכו </ion-label>
@@ -65,15 +65,15 @@
               </ion-item>
               <ion-item>   
                   <ion-label color="white">	מספר חבורות שנצפו</ion-label>        
-                    <ion-input type="number" ></ion-input>
+                    <ion-input [(ngModel)]="groupsNum" type="number" ></ion-input>
               </ion-item>
               <ion-item>     
                   <ion-label color="white">מספר הנערים/ות בכל  חבורה </ion-label>      
-                    <ion-input type="number" ></ion-input>
+                    <ion-input [(ngModel)]="membersInGroup" type="number" ></ion-input>
               </ion-item>
               <ion-item>  
                   <ion-label color="white">ממוצע הגילאים </ion-label>         
-                    <ion-input  type="text" ></ion-input>
+                    <ion-input [(ngModel)]="averageAge" type="text" ></ion-input>
               </ion-item>
               <ion-item>     
                   <ion-label color="white">אם נתקלנו באלכוהול/ סמים- כמה שיכורים/ מעשנים </ion-label>      
@@ -96,7 +96,7 @@
                     <ion-input  type="text" [(ngModel)]="notes"></ion-input>
               </ion-item>
               
-                    <button ion-button full (click)="send()">שלח</button>
+                    <button ion-button full (click)="storeInfoToDatabase()">שלח</button>
         
     </ion-col>
 

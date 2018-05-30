@@ -13,7 +13,7 @@
   <ion-list>
     <ion-item>
       <ion-label color="white">שם משתמש:</ion-label>
-      <ion-input placeholder="שם משתמש"></ion-input>
+      <ion-input type="text" [(ngModel)] = "profile.firstName" placeholder="שם משתמש"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -29,7 +29,7 @@
     
     <ion-item>
       <ion-label color="white">תעודת זהות: </ion-label>
-      <ion-input type="number" placeholder="תעודת זהות"></ion-input>
+      <ion-input type="number" [(ngModel)] = "profile.id" placeholder="תעודת זהות"></ion-input>
     </ion-item>
   
     <ion-item>
@@ -41,23 +41,23 @@
         <ion-label color="white">סוג המשתמש:</ion-label>
     </ion-item>  
 
-    <ion-list radio-group [(ngModel)]="relationship">
+    <ion-list radio-group [(ngModel)]="profile.kind">
         <ion-item>
           <ion-label>מנהל</ion-label>
-          <ion-radio value="admin" checked color="white"></ion-radio>
+          <ion-radio value= "admin"></ion-radio>
         </ion-item>
         <ion-item>
           <ion-label>רכז</ion-label>
-          <ion-radio value="coordinetor" color="white"></ion-radio>
+          <ion-radio value = "coordinetor"></ion-radio>
         </ion-item>
         <ion-item>
           <ion-label>צוות</ion-label>
-          <ion-radio value="team" [disabled]="isDisabled" color="white"></ion-radio>
+          <ion-radio value = "team"></ion-radio>
         </ion-item>
     </ion-list>
 
     
-    <button ion-button  (click) ="register(user)" >הוסף משתמש</button>
+    <button ion-button (click) ="register(user)" >הוסף משתמש</button>
     
 
   </ion-list>
