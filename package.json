@@ -19,8 +19,8 @@
   "dependencies": {
     "@ionic-native/fcm": "^4.7.0",
     "@ionic-native/firebase": "^4.7.0",
-    "angularfire2": "^5.0.0-rc.8.0",
-    "firebase": "^5.0.2",
+    "angularfire2": "^5.0.0-rc.6",
+    "firebase": "^5.0.4",
     "promise-polyfill": "^7.1.2"
   }
 }
