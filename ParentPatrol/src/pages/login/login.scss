@@ -4,15 +4,15 @@ page-login {
     width: 100%  !important;
     margin: auto;  
 }
+
 h1{
         text-align: center;
         font-weight: bold;
         padding-top: 2%;
         padding-bottom: 10px;
-        color: white;
+        color: #004381;
         font-family: Segoe UI;
-        text-shadow: 1px 1px 1px black; 
-        font-size: 26px;
+        text-shadow: 1px 1px 1px white; 
 }
 
 
@@ -27,8 +27,19 @@ h1{
     box-shadow: 4px 4px rgb(197, 197, 197);
     border: 1px solid rgb(197, 197, 197);
     opacity: 0.75;  
-    
-    
+}
+
+.list2{
+    border-radius: 5px; 
+    margin-bottom: 9px;
+    text-align: center;
+    width: 80%; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;   
+    box-shadow: 4px 4px rgb(197, 197, 197);
+    border: 1px solid rgb(197, 197, 197);
+    opacity: 0.75;  
 }
 
 .button {

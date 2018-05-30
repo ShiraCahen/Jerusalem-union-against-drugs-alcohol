@@ -1,23 +1,38 @@
 
 <ion-content padding class="bg-img">
-  <ion-title text-center>
-        האיגוד הירושלמי
-      <br/>
-      למאבק בסמים ואלכוהול
-  
+    <ion-title> 
+  <h1>סיירת הורים</h1>
     </ion-title>
     <p>
-        <ion-list > 
-          <ion-item class="list1">
-            <ion-label floating><ion-icon ios="ios-contact" md="md-contact"> </ion-icon>  שם משתמש </ion-label>
-            <ion-input type="text" [(ngModel)] = "user1.email"></ion-input>
-          </ion-item>
       
-          <ion-item class="list1" >
-            <ion-label floating><ion-icon ios="ios-lock" md="md-lock"></ion-icon>  סיסמא </ion-label>
-            <ion-input type="password" [(ngModel)] = "user1.password"></ion-input>
-          </ion-item>   
-        </ion-list>
+      <div *ngIf="browserSize == 'desktop-card'">
+          <ion-list > 
+              <ion-item class="list1">
+                <ion-label floating><ion-icon ios="ios-contact" md="md-contact"> </ion-icon>  שם משתמש </ion-label>
+                <ion-input type="text" [(ngModel)] = "user1.email"></ion-input>
+              </ion-item>
+          
+              <ion-item class="list1" >
+                <ion-label floating><ion-icon ios="ios-lock" md="md-lock"></ion-icon>  סיסמא </ion-label>
+                <ion-input type="password" [(ngModel)] = "user1.password"></ion-input>
+              </ion-item>   
+            </ion-list>
+      </div>
+    
+      <div *ngIf="browserSize == 'mobile-card'">
+          <ion-list > 
+              <ion-item class="list2">
+                <ion-label floating><ion-icon ios="ios-contact" md="md-contact"> </ion-icon>  שם משתמש </ion-label>
+                <ion-input type="text" [(ngModel)] = "user1.email"></ion-input>
+              </ion-item>
+          
+              <ion-item class="list2" >
+                <ion-label floating><ion-icon ios="ios-lock" md="md-lock"></ion-icon>  סיסמא </ion-label>
+                <ion-input type="password" [(ngModel)] = "user1.password"></ion-input>
+              </ion-item>   
+            </ion-list>
+      </div>
+        
         <button class="button" (click) ="login(user1)">התחברות</button>
         <button class="button" [navPush]="home">כניסה זמנית</button>
         <p>לא רשום? פנה לרכז האחראי </p>

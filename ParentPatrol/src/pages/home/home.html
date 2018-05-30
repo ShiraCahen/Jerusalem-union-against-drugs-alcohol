@@ -1,33 +1,31 @@
 <ion-header>
   <ion-navbar>
-    
-    <ion-title class = "title" text-center> 
-      
-          האיגוד הירושלמי
-        <br/>
-        למאבק בסמים ואלכוהול
-        
-  </ion-title>
+      <div *ngIf="browserSize == 'desktop-card'">
+          <ion-title> 
+              <h1  class="textStyle1">סיירת הורים</h1>
+          </ion-title>
+      </div>
+      <div *ngIf="browserSize == 'mobile-card'">
+          <ion-title> 
+              <h1 class="textStyle2">סיירת הורים</h1>
+          </ion-title>
+      </div>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="bg-img">
-  <ion-grid text-center>
-    <ion-row wrap>
-      <ion-col width-25>
-         <button ion-button class="round" icon-left id = "hot" [navPush]="detail">
-            <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
-            ד"וח סיור
+  
+        <span class="container">
+          <button ion-button class="round" icon-left id = "hot" [navPush]="detail">
+          <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
+               ד"וח סיור
           </button>
-      </ion-col>
-      <ion-col width-25>
-        <button ion-button class="round" icon-left id = "moadonit" [navPush]="moadonit">
+         
+          <button ion-button class="round" icon-left id = "moadonit" [navPush]="moadonit">
           <ion-icon ios="ios-game-controller-b" md="md-game-controller-b"></ion-icon>
-            דו"ח מועדון
-        </button>
-      </ion-col> 
-    </ion-row>
- </ion-grid>
+               דו"ח מועדון
+          </button>
+        </span>
     
 <p>
     <button class = "a" ion-button icon-left [navPush]="addUser">

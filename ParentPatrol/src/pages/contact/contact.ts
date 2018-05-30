@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController ,NavParams,IonicPage, LoadingController} from 'ionic-angular';
 import { ReproviderProvider } from '../../providers/reprovider/reprovider';
 import { DataProvider } from '../../providers/data/data';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { AlertController } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 
 @Component({
@@ -36,32 +37,62 @@ export class ContactPage {
   details: String ="";
   handle: string ="";
   notes: String ="";
-
+  select: any;
+  insidePlaces: string[];
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
               public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,
-              private db:AngularFireDatabase) {
- 
+              private db:AngularFireDatabase,public navParams: NavParams,
+              private afs: AngularFirestore, private loadCtrl: LoadingController) {
+                this.select = navParams.get('data');
+                console.log(this.select)
+
+                const settings = { timestampsInSnapshots: true };
+                afs.firestore.settings(settings);
+
+                let loading = loadCtrl.create();
+                loading.present()
+
+                this.getPlace(this.select).then(locations => {
+                  this.insidePlaces = locations
+                  loading.dismiss()
+      }, err => {
+        console.log(this.insidePlaces)
+                  loading.dismiss()
+                }).catch(err => {
+                  console.log(err)
+                  loading.dismiss()
+                })
+                
+               
   }
 
-  makeMessage() {
+  getPlace(name: string): Promise<string[]>{
+    return new Promise<any>((resolve, reject) => {
+      this.afs.collection<any>(name).valueChanges().subscribe(res => {
+        console.log(res)
+        resolve(res[0].location)
+      }, err => {
+        reject(err)
+      })
+    })
+  }
+
+  /*makeMessage() {
       for(var i = 0 ; i < this.postsProvider.posts.length ; i++) {
         if(this.selected[i] == true) {
             this.str +="\r\n"+ this.postsProvider.posts[i].title;
         }
       }
-
       this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.volenteersName
       + "\r\n תאריך: " + this.myDate + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
       + "\r\n במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
       + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
       + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes;
-
       //console.log(this.msg);
       return this.msg;
     }
-
   send() {
-    this.str= this.makeMessage();
+  //  this.str= this.makeMessage();
     console.log (this.str);
     
     let email = {
@@ -69,14 +100,14 @@ export class ContactPage {
       subject: "",
       body:"" + this.str,
       isHtml: true,
-    //  app:"Gmail"
-
+      app:"Gmail"
   }
   this.emailComposer.open(email);
-}
+  console.log ("heeeeeeeeyyyyyyy");
+}*/
 
   ionViewDidLoad(){
-    this.postsProvider.load();
+
   }
 
   updateState(i) {
@@ -84,7 +115,7 @@ export class ContactPage {
   }
 
   storeInfoToDatabase(){
-    this.send();
+   // this.send();
     let toSave= {
         Team: this.team,
         MyDate: this.myDate,
@@ -129,7 +160,7 @@ export class ContactPage {
         TwentySix: this.selected[25],        
     }
     this.presentAlert();
-    return this.db.list('hotSpot:').push(toSave);
+  //  return this.db.list('hotSpot:').push(toSave);
 }
 
 presentAlert() {
@@ -147,4 +178,29 @@ presentAlert() {
   });
   alert.present();
 }
+
+sendEmail() {
+  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.volenteersName
+  + "\r\n תאריך: " + this.myDate + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
+  + "\r\n במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
+  + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
+  + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes;
+  let email = {
+    to: 'parentspatroljer@gmail.com',
+    cc: '',
+    attachments: [
+      //this.currentImage
+    ],
+    subject: 'Test',
+    body: this.msg+ '' ,
+    isHtml: true
+  };
+
+  this.emailComposer.open(email);
+}
+
+
+
+
+
 }

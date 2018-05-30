@@ -1,39 +1,35 @@
 <meta charset="utf-8" />
 <ion-header>
-
+    
   <ion-navbar>
-    <ion-title>
-     פרטי המתנדב
+    <ion-title text-right>
+     פרטי הסיור
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="bg-img">
+<ion-content padding class="bg-color">
     <ion-grid  text-wrap>
         <ion-row>
            <ion-col>
-    <ion-item>
-        <h2>אנא סמן באיזו סיירת אתה:</h2> 
-    </ion-item>
-
-        <ion-list>
-                <ion-item *ngFor="let post of postsProvider.posts; let i = index">
-                    <ion-label> {{post.title}} </ion-label>
-                    <ion-checkbox  [(ngModel)]="selected[i]" color="dark"></ion-checkbox>
-                    <!--(click)="addValue($event)"  not in use--> 
-                </ion-item>
-          </ion-list> 
-        </ion-col>    
-      </ion-row>   
-    </ion-grid> 
-
-  
-  <ion-grid text-wrap>
-      <ion-row>
-         <ion-col>
+              <ion-list radio-group [(ngModel)]="rates" >
+                      <ion-list-header>
+                          סיירת:
+                      </ion-list-header>
+                      <ion-item *ngFor="let post of postsProvider.posts; let i = index" >
+                          <ion-label> {{post.title}} </ion-label>
+                          <ion-radio checked="{{i == 0}}"
+                           name="theRadioGroupName"
+                           value="{{post.english}}" 
+                           (change)="mcqAnswer($event)"></ion-radio>
+                         
+                      </ion-item>
+               </ion-list> 
+              
+              
             <ion-item>
                 <ion-label color="white" >תאריך</ion-label>
-                <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+                <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" required></ion-datetime>
               </ion-item>
 
             <ion-item>
@@ -60,29 +56,18 @@
               </ion-row>     
             </ion-grid>
 
-  
 
-
-
-    <ion-grid text-center>
-      <ion-row wrap>
-
-        <ion-col width-25>
-           <button ion-button class="round" icon-left id = "hot" [navPush]="contact">
-              <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
-              נקודה חמה
-            </button>
-        </ion-col>
-
-        <ion-col width-25>
-          <button ion-button class="round" icon-left id = "cold" [navPush]="cold">
-            <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
-              נקודה קרה
-          </button>
-        </ion-col>
-        
-      </ion-row>
-   </ion-grid>
+            <span class="container"  text-center>
+                <button ion-button class="round" icon-left id = "hot" (click)="hotClicked()" >
+                    <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
+                    נקודה חמה
+                  </button>
+               
+                  <button ion-button class="round" icon-left id = "cold" [navPush]="cold">
+                      <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
+                        נקודה קרה
+                    </button>
+              </span>
 
   </ion-content>
       

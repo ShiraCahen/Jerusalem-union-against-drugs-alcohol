@@ -6,7 +6,8 @@ import { ReproviderProvider } from '../../providers/reprovider/reprovider';
 import { DataProvider } from '../../providers/data/data';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireStorage } from 'angularfire2/storage';
-import { AlertController } from 'ionic-angular';
+import { AlertController,Platform  } from 'ionic-angular';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 @Component({
   selector: 'page-detail',
@@ -16,7 +17,7 @@ export class DetailPage {
   contact = ContactPage;
   cold = ColdPage;
   data = DataProvider;
-  selected= [false,false,false,false,false,false,false,false,false,false,];
+  selected= [false,false,false,false,false,false,false,false,false,false];
   checked : boolean = false;
   team: String ="";
   myDate: String ="";
@@ -25,20 +26,39 @@ export class DetailPage {
   notes: String ="";
   endTime: String ="";
   volenteersNum: Number = 0;
+  str:any;
+  rates:any;
+  browserSize;
 
   constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, 
                private dataProvider:DataProvider,private alertCtrl: AlertController,
-              private db:AngularFireDatabase) {}
+              private db:AngularFireDatabase, public platform: Platform,public emailComposer:EmailComposer) {
+
+      if(this.platform.is('core')){ 
+        this.browserSize = "desktop-card"
+      }
+      else{
+        this.browserSize = "mobile-card"
+      }
+}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailPage');
+    this.postsProvider.load();
   }
 
   updateState(i) {
     console.log('Cucumbers new state:' + this.selected[i] +" "+i);
   }
 
-  storeInfoToDatabase(){
+ hotClicked() {
+   this.str= this.rates;
+ 
+  console.log(this.str);
+ this.navCtrl.push(ContactPage, {
+    data: this.str
+  });
+ }
+/*  storeInfoToDatabase(){
     let toSave= {
         Team: this.team,
         MyDate: this.myDate,
@@ -60,6 +80,23 @@ export class DetailPage {
     }
 
     return this.db.list('details:').push(toSave);
+}*/
+
+sendEmail() {
+  let email = {
+    to: 'parentspatroljer@gmail.com',
+    cc: '',
+    attachments: [
+      //this.currentImage
+    ],
+    subject: 'Test',
+    body: 'testing',
+    isHtml: true
+  };
+
+  this.emailComposer.open(email);
 }
+
+
 
 }
