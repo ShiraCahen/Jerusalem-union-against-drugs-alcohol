@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-right>
+    <ion-title text-center>
      הוספת משתמש
     </ion-title>
   </ion-navbar>
@@ -13,42 +13,38 @@
 <ion-content padding class="bg-color">
 
   <ion-item text-center class="text">
-    *שדות המסומנים בכוכבית הינם שדות חובה
+    *השדות המסומנים בכוכבית הינם שדות חובה
   </ion-item>
 
   <ion-list>
+
     <ion-item>
-      <ion-label color="white">שם משתמש:</ion-label>
-      <ion-input placeholder="שם משתמש"></ion-input>
+      <ion-label color="white">* אימייל:</ion-label>
+      <ion-input type="text" [(ngModel)] = "user.email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label color="white">*סיסמא:</ion-label>
-      <ion-input type="text" [(ngModel)] = "user.password" placeholder="Password Input"></ion-input>
+      <ion-label color="white">* סיסמא:</ion-label>
+      <ion-input type="text" [(ngModel)] = "user.password"></ion-input>
     </ion-item>
   
     <ion-item>
-      <ion-label color="white">מס' פלאפון: </ion-label>
-      <ion-input type="number" placeholder="מס' פלאפון"></ion-input>
+      <ion-label color="white">מספר פלאפון: </ion-label>
+      <ion-input type="number"></ion-input>
     </ion-item>
 
     
     <ion-item>
       <ion-label color="white">תעודת זהות: </ion-label>
-      <ion-input type="number" placeholder="תעודת זהות"></ion-input>
+      <ion-input type="number"></ion-input>
     </ion-item>
   
-    <ion-item>
-      <ion-label color="white">*Email:</ion-label>
-      <ion-input type="text" [(ngModel)] = "user.email" placeholder="Email Input"></ion-input>
-    </ion-item>
-
     <ion-item text-right>
         <ion-label color="white">*סוג המשתמש:</ion-label>
     </ion-item>  
 
     <ion-list radio-group [(ngModel)]="relationship" float-right text-right>
-        <ion-item>
+    <ion-item>
           <ion-label>מנהל</ion-label>
           <ion-radio value="admin" checked color="white"></ion-radio>
         </ion-item>

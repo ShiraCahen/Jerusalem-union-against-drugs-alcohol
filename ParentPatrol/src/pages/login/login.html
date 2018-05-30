@@ -1,14 +1,14 @@
 
 <ion-content padding class="bg-img">
     <ion-title> 
-  <h1>סיירת הורים</h1>
+  <h1>סיירות הורים</h1>
     </ion-title>
     <p>
       
       <div *ngIf="browserSize == 'desktop-card'">
           <ion-list > 
               <ion-item class="list1">
-                <ion-label floating><ion-icon ios="ios-contact" md="md-contact"> </ion-icon>  שם משתמש </ion-label>
+                <ion-label floating><ion-icon ios="ios-contact" md="md-contact"> </ion-icon>  אימייל  </ion-label>
                 <ion-input type="text" [(ngModel)] = "user1.email"></ion-input>
               </ion-item>
           
@@ -22,11 +22,11 @@
       <div *ngIf="browserSize == 'mobile-card'">
           <ion-list > 
               <ion-item class="list2">
-                <ion-label floating><ion-icon ios="ios-contact" md="md-contact"> </ion-icon>  שם משתמש </ion-label>
+                <ion-label floating><ion-icon ios="ios-contact" md="md-contact"> </ion-icon>  אימייל </ion-label>
                 <ion-input type="text" [(ngModel)] = "user1.email"></ion-input>
               </ion-item>
           
-              <ion-item class="list2" >
+              <ion-item class="list2">
                 <ion-label floating><ion-icon ios="ios-lock" md="md-lock"></ion-icon>  סיסמא </ion-label>
                 <ion-input type="password" [(ngModel)] = "user1.password"></ion-input>
               </ion-item>   

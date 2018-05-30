@@ -8,7 +8,6 @@ import { AlertController } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { AngularFirestore } from 'angularfire2/firestore';
 
-
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'

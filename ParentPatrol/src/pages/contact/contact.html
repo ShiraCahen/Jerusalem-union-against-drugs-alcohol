@@ -16,7 +16,7 @@
          <ion-col>
           <ion-list radio-group [(ngModel)]="rates" >
                   <ion-list-header>
-                      גנים:
+                      איזורי סיור:
                   </ion-list-header>
                   <ion-item *ngFor="let place of insidePlaces; let i = index" >
                       <ion-label> {{place}} </ion-label>
@@ -26,7 +26,7 @@
           </ion-list> 
               <ion-item>       
                   <ion-label color="white">מקומות נוספים בהם ביקרתם </ion-label>    
-                    <ion-input type="text" [(ngModel)]="morePlaces" placeholder="מקומות נוספים בהם ביקרתם:"></ion-input>
+                    <ion-input type="text" [(ngModel)]="morePlaces"></ion-input>
               </ion-item>
              
               <ion-item>   
@@ -60,7 +60,7 @@
               </ion-item>
 
               <ion-item>    
-                  <ion-label color="white">פרטי הנער/ נערה, במידה ויצטרכו ליצור קשר או להעביר הלאה לגורמי טיפול </ion-label>       
+                  <ion-label color="white">פרטי הנער/ה ליצירת קשר או להעברה הלאה לגורמי טיפול </ion-label>       
                     <ion-input type="text" [(ngModel)]="details"></ion-input>
               </ion-item>
 

@@ -1,10 +1,10 @@
 <meta charset="utf-8" />
 <ion-header>
     
-  <ion-navbar>
-    <ion-title text-right>
-     פרטי הסיור
-    </ion-title>
+<ion-navbar>
+   <!-- <ion-title text-right>
+     פרטים חשובים
+    </ion-title>-->
   </ion-navbar>
 </ion-header>
 
@@ -14,7 +14,7 @@
            <ion-col>
               <ion-list radio-group [(ngModel)]="rates" >
                       <ion-list-header>
-                          סיירת:
+                          אנא בחר את הסיירת שלך:
                       </ion-list-header>
                       <ion-item *ngFor="let post of postsProvider.posts; let i = index" >
                           <ion-label> {{post.title}} </ion-label>
@@ -28,27 +28,27 @@
               
               
             <ion-item>
-                <ion-label color="white" >תאריך</ion-label>
+                <ion-label color="black" >תאריך</ion-label>
                 <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" required></ion-datetime>
               </ion-item>
 
             <ion-item>
-                <ion-label color="white">שעת התחלה</ion-label>
+                <ion-label color="black">שעת התחלה</ion-label>
                 <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
             </ion-item>     
 
             <ion-item>
-                    <ion-label color="white">שעת סיום</ion-label>
+                    <ion-label color="black">שעת סיום</ion-label>
                     <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
             </ion-item>  
 
                   <ion-item>
-                        <ion-label floating color="white">מספר צוות</ion-label>
+                        <ion-label floating color="black">מספר צוות</ion-label>
                         <ion-input type="number" [(ngModel)]="teamNumber" ></ion-input>
                       </ion-item>  
 
                       <ion-item>
-                            <ion-label floating color="white">שמות מתנדבים</ion-label>
+                            <ion-label floating color="black">שמות מתנדבים</ion-label>
                             <ion-input type="text" [(ngModel)]="volenteersName"></ion-input>
                       </ion-item> 
                   

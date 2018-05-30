@@ -14,7 +14,7 @@
         <ion-row>
            <ion-col>
              <ion-item>
-                <ion-label floating color="white" class="small">צוות:</ion-label>
+                <ion-label floating color="white">צוות:</ion-label>
                  <ion-input type="text" [(ngModel)]="team"></ion-input>
               </ion-item>
       <ion-item>
@@ -22,7 +22,7 @@
           <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
         </ion-item>
       <ion-item>
-          <ion-label color="white"> שעת הפעלת המועדון</ion-label>
+          <ion-label color="white">שעת פתיחת המועדון</ion-label>
           <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
         </ion-item>       
           <ion-item>
@@ -43,20 +43,20 @@
               <ion-input type="number" [(ngModel)]="numOfYoungsters"></ion-input>
          </ion-item>
          <ion-item>     
-            <ion-label floating color="white">ממוצע הגילאים </ion-label>      
+            <ion-label floating color="white">ממוצע הגילאים</ion-label>      
               <ion-input type="number" [(ngModel)]="averageAge"></ion-input>
          </ion-item>
          <ion-item>  
-            <ion-label floating color="white">מספר בני נוער שיכורים\ מעשנים:</ion-label>         
+            <ion-label floating color="white">מספר בני נוער שיכורים או מעשנים:</ion-label>         
               <ion-input  type="number" [(ngModel)]="alcoholOrDrugs"></ion-input>
          </ion-item>
          
          <ion-item> 
-            <ion-label floating color="white">אירועים חריגים-יש להודיע לרכז בנוסף</ion-label>          
+            <ion-label floating color="white">אירועים חריגים - יש להודיע לרכז בנוסף</ion-label>          
               <ion-input  type="text" [(ngModel)]="exeptions"></ion-input>
          </ion-item>
          <ion-item>    
-            <ion-label floating color="white">פרטי הנער/ נערה, במידה ויצטרכו ליצור קשר או להעביר הלאה לגורמי טיפול </ion-label>       
+            <ion-label floating color="white">פרטי הנער/ה, ליצירת קשר או להעברה הלאה לגורמי טיפול </ion-label>       
               <ion-input type="text" [(ngModel)]="youngsterName"></ion-input>
          </ion-item>
          <ion-item>    
@@ -81,8 +81,6 @@
           
     </ion-grid>
 
-    <button ion-button (click)="sendEmail()">         
-        שליחת מייל
-    </button>
+    <button ion-button (click)="sendEmail()">שלח מייל</button>
 
 </ion-content>
