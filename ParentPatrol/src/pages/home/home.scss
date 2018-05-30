@@ -4,16 +4,21 @@ page-home {
         flex-wrap: wrap;
     }
    
-    h1 {
+    h1{
         text-align: center;
         font-weight: bold;
-        padding-top: 1%;
+        padding-top: 2%;
         padding-bottom: 10px;
-        padding-left: 6%;
         color: #004381;
         font-family: Segoe UI;
-        text-shadow: 1px 1px 1px rgb(149, 168, 182); 
-        font-size: 26px;
+        text-shadow: 1px 1px 1px grey; 
+        margin-left:18%;
+    }
+    .textStyle1{
+        margin-left:5.5%;
+    }
+    .textStyle2{
+        margin-left:18%;
     }
     
     .round {

@@ -83,17 +83,14 @@ export class ContactPage {
             this.str +="\r\n"+ this.postsProvider.posts[i].title;
         }
       }
-
       this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.volenteersName
       + "\r\n תאריך: " + this.myDate + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
       + "\r\n במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
       + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
       + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes;
-
       //console.log(this.msg);
       return this.msg;
     }
-
   send() {
   //  this.str= this.makeMessage();
     console.log (this.str);
@@ -104,7 +101,6 @@ export class ContactPage {
       body:"" + this.str,
       isHtml: true,
       app:"Gmail"
-
   }
   this.emailComposer.open(email);
   console.log ("heeeeeeeeyyyyyyy");
@@ -182,4 +178,29 @@ presentAlert() {
   });
   alert.present();
 }
+
+sendEmail() {
+  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.volenteersName
+  + "\r\n תאריך: " + this.myDate + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
+  + "\r\n במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
+  + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
+  + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes;
+  let email = {
+    to: 'parentspatroljer@gmail.com',
+    cc: '',
+    attachments: [
+      //this.currentImage
+    ],
+    subject: 'Test',
+    body: this.msg+ '' ,
+    isHtml: true
+  };
+
+  this.emailComposer.open(email);
+}
+
+
+
+
+
 }
