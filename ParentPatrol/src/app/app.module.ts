@@ -5,12 +5,14 @@ import { MyApp } from './app.component';
 import { AngularFireModule } from "angularfire2"
 import { AngularFireDatabaseModule } from "angularfire2/database"
 import { AngularFireStorageModule } from "angularfire2/storage"
+import { AngularFirestoreModule } from "angularfire2/firestore"
 
 import { FIREBASE_CONFIG } from "./app.firebase.config";
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { ColdPage } from '../pages/cold/cold';
+import { DetailPage } from '../pages/detail/detail';
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,7 +22,10 @@ import { ReproviderProvider } from '../providers/reprovider/reprovider';
 import { DataProvider } from '../providers/data/data';
 import { LoginPageModule } from '../pages/login/login.module';
 import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
-
+import { Pedometer } from '@ionic-native/pedometer';
+import { SettingsProvider } from '../providers/settings/settings';
+import { SettingsPage } from '../pages/settings/settings';
+import { CounterPage } from '../pages/counter/counter';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,9 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     ContactPage,
     HomePage,
     ColdPage,
-   
+    SettingsPage,
+   CounterPage,
+   DetailPage,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +45,7 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule,
+    AngularFirestoreModule,
     AddUserPageModule,
     LoginPageModule,
     MoadonitPageModule
@@ -50,7 +58,9 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     ContactPage,
     HomePage,
     ColdPage,
-
+    SettingsPage,
+   CounterPage,
+   DetailPage,
   ],
   providers: [
     StatusBar,
@@ -58,7 +68,9 @@ import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider,
-    DataProvider
+    DataProvider,
+    Pedometer,
+    SettingsProvider
   ]
 })
 export class AppModule {}
