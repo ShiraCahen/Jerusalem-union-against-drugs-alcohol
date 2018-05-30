@@ -52,8 +52,10 @@ export class DetailPage {
 
  hotClicked() {
    this.str= this.rates;
+  if(this.str==undefined){   
+    this.str=this.postsProvider.posts[0].english;
+  }
  
-  console.log(this.str);
  this.navCtrl.push(ContactPage, {
     data: this.str
   });

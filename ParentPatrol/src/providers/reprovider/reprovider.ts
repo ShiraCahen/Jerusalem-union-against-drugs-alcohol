@@ -12,7 +12,7 @@ export class ReproviderProvider {
     this.posts=[
       {title:'הר חומה',english:'HarHoma'},
       {title:'פסגת זאב',english:'PisgatZeev'},
-      {title:'קריית יובל',english:'KiryatYuvalim'},
+      {title:'קריית יובל',english:'KiryatYovel'},
       {title:'קטמונים',english:'Katamonim'},
       {title:'שיכוני תלפיות',english:'Talpiot'},
       {title:'בית הכרם',english:'BeitHakerem'},
