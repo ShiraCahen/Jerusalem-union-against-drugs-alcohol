@@ -50,8 +50,8 @@ Please visit our wiki for furthur project info:
 ### Iteration Pages
 - [Iteration 0 - ZFR](https://github.com/ShiraCahen/Parents-Patrol/wiki/Iteration-0-ZFR)
 - [Iteration 1 - MVP](https://github.com/ShiraCahen/Parents-Patrol/wiki/iteration-1-MVP)
-- [Iteration 2 - Feature X]()
-- [Iteration 3 - Feature Y]()
+- [Iteration 2 - server](https://github.com/ShiraCahen/Parents-Patrol/wiki/Iteration-2-----server)
+- [Iteration 3 - functionality](https://github.com/ShiraCahen/Parents-Patrol/wiki/iteration-3---functionality)
 - [Iteration 4 - Feature Z]()
 
 
