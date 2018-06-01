@@ -8,8 +8,8 @@ The aforementioned organization will use our applicatoin to manage parents patro
 this project developed at Azrieli College of Engineering for a social project.
 
 <p align="center">
-  <img src="http://static.wixstatic.com/media/00de82_2038740ff78f497c8cc89cd7a564926b.png/v1/fill/w_291,h_115,al_c,usm_0.66_1.00_0.01/00de82_2038740ff78f497c8cc89cd7a564926b.png">
- </br>
+ <!-- <img src="http://static.wixstatic.com/media/00de82_2038740ff78f497c8cc89cd7a564926b.png/v1/fill/w_291,h_115,al_c,usm_0.66_1.00_0.01/00de82_2038740ff78f497c8cc89cd7a564926b.png">
+ </br>-->
    <img src="https://github.com/ShiraCahen/Parents-Patrol/blob/master/pic/logo.jpg">
    
 </p>
