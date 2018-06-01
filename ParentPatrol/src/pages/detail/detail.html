@@ -1,0 +1,73 @@
+<meta charset="utf-8" />
+<ion-header>
+    
+<ion-navbar>
+   <!-- <ion-title text-right>
+     פרטים חשובים
+    </ion-title>-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bg-color">
+    <ion-grid  text-wrap>
+        <ion-row>
+           <ion-col>
+              <ion-list radio-group [(ngModel)]="rates" >
+                      <ion-list-header>
+                          אנא בחר את הסיירת שלך:
+                      </ion-list-header>
+                      <ion-item *ngFor="let post of postsProvider.posts; let i = index" >
+                          <ion-label> {{post.title}} </ion-label>
+                          <ion-radio checked="{{i == 0}}"
+                           name="theRadioGroupName"
+                           value="{{post.english}}" 
+                           (change)="mcqAnswer($event)"></ion-radio>
+                         
+                      </ion-item>
+               </ion-list> 
+              
+              
+            <ion-item>
+                <ion-label color="black" >תאריך</ion-label>
+                <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" required></ion-datetime>
+              </ion-item>
+
+            <ion-item>
+                <ion-label color="black">שעת התחלה</ion-label>
+                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
+            </ion-item>     
+
+            <ion-item>
+                    <ion-label color="black">שעת סיום</ion-label>
+                    <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
+            </ion-item>  
+
+                  <ion-item>
+                        <ion-label floating color="black">מספר צוות</ion-label>
+                        <ion-input type="number" [(ngModel)]="teamNumber" ></ion-input>
+                      </ion-item>  
+
+                      <ion-item>
+                            <ion-label floating color="black">שמות מתנדבים</ion-label>
+                            <ion-input type="text" [(ngModel)]="volenteersName"></ion-input>
+                      </ion-item> 
+                  
+                </ion-col>
+              </ion-row>     
+            </ion-grid>
+
+
+            <span class="container"  text-center>
+                <button ion-button class="round" icon-left id = "hot" (click)="hotClicked()" >
+                    <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
+                    נקודה חמה
+                  </button>
+               
+                  <button ion-button class="round" icon-left id = "cold" [navPush]="cold">
+                      <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
+                        נקודה קרה
+                    </button>
+              </span>
+
+  </ion-content>
+      

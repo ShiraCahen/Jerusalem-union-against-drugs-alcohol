@@ -1,5 +1,5 @@
 # Parents Patrol
-## Jerusalem-union-against-drugs-alcohol
+## Jerusalem-union-against-drugs-and-alcohol
 
 Parents patrols are neighborhood organizations of volunteers who go on patrols at times when youth go out to spend time outdoors. 
 This is due to the understanding that today the streets in each neighborhood are a place of entertainment for large sections of the youth.
@@ -7,10 +7,12 @@ The aforementioned organization will use our applicatoin to manage parents patro
 
 this project developed at Azrieli College of Engineering for a social project.
 
-
-![project logo (this one for is taken from basecamp - a project management service)](http://static.wixstatic.com/media/00de82_2038740ff78f497c8cc89cd7a564926b.png/v1/fill/w_291,h_115,al_c,usm_0.66_1.00_0.01/00de82_2038740ff78f497c8cc89cd7a564926b.png)
-![project logo (this one for is taken from basecamp - a project management service)](http://static.wixstatic.com/media/00de82_6f35d7d805de4b989e7d29e16acb31d0.gif)
-
+<p align="center">
+  <img src="http://static.wixstatic.com/media/00de82_2038740ff78f497c8cc89cd7a564926b.png/v1/fill/w_291,h_115,al_c,usm_0.66_1.00_0.01/00de82_2038740ff78f497c8cc89cd7a564926b.png">
+ </br>
+   <img src="http://static.wixstatic.com/media/00de82_6f35d7d805de4b989e7d29e16acb31d0.gif">
+   
+</p>
 
 ## Hosting
  [Parents Patrol](https://parentpatrol-b3347.firebaseapp.com/)
@@ -22,9 +24,8 @@ We're trying to use the best tools and practices in order to produce a quality e
 |Category|Status|
 |---|---|
 | Group Chat | [![Join the chat at https://gitter.im/jce-il/project-template](https://badges.gitter.im/jce-il/project-template.svg)](https://gitter.im/Parents-Patrol/Lobby) |
-| Issues | [Github issues](https://github.com/ShiraCahen/Parents-Patrol/issues)|
-| Project Management Board| [Board](https://github.com/ShiraCahen/Parents-Patrol/projects/1)|
-
+| Issues | [![GitHub issues](https://img.shields.io/github/issues/badges/shields.svg)](https://github.com/ShiraCahen/Parents-Patrol/issues)|
+| Project Management Board| [![Board](https://github.com/ShiraCahen/Parents-Patrol/blob/master/pic/Project-board-orange.svg)](https://github.com/ShiraCahen/Parents-Patrol/projects/1)|
 
 
 ## Please visit our [live application](https://parentpatrol-b3347.firebaseapp.com/)

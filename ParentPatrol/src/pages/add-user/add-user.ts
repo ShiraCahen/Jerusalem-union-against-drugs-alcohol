@@ -18,6 +18,7 @@ export class AddUserPage {
   home = HomePage;
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, 
     private afAuth: AngularFireAuth, private afDatabase : AngularFireDatabase) {
+      
   }
 
   presentAlert() {

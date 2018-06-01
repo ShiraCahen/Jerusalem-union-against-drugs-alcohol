@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      הגדרות משתמש
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (tap)="dismiss()">
+        <span ion-text color="primary">ביטול</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>מטרה חדשה</ion-label>
+      <ion-input type="number" [(ngModel)]="goal"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <button ion-button block (tap)="update()">עדכן</button>
+  </div>
+</ion-content>
