@@ -5,7 +5,7 @@ import { MoadonitPage } from '../moadonit/moadonit';
 import {AboutPage} from '../about/about';
 import { DetailPage } from '../detail/detail';
 import {CounterPage} from '../counter/counter';
-//import { Pedometer } from '@ionic-native/pedometer';
+import { Pedometer } from '@ionic-native/pedometer';
 
 @Component({
   selector: 'page-home',
