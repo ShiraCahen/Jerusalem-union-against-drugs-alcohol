@@ -3,7 +3,9 @@ import { NavController} from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { AlertController } from 'ionic-angular';
 import { User } from '../../models/user';
+import { Profile } from '../../models/profile';
 import { AngularFireAuth } from "angularfire2/auth"
+import { AngularFireDatabase } from "angularfire2/database"
 
 
 @Component({
@@ -12,13 +14,17 @@ import { AngularFireAuth } from "angularfire2/auth"
 })
 export class AddUserPage {
   user = {} as User;
+  profile = {} as Profile;
   home = HomePage;
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, 
-    private afAuth: AngularFireAuth) {
+    private afAuth: AngularFireAuth, private afDatabase : AngularFireDatabase) {
       
   }
 
   presentAlert() {
+    this.afAuth.authState.subscribe(auth => {
+      this.afDatabase.object(`profile/${auth.uid}`).set(this.profile);
+    })
     let alert = this.alertCtrl.create({
       title: 'הוספת משתמש',
       subTitle: 'המשתמש הוסף בהצלחה',
@@ -51,21 +57,24 @@ export class AddUserPage {
         () => { this.presentAlert() }).catch((error) => this.displayErrorAlert(error)
       )
  }
+    
+
 
  displayErrorAlert(error){
-        var errorMessage: string = error.message;
-        let alert = this.alertCtrl.create({
-          message: errorMessage,
-          buttons: [
-            {
-              text: "Ok",
-              role: 'cancel'
-            }
-          ]
-        });
-        alert.present();
-  }
+  var errorMessage: string = error.message;
+  let alert = this.alertCtrl.create({
+    message: errorMessage,
+    buttons: [
+      {
+        text: "Ok",
+        role: 'cancel'
+      }
+    ]
+  });
+  alert.present();
 }
+}
+
 
 
 

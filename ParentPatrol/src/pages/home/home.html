@@ -28,14 +28,14 @@
         </span>
     
 <p>
-    <button class = "a" ion-button icon-left [navPush]="addUser">
+    <button *ngIf = "userKind == 'admin'" class = "a" ion-button icon-left [navPush]="addUser">
         <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
       הוספת משתמש
     </button>
  
     <p>
       
-    <button class = "a" ion-button icon-left [navPush]="about">
+    <button *ngIf = "userKind != 'team'" class = "a" ion-button icon-left [navPush]="about">
       <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
         צפייה בדו"חות
     </button>

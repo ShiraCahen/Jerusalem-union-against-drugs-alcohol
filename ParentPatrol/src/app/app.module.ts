@@ -27,6 +27,7 @@ import { SettingsProvider } from '../providers/settings/settings';
 import { SettingsPage } from '../pages/settings/settings';
 import { CounterPage } from '../pages/counter/counter';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -48,7 +49,7 @@ import { CounterPage } from '../pages/counter/counter';
     AngularFirestoreModule,
     AddUserPageModule,
     LoginPageModule,
-    MoadonitPageModule
+    MoadonitPageModule,
 
   ],
   bootstrap: [IonicApp],
@@ -69,7 +70,11 @@ import { CounterPage } from '../pages/counter/counter';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider,
     DataProvider,
+<<<<<<< HEAD
     Pedometer,
+=======
+    //Pedometer,
+>>>>>>> 8e31dbd8427ce915261d17e61b69b5d526b9c550
     SettingsProvider
   ]
 })
