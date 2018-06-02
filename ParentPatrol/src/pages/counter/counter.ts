@@ -65,5 +65,9 @@ export class CounterPage {
     });
     alert.present();
   }*/
+<<<<<<< HEAD
+}
+=======
+>>>>>>> 00a74831a615012550afa77b0f1406271c432a0e
 }
 }

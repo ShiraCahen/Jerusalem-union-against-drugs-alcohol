@@ -10,7 +10,6 @@ import { AngularFireAuth } from "angularfire2/auth"
 import { DetailPage } from '../detail/detail';
 import {CounterPage} from '../counter/counter';
 
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
