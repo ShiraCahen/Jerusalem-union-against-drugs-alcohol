@@ -9,10 +9,7 @@ import { AngularFireDatabase, AngularFireList, AngularFireObject } from "angular
 import { AngularFireAuth } from "angularfire2/auth"
 import { DetailPage } from '../detail/detail';
 import {CounterPage} from '../counter/counter';
-<<<<<<< HEAD
 import { Pedometer } from '@ionic-native/pedometer';
-=======
->>>>>>> 8e31dbd8427ce915261d17e61b69b5d526b9c550
 
 @Component({
   selector: 'page-home',

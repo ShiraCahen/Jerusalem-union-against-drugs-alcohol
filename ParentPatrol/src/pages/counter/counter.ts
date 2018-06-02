@@ -17,7 +17,7 @@ export class CounterPage {
   percentage: number;
   resetNum: number;
  
-  constructor(private ref: ChangeDetectorRef, public platform: Platform,public modalCtrl: ModalController, public settings: SettingsProvider,
+  constructor(private ref: ChangeDetectorRef, public platform: Platform,public modalCtrl: ModalController,public pedometer: Pedometer, public settings: SettingsProvider,
   private alertCtrl: AlertController) {
     this.pedometer.startPedometerUpdates()
       .subscribe((data) => {
@@ -64,14 +64,5 @@ export class CounterPage {
       ]
     });
     alert.present();
-<<<<<<< HEAD
   }
-=======
-  }*/
-<<<<<<< HEAD
-}
-=======
->>>>>>> 00a74831a615012550afa77b0f1406271c432a0e
->>>>>>> 8e31dbd8427ce915261d17e61b69b5d526b9c550
-}
 }
