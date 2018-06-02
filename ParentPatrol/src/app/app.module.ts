@@ -22,7 +22,7 @@ import { ReproviderProvider } from '../providers/reprovider/reprovider';
 import { DataProvider } from '../providers/data/data';
 import { LoginPageModule } from '../pages/login/login.module';
 import { MoadonitPageModule } from '../pages/moadonit/moadonit.module';
-import { Pedometer } from '@ionic-native/pedometer';
+//import { Pedometer } from '@ionic-native/pedometer';
 import { SettingsProvider } from '../providers/settings/settings';
 import { SettingsPage } from '../pages/settings/settings';
 import { CounterPage } from '../pages/counter/counter';
@@ -69,7 +69,7 @@ import { CounterPage } from '../pages/counter/counter';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider,
     DataProvider,
-    Pedometer,
+   // Pedometer,
     SettingsProvider
   ]
 })

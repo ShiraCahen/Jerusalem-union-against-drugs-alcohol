@@ -1,6 +1,6 @@
 import { Component,ChangeDetectorRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Pedometer } from '@ionic-native/pedometer';
+//import { Pedometer } from '@ionic-native/pedometer';
 import { Platform, ModalController } from 'ionic-angular';
 import { SettingsProvider } from '../../providers/settings/settings';
 import { SettingsPage } from '../../pages/settings/settings';
@@ -17,9 +17,9 @@ export class CounterPage {
   percentage: number;
   resetNum: number;
  
-  constructor(private ref: ChangeDetectorRef, public platform: Platform, public pedometer: Pedometer, public modalCtrl: ModalController, public settings: SettingsProvider,
+  constructor(private ref: ChangeDetectorRef, public platform: Platform,public modalCtrl: ModalController, public settings: SettingsProvider,
   private alertCtrl: AlertController) {
-    this.pedometer.startPedometerUpdates()
+    /*this.pedometer.startPedometerUpdates()
       .subscribe((data) => {
           this.steps = data.numberOfSteps;
           this.setPercentage();
@@ -64,5 +64,6 @@ export class CounterPage {
       ]
     });
     alert.present();
-  }
+  }*/
+}
 }
