@@ -118,4 +118,14 @@ page-home {
         display: flex;
         justify-content: center;
       }
+
+.logOut{
+    border-radius: 10%;
+    background-color: rgb(161, 18, 18);
+    margin: auto;
+    
+}
+.logOut:hover{
+    background-color: rgb(151, 110, 110)!important;
+}
 }

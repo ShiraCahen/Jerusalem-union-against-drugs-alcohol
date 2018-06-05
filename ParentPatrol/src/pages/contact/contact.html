@@ -74,7 +74,7 @@
                     <ion-input  type="text" [(ngModel)]="notes"></ion-input>
               </ion-item>
               
-             <button ion-button full >שלח</button>
+             <button ion-button full (click)="storeInfoToDatabase()" >שלח</button>
         
     </ion-col>    
     </ion-row>           

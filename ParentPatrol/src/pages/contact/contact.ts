@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController ,NavParams,IonicPage, LoadingController} from 'ionic-angular';
 import { ReproviderProvider } from '../../providers/reprovider/reprovider';
 import { DataProvider } from '../../providers/data/data';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireObject  } from 'angularfire2/database';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { AlertController } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
@@ -40,7 +40,7 @@ export class ContactPage {
   insidePlaces: string[];
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
               public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,
-              private db:AngularFireDatabase,public navParams: NavParams,
+              private db:AngularFirestore,public navParams: NavParams,
               private afs: AngularFirestore, private loadCtrl: LoadingController) {
                 this.select = navParams.get('data');
                 console.log(this.select)
@@ -114,7 +114,6 @@ export class ContactPage {
   }
 
   storeInfoToDatabase(){
-   // this.send();
     let toSave= {
         Team: this.team,
         MyDate: this.myDate,
@@ -160,6 +159,7 @@ export class ContactPage {
     }
     this.presentAlert();
   //  return this.db.list('hotSpot:').push(toSave);
+    return this.db.collection('HotSpot').add(toSave);
 }
 
 presentAlert() {
