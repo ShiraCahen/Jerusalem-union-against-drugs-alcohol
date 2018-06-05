@@ -18,15 +18,10 @@ export class AboutPage {
   data:  any;
   moadonitData:any[] = [];
   hotSpotData:any[] = [];
+  coldSpotData:any[] = [];
   d: string;
 
   constructor(public navCtrl: NavController,private afDatabase : AngularFirestore) {
-  //  this.hsdata=this.afDatabase.list('hotSpot');
-   // console.log(this.hsdata.auth().child);
-  /*  for (var i=0; i<this.hsdata.length; i++){
-      this.reports[i]=this.hsdata.auth().child;
-    }
-    this.displayData(this.reports[0]);*/
     const firestore = firebase.firestore();
     const settings = {timestampsInSnapshots: true};
     firestore.settings(settings);
@@ -35,13 +30,18 @@ export class AboutPage {
  getData(){
  this.data = this.afDatabase.collection('Moadonit').valueChanges();
     this.data.subscribe(d=>{
-      console.log(d)
+      console.log("moadonit"+d)
       this.moadonitData = d// hold the array of all Moadonit reports
   });
   this.data = this.afDatabase.collection('HotSpot').valueChanges();
   this.data.subscribe(d=>{
-    console.log(d)
+    console.log("hot spot: "+d)
     this.hotSpotData = d// hold the array of all hot spot reports
+});
+this.data = this.afDatabase.collection('ColdSpot').valueChanges();
+this.data.subscribe(d=>{
+  console.log("cold spot: "+ d)
+  this.coldSpotData = d// hold the array of all cold spot reports
 });
   
 }
