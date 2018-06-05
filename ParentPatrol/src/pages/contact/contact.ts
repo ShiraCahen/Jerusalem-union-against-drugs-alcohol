@@ -151,9 +151,11 @@ export class ContactPage {
         TwentyTwo: this.selected[21],
         TwentyThree: this.selected[22]   
     }
-    this.presentAlert();
+   
     this.sendEmail();
+    this.presentAlert();
     return this.db.collection('HotSpot').add(toSave);
+    
 }
 
 presentAlert() {
@@ -184,6 +186,7 @@ captureImage(){
   });
 }
 sendEmail() {
+ 
   this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.navParams.get('volenteersName')
   + "\r\n תאריך: " + this.navParams.get('myDate') + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
   + "\r\n במידה והייתה היתקלות עם אלכוהול - כמה? " + this.alcohol
