@@ -60,6 +60,16 @@ export class DetailPage {
     data: this.str
   });
  }
+coldClicked() {
+  this.str= this.rates;
+ if(this.str==undefined){   
+   this.str=this.postsProvider.posts[0].english;
+ }
+
+this.navCtrl.push(ColdPage, {
+   data: this.str
+ });
+}
 /*  storeInfoToDatabase(){
     let toSave= {
         Team: this.team,
