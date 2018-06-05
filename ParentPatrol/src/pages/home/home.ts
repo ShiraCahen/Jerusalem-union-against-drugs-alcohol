@@ -10,6 +10,7 @@ import { AngularFireAuth } from "angularfire2/auth"/* */
 import { DetailPage } from '../detail/detail';
 import {CounterPage} from '../counter/counter';
 import { Pedometer } from '@ionic-native/pedometer';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -52,9 +53,9 @@ export class HomePage {
   }
 
 
-  exitApp(){
-  //  ionic.Platform.exitApp();
-  
+  logOut(){
+    this.afAuth.auth.signOut();
+    this.navCtrl.setRoot(LoginPage);
   }
 
 

@@ -14,14 +14,13 @@
   <ion-grid  text-wrap>
       <ion-row>
          <ion-col>
-          <ion-list radio-group [(ngModel)]="rates" >
+          <ion-list radio-group>
                   <ion-list-header>
                       איזורי סיור:
                   </ion-list-header>
                   <ion-item *ngFor="let place of insidePlaces; let i = index" >
                       <ion-label> {{place}} </ion-label>
-                      <ion-checkbox></ion-checkbox>
-                      <!--(click)="addValue($event)"  not in use--> 
+                      <ion-checkbox [(ngModel)]="selected[i]"></ion-checkbox>
                   </ion-item>
           </ion-list> 
               <ion-item>       
@@ -46,12 +45,12 @@
 
               <ion-item>     
                   <ion-label color="white">מספר נערים תחת השפעה חריגה של אלכוהול: </ion-label>      
-                    <ion-input type="number" [(ngModel)]="alcoholOrDrugs"></ion-input>
+                    <ion-input type="number" [(ngModel)]="alcohol"></ion-input>
               </ion-item>
 
               <ion-item>     
                   <ion-label color="white">מספר נערים תחת השפעה חריגה של סמים: </ion-label>      
-                    <ion-input type="number" [(ngModel)]="alcoholOrDrugs"></ion-input>
+                    <ion-input type="number" [(ngModel)]="drugs"></ion-input>
               </ion-item>
 
               <ion-item> 
@@ -80,8 +79,8 @@
     </ion-row>           
   </ion-grid>
 
-  <button ion-button (click)="sendEmail()">         
+ <!--> <button ion-button (click)="sendEmail()">         
     שליחת מייל
-  </button>
+  </button><-->
 
 </ion-content>

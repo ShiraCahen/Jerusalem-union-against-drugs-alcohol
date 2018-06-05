@@ -15,23 +15,18 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class ContactPage {
   data : any;
-  selected= [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,];  
+  selected= [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];  
   checked : boolean = false;
   msg: String;
   str: String = "";
   team: String ="";
-  myDate: String ="";
-  startTime: String ="";
-  endTime: String ="";
-  teamNumber: Number = 0;
-  volenteersNum: Number = 0;
-  volenteersName: String ="";
   morePlaces: string="";
   description: String ="";
   groupsNum: Number=0;
   membersInGroup: Number=0;
   averageAge: string="";
-  alcoholOrDrugs: String ="";
+  alcohol: String ="";
+  drugs: String ="";
   exeptions: String ="";
   details: String ="";
   handle: string ="";
@@ -42,9 +37,7 @@ export class ContactPage {
               public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,
               private db:AngularFirestore,public navParams: NavParams,
               private afs: AngularFirestore, private loadCtrl: LoadingController) {
-                this.select = navParams.get('data');
-                console.log(this.select)
-
+              this.select = navParams.get('data');
                 const settings = { timestampsInSnapshots: true };
                 afs.firestore.settings(settings);
 
@@ -113,20 +106,22 @@ export class ContactPage {
     console.log('Cucumbers new state:' + this.selected[i] +" "+i);
   }
 
+
   storeInfoToDatabase(){
     let toSave= {
-        Team: this.team,
-        MyDate: this.myDate,
-        StartTime: this.startTime,
-        EndTime: this.endTime,
-        TeamNumbe: this.teamNumber,
-        VolenteersName: this.volenteersName,
+        Team: this.select,
+        MyDate: this.navParams.get('myDate'),
+        StartTime: this.navParams.get('startTime'),
+        EndTime: this.navParams.get('endTime'),
+        TeamNumbe: this.navParams.get('teamNumber'),
+        VolenteersName: this.navParams.get('volenteersName'),
         MorePlaces: this.morePlaces,
         Description: this.description,
         GroupNum: this.groupsNum,
         MembersInGroup: this.membersInGroup,
         AverageAge: this.averageAge,
-        AlcoholOrDrugs: this.alcoholOrDrugs,
+        underAlcoho: this.alcohol,
+        underDrugs: this.drugs,
         Exeptions: this.exeptions,
         Handle: this.handle,
         Notes: this.notes,
@@ -152,13 +147,10 @@ export class ContactPage {
         Twenty: this.selected[19],
         TwentyOne: this.selected[20],
         TwentyTwo: this.selected[21],
-        TwentyThree: this.selected[22],
-        TwentyFour: this.selected[23],
-        TwentyFive: this.selected[24],
-        TwentySix: this.selected[25],        
+        TwentyThree: this.selected[22]   
     }
     this.presentAlert();
-  //  return this.db.list('hotSpot:').push(toSave);
+    this.sendEmail();
     return this.db.collection('HotSpot').add(toSave);
 }
 
@@ -179,9 +171,10 @@ presentAlert() {
 }
 
 sendEmail() {
-  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.volenteersName
-  + "\r\n תאריך: " + this.myDate + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
-  + "\r\n במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
+  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.navParams.get('volenteersName')
+  + "\r\n תאריך: " + this.navParams.get('myDate') + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
+  + "\r\n במידה והייתה היתקלות עם אלכוהול - כמה? " + this.alcohol
+  + "\r\n במידה והייתה היתקלות עם סמים - כמה? " + this.drugs
   + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
   + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes;
   let email = {
