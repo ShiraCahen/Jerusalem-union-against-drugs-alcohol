@@ -17,7 +17,7 @@ export class CounterPage {
   percentage: number;
   resetNum: number;
  
-  constructor(private ref: ChangeDetectorRef, public platform: Platform,public modalCtrl: ModalController,public pedometer: Pedometer, public settings: SettingsProvider,
+  constructor(private ref: ChangeDetectorRef, public platform: Platform, public pedometer: Pedometer,public modalCtrl: ModalController,/*public pedometer: Pedometer,*/ public settings: SettingsProvider,
   private alertCtrl: AlertController) {
     this.pedometer.startPedometerUpdates()
       .subscribe((data) => {

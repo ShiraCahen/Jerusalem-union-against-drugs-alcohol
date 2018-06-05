@@ -12,14 +12,13 @@
   <ion-grid  text-wrap>
       <ion-row>
          <ion-col>
-            <ion-list radio-group [(ngModel)]="rates" >
+            <ion-list radio-group>
                 <ion-list-header>
                     איזורי סיור:
                 </ion-list-header>
                 <ion-item *ngFor="let place of insidePlaces; let i = index" >
                     <ion-label> {{place}} </ion-label>
-                    <ion-checkbox></ion-checkbox>
-                    <!--(click)="addValue($event)"  not in use--> 
+                    <ion-checkbox [(ngModel)]="selected[i]"></ion-checkbox>
                 </ion-item>
         </ion-list> 
             <ion-item>    
@@ -27,7 +26,6 @@
                     <ion-input  type="text" [(ngModel)]="notes"></ion-input>
             </ion-item>
             <button ion-button full (click)="storeInfoToDatabase()">שלח</button>
-            <!--(click)="send()"not in use- bug-->
     </ion-col>
     </ion-row>   
   </ion-grid>

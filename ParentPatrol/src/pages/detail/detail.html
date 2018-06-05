@@ -1,11 +1,11 @@
 <meta charset="utf-8" />
 <ion-header>
     
-<ion-navbar>
-   <!-- <ion-title text-right>
-     פרטים חשובים
-    </ion-title>-->
-  </ion-navbar>
+        <ion-navbar>
+                <ion-title text-center>
+                דו"ח סיור
+                </ion-title>
+              </ion-navbar>
 </ion-header>
 
 <ion-content padding class="bg-color">
@@ -20,9 +20,7 @@
                           <ion-label> {{post.title}} </ion-label>
                           <ion-radio checked="{{i == 0}}"
                            name="theRadioGroupName"
-                           value="{{post.english}}" 
-                           (change)="mcqAnswer($event)"></ion-radio>
-                         
+                           value="{{post.english}}"></ion-radio>         
                       </ion-item>
                </ion-list> 
               
