@@ -6,7 +6,7 @@ import { AngularFireModule } from "angularfire2"
 import { AngularFireDatabaseModule } from "angularfire2/database"
 import { AngularFireStorageModule } from "angularfire2/storage"
 import { AngularFirestoreModule } from "angularfire2/firestore"
-
+import { Camera, CameraOptions } from '@ionic-native/camera';
 import { FIREBASE_CONFIG } from "./app.firebase.config";
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -66,6 +66,7 @@ import { CounterPage } from '../pages/counter/counter';
   providers: [
     StatusBar,
     EmailComposer,
+    Camera,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider,

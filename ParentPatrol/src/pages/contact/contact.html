@@ -74,8 +74,16 @@
               </ion-item>
               
              <button ion-button full (click)="storeInfoToDatabase()" >שלח</button>
-        
-    </ion-col>    
+             <button ion-button full (click)="captureImage()" >הוסף תמונה</button>
+    
+              <ion-card>
+                <ion-card-header>תמונה:</ion-card-header>
+                <ion-card-content>
+                    <img [src]="currentImage" *ngIf="currentImage"/>
+                </ion-card-content>
+              </ion-card>  
+    
+          </ion-col>    
     </ion-row>           
   </ion-grid>
 

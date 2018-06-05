@@ -38,6 +38,7 @@
         <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+        <preference name="loadUrlTimeoutValue" value="700000" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -86,6 +87,7 @@
     <allow-navigation href="*" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-email-composer" spec="^0.8.15" />
-    <engine name="android" spec="7.0.0" />
     <plugin name="cordova-plugin-pedometer" spec="^0.4.1" />
+    <plugin name="cordova-plugin-camera" spec="^4.0.3" />
+    <engine name="android" spec="7.0.0" />
 </widget>

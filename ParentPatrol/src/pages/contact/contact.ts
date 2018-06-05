@@ -7,6 +7,7 @@ import { AngularFireStorage } from 'angularfire2/storage';
 import { AlertController } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-contact',
@@ -33,8 +34,9 @@ export class ContactPage {
   notes: String ="";
   select: any;
   insidePlaces: string[];
+  currentImage =null;
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
-              public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,
+              public postsProvider: ReproviderProvider, public emailComposer:EmailComposer, private camera : Camera,
               private db:AngularFirestore,public navParams: NavParams,
               private afs: AngularFirestore, private loadCtrl: LoadingController) {
               this.select = navParams.get('data');
@@ -46,13 +48,13 @@ export class ContactPage {
 
                 this.getPlace(this.select).then(locations => {
                   this.insidePlaces = locations
-                  loading.dismiss()
+                  loading.dismiss();
       }, err => {
         console.log(this.insidePlaces)
-                  loading.dismiss()
+                  loading.dismiss();
                 }).catch(err => {
                   console.log(err)
-                  loading.dismiss()
+                  loading.dismiss();
                 })
                 
                
@@ -169,7 +171,18 @@ presentAlert() {
   });
   alert.present();
 }
-
+captureImage(){
+  const option: CameraOptions ={
+    sourceType: this.camera.PictureSourceType.CAMERA,
+    destinationType: this.camera.DestinationType.FILE_URI
+  }
+  this.camera.getPicture(option).then((imageData) => {
+ 
+    this.currentImage= imageData;
+  },err =>{
+    console.log('Image error:',err);
+  });
+}
 sendEmail() {
   this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.navParams.get('volenteersName')
   + "\r\n תאריך: " + this.navParams.get('myDate') + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
@@ -181,7 +194,7 @@ sendEmail() {
     to: 'parentspatroljer@gmail.com',
     cc: '',
     attachments: [
-      //this.currentImage
+      this.currentImage
     ],
     subject: 'Test',
     body: this.msg+ '' ,
