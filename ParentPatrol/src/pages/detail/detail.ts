@@ -26,6 +26,7 @@ export class DetailPage {
   notes: String ="";
   endTime: String ="";
   volenteersNum: Number = 0;
+  volenteersName:String="";
   str:any;
   rates:any;
   browserSize;
@@ -57,7 +58,12 @@ export class DetailPage {
   }
  
  this.navCtrl.push(ContactPage, {
-    data: this.str
+    data: this.str,
+    myDate: this.myDate,
+    startTime: this.startTime,
+    endTime:this.endTime,
+    teamNumber:this.teamNumber,
+    volenteersName:this.volenteersName
   });
  }
 coldClicked() {
@@ -67,7 +73,12 @@ coldClicked() {
  }
 
 this.navCtrl.push(ColdPage, {
-   data: this.str
+   data: this.str,
+   myDate: this.myDate,
+   startTime: this.startTime,
+   endTime:this.endTime,
+   teamNumber:this.teamNumber,
+   volenteersName:this.volenteersName
  });
 }
 /*  storeInfoToDatabase(){
