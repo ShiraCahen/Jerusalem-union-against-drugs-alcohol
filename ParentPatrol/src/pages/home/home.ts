@@ -10,6 +10,7 @@ import { AngularFireAuth } from "angularfire2/auth"
 import { DetailPage } from '../detail/detail';
 import {CounterPage} from '../counter/counter';
 import { Pedometer } from '@ionic-native/pedometer';
+import {LocationsPage} from '../locations/locations';
 
 @Component({
   selector: 'page-home',
@@ -22,7 +23,7 @@ export class HomePage {
   about=AboutPage;
   userKind: string;
   profileData:  any;
-
+  locations=LocationsPage;
    
   detail = DetailPage;
   browserSize;
