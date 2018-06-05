@@ -26,7 +26,8 @@ import { Pedometer } from '@ionic-native/pedometer';
 import { SettingsProvider } from '../providers/settings/settings';
 import { SettingsPage } from '../pages/settings/settings';
 import { CounterPage } from '../pages/counter/counter';
-
+import { LocationsProvider } from '../providers/locations/locations';
+import {LocationsPage} from '../pages/locations/locations';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CounterPage } from '../pages/counter/counter';
     SettingsPage,
    CounterPage,
    DetailPage,
+   LocationsPage,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +64,7 @@ import { CounterPage } from '../pages/counter/counter';
     SettingsPage,
    CounterPage,
    DetailPage,
+   LocationsPage
   ],
   providers: [
     StatusBar,
@@ -72,7 +75,8 @@ import { CounterPage } from '../pages/counter/counter';
     ReproviderProvider,
     DataProvider,
     Pedometer,
-    SettingsProvider
+    SettingsProvider,
+    LocationsProvider,
   ]
 })
 export class AppModule {}
