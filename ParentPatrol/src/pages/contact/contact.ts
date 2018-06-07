@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { NavController ,NavParams,IonicPage, LoadingController} from 'ionic-angular';
 import { ReproviderProvider } from '../../providers/reprovider/reprovider';
 import { DataProvider } from '../../providers/data/data';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireObject  } from 'angularfire2/database';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { AlertController } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-contact',
@@ -15,36 +16,30 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class ContactPage {
   data : any;
-  selected= [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,];  
+  selected= [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];  
   checked : boolean = false;
   msg: String;
   str: String = "";
   team: String ="";
-  myDate: String ="";
-  startTime: String ="";
-  endTime: String ="";
-  teamNumber: Number = 0;
-  volenteersNum: Number = 0;
-  volenteersName: String ="";
   morePlaces: string="";
   description: String ="";
   groupsNum: Number=0;
   membersInGroup: Number=0;
   averageAge: string="";
-  alcoholOrDrugs: String ="";
+  alcohol: String ="";
+  drugs: String ="";
   exeptions: String ="";
   details: String ="";
   handle: string ="";
   notes: String ="";
   select: any;
   insidePlaces: string[];
+  currentImage =null;
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
-              public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,
-              private db:AngularFireDatabase,public navParams: NavParams,
+              public postsProvider: ReproviderProvider, public emailComposer:EmailComposer, private camera : Camera,
+              private db:AngularFirestore,public navParams: NavParams,
               private afs: AngularFirestore, private loadCtrl: LoadingController) {
-                this.select = navParams.get('data');
-                console.log(this.select)
-
+              this.select = navParams.get('data');
                 const settings = { timestampsInSnapshots: true };
                 afs.firestore.settings(settings);
 
@@ -53,13 +48,13 @@ export class ContactPage {
 
                 this.getPlace(this.select).then(locations => {
                   this.insidePlaces = locations
-                  loading.dismiss()
+                  loading.dismiss();
       }, err => {
         console.log(this.insidePlaces)
-                  loading.dismiss()
+                  loading.dismiss();
                 }).catch(err => {
                   console.log(err)
-                  loading.dismiss()
+                  loading.dismiss();
                 })
                 
                
@@ -113,21 +108,22 @@ export class ContactPage {
     console.log('Cucumbers new state:' + this.selected[i] +" "+i);
   }
 
+
   storeInfoToDatabase(){
-   // this.send();
     let toSave= {
-        Team: this.team,
-        MyDate: this.myDate,
-        StartTime: this.startTime,
-        EndTime: this.endTime,
-        TeamNumbe: this.teamNumber,
-        VolenteersName: this.volenteersName,
+        Team: this.select,
+        MyDate: this.navParams.get('myDate'),
+        StartTime: this.navParams.get('startTime'),
+        EndTime: this.navParams.get('endTime'),
+        TeamNumbe: this.navParams.get('teamNumber'),
+        VolenteersName: this.navParams.get('volenteersName'),
         MorePlaces: this.morePlaces,
         Description: this.description,
         GroupNum: this.groupsNum,
         MembersInGroup: this.membersInGroup,
         AverageAge: this.averageAge,
-        AlcoholOrDrugs: this.alcoholOrDrugs,
+        underAlcoho: this.alcohol,
+        underDrugs: this.drugs,
         Exeptions: this.exeptions,
         Handle: this.handle,
         Notes: this.notes,
@@ -153,13 +149,13 @@ export class ContactPage {
         Twenty: this.selected[19],
         TwentyOne: this.selected[20],
         TwentyTwo: this.selected[21],
-        TwentyThree: this.selected[22],
-        TwentyFour: this.selected[23],
-        TwentyFive: this.selected[24],
-        TwentySix: this.selected[25],        
+        TwentyThree: this.selected[22]   
     }
+   
+    this.sendEmail();
     this.presentAlert();
-  //  return this.db.list('hotSpot:').push(toSave);
+    return this.db.collection('HotSpot').add(toSave);
+    
 }
 
 presentAlert() {
@@ -177,18 +173,31 @@ presentAlert() {
   });
   alert.present();
 }
-
+captureImage(){
+  const option: CameraOptions ={
+    sourceType: this.camera.PictureSourceType.CAMERA,
+    destinationType: this.camera.DestinationType.FILE_URI
+  }
+  this.camera.getPicture(option).then((imageData) => {
+ 
+    this.currentImage= imageData;
+  },err =>{
+    console.log('Image error:',err);
+  });
+}
 sendEmail() {
-  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.volenteersName
-  + "\r\n תאריך: " + this.myDate + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
-  + "\r\n במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
+ 
+  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.navParams.get('volenteersName')
+  + "\r\n תאריך: " + this.navParams.get('myDate') + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
+  + "\r\n במידה והייתה היתקלות עם אלכוהול - כמה? " + this.alcohol
+  + "\r\n במידה והייתה היתקלות עם סמים - כמה? " + this.drugs
   + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
   + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes;
   let email = {
     to: 'parentspatroljer@gmail.com',
     cc: '',
     attachments: [
-      //this.currentImage
+      this.currentImage
     ],
     subject: 'Test',
     body: this.msg+ '' ,

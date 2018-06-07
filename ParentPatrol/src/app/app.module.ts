@@ -6,7 +6,7 @@ import { AngularFireModule } from "angularfire2"
 import { AngularFireDatabaseModule } from "angularfire2/database"
 import { AngularFireStorageModule } from "angularfire2/storage"
 import { AngularFirestoreModule } from "angularfire2/firestore"
-
+import { Camera, CameraOptions } from '@ionic-native/camera';
 import { FIREBASE_CONFIG } from "./app.firebase.config";
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -26,6 +26,8 @@ import { Pedometer } from '@ionic-native/pedometer';
 import { SettingsProvider } from '../providers/settings/settings';
 import { SettingsPage } from '../pages/settings/settings';
 import { CounterPage } from '../pages/counter/counter';
+import { LocationsProvider } from '../providers/locations/locations';
+import {LocationsPage} from '../pages/locations/locations';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { CounterPage } from '../pages/counter/counter';
     SettingsPage,
    CounterPage,
    DetailPage,
+   LocationsPage,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ import { CounterPage } from '../pages/counter/counter';
     AngularFirestoreModule,
     AddUserPageModule,
     LoginPageModule,
-    MoadonitPageModule
+    MoadonitPageModule,
 
   ],
   bootstrap: [IonicApp],
@@ -61,16 +64,19 @@ import { CounterPage } from '../pages/counter/counter';
     SettingsPage,
    CounterPage,
    DetailPage,
+   LocationsPage
   ],
   providers: [
     StatusBar,
     EmailComposer,
+    Camera,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider,
     DataProvider,
     Pedometer,
-    SettingsProvider
+    SettingsProvider,
+    LocationsProvider,
   ]
 })
 export class AppModule {}

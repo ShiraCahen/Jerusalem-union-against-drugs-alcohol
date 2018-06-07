@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController} from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
-import { AngularFireDatabase } from 'angularfire2/database';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @IonicPage()
 @Component({
@@ -27,7 +27,7 @@ export class MoadonitPage {
   notes: String ="";
   msg: String;
 
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private db:AngularFireDatabase,public emailComposer:EmailComposer) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private db:AngularFirestore,public emailComposer:EmailComposer) {
   }
 
   ionViewDidLoad() {
@@ -52,7 +52,7 @@ export class MoadonitPage {
 
     }
     this.presentAlert();
-    return this.db.list('Moadonit:').push(toSave);
+    return this.db.collection('Moadonit').add(toSave);
 }
 
 

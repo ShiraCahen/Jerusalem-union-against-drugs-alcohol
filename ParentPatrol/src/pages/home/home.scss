@@ -1,4 +1,15 @@
 page-home {
+.navbar{
+    background-image: url('../assets/imgs/bg4.jpg');
+    opacity: 0.6;
+    //background-color: #2177c7;
+}
+.titel
+{
+    font-size: 30px;
+}
+
+
     .gallery {
         -webkit-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -99,8 +110,24 @@ page-home {
         width: 100%  !important;
         margin: auto;  
     }
+
+    .hide {
+        display: none;
+    }
     .container {
         display: flex;
         justify-content: center;
       }
+
+.logOut{
+    border-radius: 10%;
+    background-color: rgb(161, 18, 18);
+    margin: auto;
+    font-size: 13px;
+    
+}
+.logOut:hover{
+    background-color: rgb(255, 255, 255)!important;
+    color:  rgb(161, 18, 18) !important;
+}
 }
