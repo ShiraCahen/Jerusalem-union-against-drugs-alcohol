@@ -47,13 +47,13 @@ export class ContactPage {
                 afs.firestore.settings(settings);
 
                 let load = this.loading.create();
-                load.present()
-                this.lp.getList(this.select)
+                load.present();
+                this.lp.getList(this.select);
                 this.lp.getList(this.select).then(res => {
                   this.keys = res;
-                  load.dismiss()
+                  load.dismiss();
                 }).catch(err => {
-                  load.dismiss()
+                  load.dismiss();
                 })
                 
                
