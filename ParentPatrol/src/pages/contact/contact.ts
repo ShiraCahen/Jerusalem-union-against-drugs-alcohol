@@ -9,6 +9,8 @@ import { EmailComposer } from '@ionic-native/email-composer';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { LocationsProvider } from '../../providers/locations/locations';
 import {locationItem} from '../../models/locationItem.interface'
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
@@ -35,8 +37,9 @@ export class ContactPage {
   select: any;
   insidePlaces: string[];
   keys: any[] = [];
+  currentImage =null;
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
-              public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,
+              public postsProvider: ReproviderProvider, public emailComposer:EmailComposer, private camera : Camera,
               private db:AngularFirestore,public navParams: NavParams,
               private afs: AngularFirestore, private loading: LoadingController, private lp:LocationsProvider) {
               this.select = navParams.get('data');
@@ -147,9 +150,11 @@ export class ContactPage {
         TwentyTwo: this.selected[21],
         TwentyThree: this.selected[22]   
     }
-    this.presentAlert();
+   
     this.sendEmail();
+    this.presentAlert();
     return this.db.collection('HotSpot').add(toSave);
+    
 }
 
 presentAlert() {
@@ -167,8 +172,20 @@ presentAlert() {
   });
   alert.present();
 }
-
+captureImage(){
+  const option: CameraOptions ={
+    sourceType: this.camera.PictureSourceType.CAMERA,
+    destinationType: this.camera.DestinationType.FILE_URI
+  }
+  this.camera.getPicture(option).then((imageData) => {
+ 
+    this.currentImage= imageData;
+  },err =>{
+    console.log('Image error:',err);
+  });
+}
 sendEmail() {
+ 
   this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.navParams.get('volenteersName')
   + "\r\n תאריך: " + this.navParams.get('myDate') + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
   + "\r\n במידה והייתה היתקלות עם אלכוהול - כמה? " + this.alcohol
@@ -179,7 +196,7 @@ sendEmail() {
     to: 'parentspatroljer@gmail.com',
     cc: '',
     attachments: [
-      //this.currentImage
+      this.currentImage
     ],
     subject: 'Test',
     body: this.msg+ '' ,

@@ -46,7 +46,7 @@ export class AddUserPage {
       let alert = this.alertCtrl.create({
         title: 'שגיאה',
         subTitle: 'נא להזין אימייל תקין וסיסמה',
-        buttons: ['OK']
+        buttons: ['אישור']
       });
       alert.present();
       return;
