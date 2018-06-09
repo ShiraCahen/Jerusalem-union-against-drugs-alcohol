@@ -8,7 +8,9 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { AlertController,Platform  } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
-
+import { IonicPage,LoadingController  } from 'ionic-angular';
+import { LocationsProvider } from '../../providers/locations/locations';
+import {locationItem} from '../../models/locationItem.interface'
 @Component({
   selector: 'page-detail',
   templateUrl: 'detail.html',
@@ -30,9 +32,10 @@ export class DetailPage {
   str:any;
   rates:any;
   browserSize;
+  keys: any[] = []
 
-  constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, 
-               private dataProvider:DataProvider,private alertCtrl: AlertController,
+  constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, private lp:LocationsProvider,
+               private dataProvider:DataProvider,private alertCtrl: AlertController,private loading:LoadingController,
               private db:AngularFireDatabase, public platform: Platform,public emailComposer:EmailComposer) {
 
       if(this.platform.is('core')){ 
@@ -41,10 +44,19 @@ export class DetailPage {
       else{
         this.browserSize = "mobile-card"
       }
+      this.postsProvider.load();
+      let load = this.loading.create();
+      load.present()
+      this.lp.getNList().then(res => {
+        this.keys = res;
+        load.dismiss()
+      }).catch(err => {
+        load.dismiss()
+      })
 }
 
   ionViewDidLoad() {
-    this.postsProvider.load();
+
   }
 
   updateState(i) {
@@ -54,7 +66,7 @@ export class DetailPage {
  hotClicked() {
    this.str= this.rates;
   if(this.str==undefined){   
-    this.str=this.postsProvider.posts[0].english;
+    this.str=this.keys[0];
   }
  
  this.navCtrl.push(ContactPage, {
@@ -68,8 +80,8 @@ export class DetailPage {
  }
 coldClicked() {
   this.str= this.rates;
- if(this.str==undefined){   
-   this.str=this.postsProvider.posts[0].english;
+  if(this.str==undefined){   
+    this.str=this.keys[0];
  }
 
 this.navCtrl.push(ColdPage, {

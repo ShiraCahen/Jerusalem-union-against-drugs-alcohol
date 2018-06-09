@@ -7,7 +7,8 @@ import { AngularFireStorage } from 'angularfire2/storage';
 import { AlertController } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { AngularFirestore } from 'angularfire2/firestore';
-
+import { LocationsProvider } from '../../providers/locations/locations';
+import {locationItem} from '../../models/locationItem.interface'
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
@@ -33,26 +34,23 @@ export class ContactPage {
   notes: String ="";
   select: any;
   insidePlaces: string[];
+  keys: any[] = [];
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
               public postsProvider: ReproviderProvider, public emailComposer:EmailComposer,
               private db:AngularFirestore,public navParams: NavParams,
-              private afs: AngularFirestore, private loadCtrl: LoadingController) {
+              private afs: AngularFirestore, private loading: LoadingController, private lp:LocationsProvider) {
               this.select = navParams.get('data');
                 const settings = { timestampsInSnapshots: true };
                 afs.firestore.settings(settings);
 
-                let loading = loadCtrl.create();
-                loading.present()
-
-                this.getPlace(this.select).then(locations => {
-                  this.insidePlaces = locations
-                  loading.dismiss()
-      }, err => {
-        console.log(this.insidePlaces)
-                  loading.dismiss()
+                let load = this.loading.create();
+                load.present()
+                this.lp.getList(this.select)
+                this.lp.getList(this.select).then(res => {
+                  this.keys = res;
+                  load.dismiss()
                 }).catch(err => {
-                  console.log(err)
-                  loading.dismiss()
+                  load.dismiss()
                 })
                 
                

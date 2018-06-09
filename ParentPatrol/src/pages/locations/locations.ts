@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController  } from 'ionic-angular';
 import { LocationsProvider } from '../../providers/locations/locations';
 import {locationItem} from '../../models/locationItem.interface'
-
+import {AddAreasPage} from '../add-areas/add-areas';
+import {DelAreasPage} from '../del-areas/del-areas';
 /**
  * Generated class for the LocationsPage page.
  *
@@ -20,8 +21,9 @@ export class LocationsPage {
   locName: string
   subLocName: string
   keys: any[] = []
-
-  constructor(public lp:LocationsProvider) {
+  addareas = AddAreasPage;
+  delareas = DelAreasPage;
+  constructor(public lp:LocationsProvider, public loading:LoadingController) {
   }
 
   addLoc(){
@@ -36,10 +38,17 @@ export class LocationsPage {
    this.lp.deleteLoc(this.locName,this.subLocName);
   }
 
-/*  
-  printList(){
-    this.lp.getList(this.locName)
 
+  printList(){
+    let load = this.loading.create();
+    load.present()
+    this.lp.getList(this.locName)
+    this.lp.getList(this.locName).then(res => {
+      this.keys = res;
+      load.dismiss()
+    }).catch(err => {
+      load.dismiss()
+    })
   }
-  */
+  
 }

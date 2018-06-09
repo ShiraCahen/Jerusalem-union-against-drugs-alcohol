@@ -13,49 +13,21 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-list>
-    <ion-item>
-        <ion-label floating>שם איזור</ion-label>
-        <ion-input type="text" value="" [(ngModel)]="locName"></ion-input>
-    </ion-item>            
+<ion-content padding class="bg-color">
 
-    <ion-item>
-      <ion-label floating>שם תת איזור</ion-label>
-      <ion-input type="text" value="" [(ngModel)]="subLocName"></ion-input>
-     </ion-item>     
 
-      <ion-item>
-          <button type="button" (click)="addLoc(locName)" ion-button full >שלח</button>
-      </ion-item>
-
-      <ion-item>
-        <button type="button" (click)="addLocSub()" ion-button full >שלח תת איזור</button>
-    </ion-item>
-
-    <ion-item>
-      <button type="button" (click)="deleteLoc()" ion-button full >מחק תת איזור</button>
+<ion-item>
+    <button *ngIf = "userKind != 'team'" class = "a" ion-button icon-left [navPush]="addareas">
+        <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
+    דף הוספה
+    </button>
   </ion-item>
 
   <ion-item>
-    <button type="button" (click)="deleteDoc()" ion-button full >מחק איזור</button>
-</ion-item>
+      <button *ngIf = "userKind != 'team'" class = "a" ion-button icon-left [navPush]="delareas">
+          <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
+      דף מחיקה
+      </button>
+    </ion-item>
 
-<ion-item>
-  <button type="button" (click)="printList()" ion-button full >צפייה</button>
-</ion-item>
-
-</ion-list>
-<ion-list>
-  <ion-list-header>
-   צפייה
-  </ion-list-header>
-  
-  
-  <ion-item *ngFor="let key of keys">
-   
-    <ion-label>{{key}}</ion-label>
-  </ion-item>
-  
-</ion-list>
 </ion-content>

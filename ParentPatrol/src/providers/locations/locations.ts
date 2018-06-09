@@ -14,6 +14,9 @@ export class LocationsProvider {
   locitem={} as locationItem;
   locListRef: AngularFirestoreCollection<any>;
   locRef;
+  
+ 
+  obj;
   db = firebase.firestore();
   constructor(private afs: AngularFirestore) {
     afs.firestore.settings({ timestampsInSnapshots: true });
@@ -41,27 +44,73 @@ export class LocationsProvider {
   }
 
   deleteDoc(locName: string){
+    console.log("del2")
     var deleteDoc = this.afs.collection('Locations').doc(locName).delete();
   }
 
-  getList(locName: string){
-    
-    var docRef = this.db.collection('Locations').doc('תלפיות');
-    var getDoc = docRef.get()
-        .then(doc => {
-          if (!doc.exists) {
-            console.log('No such document!');
-          } else {
-            console.log('Document data:', doc.data());
-          }
+  getNList():Promise<any>{
+    let arr1: string[] = [];
+    var locRef = this.db.collection('Locations');
+    var i=0;
+        return new Promise<any>((resolve, reject) => {
+          locRef.get()
+        .then(snapshot => {
+          snapshot.forEach(doc => {
+            //console.log(doc.id, '=>', doc.data());
+            arr1[i]=doc.id
+            i++;
+          });
+          resolve(arr1);
         })
         .catch(err => {
-          console.log('Error getting document', err);
+          console.log('Error getting documents', err);
         });
-    
-  }
-
-  /*
- 
-  */
+        })  
 }
+
+  getList(locName: string):Promise<any>{
+    var i=0;
+    var docRef = this.db.collection('Locations').doc(locName);
+    let  arr2: string[] = [];
+    return new Promise<any>((resolve, reject) => {
+      docRef.get()
+          .then(doc => {
+            if (!doc.exists) {
+              console.log('No such document!');
+            } else {
+              Object.keys(doc.data()).forEach(key => {
+                arr2[i] = doc.data()[key];
+                i++;
+              });
+              resolve(arr2);
+            }
+          })
+          .catch(err => {
+            console.log('Error getting document', err);
+            resolve(err);
+          });
+    }) 
+        
+  
+  }
+}
+/* LIST OF DOCS
+getList(locName: string):Promise<any>{
+      var citiesRef = this.db.collection('Locations');
+      var i=0;
+          return new Promise<any>((resolve, reject) => {
+            citiesRef.get()
+          .then(snapshot => {
+            snapshot.forEach(doc => {
+              //console.log(doc.id, '=>', doc.data());
+              this.arr1[i]=doc.id
+              i++;
+            });
+            resolve(this.arr1);
+          })
+          .catch(err => {
+            console.log('Error getting documents', err);
+          });
+          })  
+}
+*/
