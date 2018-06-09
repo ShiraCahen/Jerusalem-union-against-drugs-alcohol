@@ -44,7 +44,6 @@ export class LocationsProvider {
   }
 
   deleteDoc(locName: string){
-    console.log("del2")
     var deleteDoc = this.afs.collection('Locations').doc(locName).delete();
   }
 
