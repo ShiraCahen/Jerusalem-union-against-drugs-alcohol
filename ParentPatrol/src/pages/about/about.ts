@@ -42,6 +42,7 @@ this.data = this.afDatabase.collection('ColdSpot').valueChanges();
 this.data.subscribe(d=>{
   console.log("cold spot: "+ d)
   this.coldSpotData = d// hold the array of all cold spot reports
+  
 });
   
 }

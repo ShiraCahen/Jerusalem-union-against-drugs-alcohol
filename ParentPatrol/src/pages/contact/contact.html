@@ -18,9 +18,11 @@
                   <ion-list-header>
                       איזורי סיור:
                   </ion-list-header>
-                  <ion-item *ngFor="let key of keys" >
+                  
+                  <ion-item *ngFor="let key of keys;let i= index" >
                       <ion-label> {{key}} </ion-label>
-                      <ion-checkbox [(ngModel)]="key[i]"></ion-checkbox>
+                      <ion-checkbox [(ngModel)]="selected[i]"></ion-checkbox>
+                                                
                   </ion-item>
 
           </ion-list> 
