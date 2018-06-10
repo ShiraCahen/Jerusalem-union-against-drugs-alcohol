@@ -17,7 +17,6 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 
 export class ContactPage {
-  catagoryList:  ["","","","","",""];
   data : any;
   rates:any;
   selected = [false,false,false,false,false,false,false,false,false,false,false,false,false,
@@ -39,12 +38,8 @@ export class ContactPage {
   notes: String ="";
   select: any;
   insidePlaces: string[];
-<<<<<<< HEAD
-  currentImage = null;
-=======
   keys: any[] = [];
   currentImage =null;
->>>>>>> 3f0abe18fc24254279cad15f909a4471fb045c0a
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
               public emailComposer:EmailComposer,
               private camera : Camera,
@@ -61,14 +56,8 @@ export class ContactPage {
                   this.keys = res;
                   load.dismiss();
                 }).catch(err => {
-<<<<<<< HEAD
-                  console.log(err)
-                  loading.dismiss();
-                })              
-=======
                   load.dismiss();
                 })
->>>>>>> 3f0abe18fc24254279cad15f909a4471fb045c0a
                 
   }
 
