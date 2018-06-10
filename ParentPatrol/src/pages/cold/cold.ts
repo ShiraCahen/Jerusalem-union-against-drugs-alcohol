@@ -6,7 +6,8 @@ import { AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { AngularFirestore } from 'angularfire2/firestore';
-
+import { LocationsProvider } from '../../providers/locations/locations';
+import {locationItem} from '../../models/locationItem.interface'
 @Component({
   selector: 'page-cold',
   templateUrl: 'cold.html',
@@ -19,28 +20,24 @@ export class ColdPage {
   msg;
   select: any;
   insidePlaces: string[];
-
+  keys: any[] = [];
   constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, 
-              public navParams: NavParams,private alertCtrl: AlertController,
-              private db:AngularFirestore,public emailComposer:EmailComposer,private afs: AngularFirestore, private loadCtrl: LoadingController) {
+              public navParams: NavParams,private alertCtrl: AlertController,private lp: LocationsProvider,
+              private db:AngularFirestore,public emailComposer:EmailComposer,private afs: AngularFirestore, private loading: LoadingController) {
                 this.select = navParams.get('data');
                 console.log(this.select)
 
                 const settings = { timestampsInSnapshots: true };
                 afs.firestore.settings(settings);
 
-                let loading = loadCtrl.create();
-                loading.present()
-
-                this.getPlace(this.select).then(locations => {
-                  this.insidePlaces = locations
-                  loading.dismiss()
-      }, err => {
-        console.log(this.insidePlaces)
-                  loading.dismiss()
+                let load = this.loading.create();
+                load.present()
+                this.lp.getList(this.select)
+                this.lp.getList(this.select).then(res => {
+                  this.keys = res;
+                  load.dismiss()
                 }).catch(err => {
-                  console.log(err)
-                  loading.dismiss()
+                  load.dismiss()
                 })
                 
                

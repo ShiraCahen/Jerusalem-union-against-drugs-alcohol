@@ -18,10 +18,11 @@
                   <ion-list-header>
                       איזורי סיור:
                   </ion-list-header>
-                  <ion-item *ngFor="let place of insidePlaces; let i = index" >
-                      <ion-label> {{place}} </ion-label>
-                      <ion-checkbox [(ngModel)]="selected[i]"></ion-checkbox>
+                  <ion-item *ngFor="let key of keys" >
+                      <ion-label> {{key}} </ion-label>
+                      <ion-checkbox [(ngModel)]="key[i]"></ion-checkbox>
                   </ion-item>
+
           </ion-list> 
               <ion-item>       
                   <ion-label color="white">מקומות נוספים בהם ביקרתם </ion-label>    
@@ -111,10 +112,17 @@
                   <ion-label color="white">הערות</ion-label>       
                     <ion-input  type="text" [(ngModel)]="notes"></ion-input>
               </ion-item>
+<<<<<<< HEAD
               
              <button ion-button full (click)="captureImage()" >הוסף תמונה</button>
      <button ion-button full (click)="storeInfoToDatabase()" >שלח</button>
 
+=======
+              <button ion-button full (click)="captureImage()" >הוסף תמונה</button>
+             <button ion-button full (click)="storeInfoToDatabase()" >שלח</button>
+            
+    
+>>>>>>> 3f0abe18fc24254279cad15f909a4471fb045c0a
               <ion-card>
                 <ion-card-header>תמונה:</ion-card-header>
                 <ion-card-content>
@@ -126,8 +134,6 @@
     </ion-row>           
   </ion-grid>
 
- <!--> <button ion-button (click)="sendEmail()">         
-    שליחת מייל
-  </button><-->
+
 
 </ion-content>

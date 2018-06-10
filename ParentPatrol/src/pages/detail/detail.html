@@ -16,14 +16,15 @@
                       <ion-list-header>
                           אנא בחר את הסיירת שלך:
                       </ion-list-header>
-                      <ion-item *ngFor="let post of postsProvider.posts; let i = index" >
-                          <ion-label> {{post.title}} </ion-label>
-                          <ion-radio checked="{{i == 0}}"
+                      <ion-item *ngFor="let key of keys; let i = index" >
+                          <ion-label> {{key}} </ion-label>
+                          <ion-radio
                            name="theRadioGroupName"
-                           value="{{post.english}}"></ion-radio>         
+                           value="{{key}}"></ion-radio>         
                       </ion-item>
                </ion-list> 
               
+
               
             <ion-item>
                 <ion-label color="black" >תאריך</ion-label>

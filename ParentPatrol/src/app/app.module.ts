@@ -28,7 +28,8 @@ import { SettingsPage } from '../pages/settings/settings';
 import { CounterPage } from '../pages/counter/counter';
 import { LocationsProvider } from '../providers/locations/locations';
 import {LocationsPage} from '../pages/locations/locations';
-
+import {AddAreasPage} from '../pages/add-areas/add-areas';
+import {DelAreasPage} from '../pages/del-areas/del-areas';
 @NgModule({
   declarations: [
     MyApp,
@@ -40,6 +41,8 @@ import {LocationsPage} from '../pages/locations/locations';
    CounterPage,
    DetailPage,
    LocationsPage,
+   AddAreasPage,
+   DelAreasPage,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,9 @@ import {LocationsPage} from '../pages/locations/locations';
     SettingsPage,
    CounterPage,
    DetailPage,
-   LocationsPage
+   LocationsPage,
+   AddAreasPage,
+   DelAreasPage,
   ],
   providers: [
     StatusBar,
