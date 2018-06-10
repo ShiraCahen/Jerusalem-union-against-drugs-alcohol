@@ -53,10 +53,49 @@
                     <ion-input type="number" [(ngModel)]="drugs"></ion-input>
               </ion-item>
 
+
+              <ion-list-header>
+                 אירועים חריגים בהם נתקלתם:
+              </ion-list-header>
+              
+              <ion-item>
+                <ion-label>אלימות</ion-label>
+                <ion-checkbox checked="false" [(ngModel)]="violence"></ion-checkbox>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>ונדליזם</ion-label>
+                <ion-checkbox checked="false" [(ngModel)]="vandalism"></ion-checkbox>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>סמים</ion-label>
+                <ion-checkbox checked="false" [(ngModel)]="drugss"></ion-checkbox>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>אלכוהול</ion-label>
+                  <ion-checkbox checked="false" [(ngModel)]="alcoholl"></ion-checkbox>
+                </ion-item>
+
+              <ion-item>
+                <ion-label> משטרה</ion-label>
+                <ion-checkbox checked="false" [(ngModel)]="police"></ion-checkbox>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>אמבולנס</ion-label>
+                <ion-checkbox checked="false" [(ngModel)]="ambulance"></ion-checkbox>
+              </ion-item>
+
               <ion-item> 
-                  <ion-label color="white">אירועים חריגים </ion-label>          
+                  <ion-label color="white">
+                  אנא הרחיבו על מה שסימנתם:
+                  </ion-label>          
                     <ion-input  type="text" [(ngModel)]="exeptions"></ion-input>
               </ion-item>
+
+
 
               <ion-item>    
                   <ion-label color="white">פרטי הנער/ה ליצירת קשר או להעברה הלאה לגורמי טיפול </ion-label>       
@@ -73,9 +112,9 @@
                     <ion-input  type="text" [(ngModel)]="notes"></ion-input>
               </ion-item>
               
-             <button ion-button full (click)="storeInfoToDatabase()" >שלח</button>
              <button ion-button full (click)="captureImage()" >הוסף תמונה</button>
-    
+     <button ion-button full (click)="storeInfoToDatabase()" >שלח</button>
+
               <ion-card>
                 <ion-card-header>תמונה:</ion-card-header>
                 <ion-card-content>

@@ -12,11 +12,14 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
-
 })
+
 export class ContactPage {
+  catagoryList:  ["","","","","",""];
   data : any;
-  selected= [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];  
+  rates:any;
+  selected = [false,false,false,false,false,false,false,false,false,false,false,false,false,
+              false,false,false,false,false,false,false,false,false,false];  
   checked : boolean = false;
   msg: String;
   str: String = "";
@@ -34,9 +37,10 @@ export class ContactPage {
   notes: String ="";
   select: any;
   insidePlaces: string[];
-  currentImage =null;
+  currentImage = null;
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
-              public postsProvider: ReproviderProvider, public emailComposer:EmailComposer, private camera : Camera,
+              public emailComposer:EmailComposer,
+              private camera : Camera,
               private db:AngularFirestore,public navParams: NavParams,
               private afs: AngularFirestore, private loadCtrl: LoadingController) {
               this.select = navParams.get('data');
@@ -55,10 +59,14 @@ export class ContactPage {
                 }).catch(err => {
                   console.log(err)
                   loading.dismiss();
-                })
+                })              
                 
-               
   }
+
+  ionViewDidLoad() {
+  
+  }
+
 
   getPlace(name: string): Promise<string[]>{
     return new Promise<any>((resolve, reject) => {
@@ -99,10 +107,6 @@ export class ContactPage {
   this.emailComposer.open(email);
   console.log ("heeeeeeeeyyyyyyy");
 }*/
-
-  ionViewDidLoad(){
-
-  }
 
   updateState(i) {
     console.log('Cucumbers new state:' + this.selected[i] +" "+i);
@@ -187,8 +191,10 @@ captureImage(){
 }
 sendEmail() {
  
-  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.navParams.get('volenteersName')
-  + "\r\n תאריך: " + this.navParams.get('myDate') + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
+  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team 
+  + " \r\n שמות המתנדבים: " + this.navParams.get('volenteersName')
+  + "\r\n תאריך: " + this.navParams.get('myDate') 
+  + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
   + "\r\n במידה והייתה היתקלות עם אלכוהול - כמה? " + this.alcohol
   + "\r\n במידה והייתה היתקלות עם סמים - כמה? " + this.drugs
   + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
