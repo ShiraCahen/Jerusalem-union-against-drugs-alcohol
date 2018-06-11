@@ -14,7 +14,6 @@
   <ion-grid  text-wrap>
       <ion-row>
          <ion-col>
-<<<<<<< HEAD
           <ion-list radio-group [(ngModel)]="place" >
                 <ion-list-header>
                     אנא בחר את הסיירת שלך:
@@ -26,20 +25,6 @@
                     value="{{key}}" ></ion-radio>         
                 </ion-item>
         </ion-list> 
-=======
-          <ion-list radio-group>
-                  <ion-list-header>
-                      איזורי סיור:
-                  </ion-list-header>
-                  
-                  <ion-item *ngFor="let key of keys;let i= index" >
-                      <ion-label> {{key}} </ion-label>
-                      <ion-checkbox [(ngModel)]="selected[i]"></ion-checkbox>
-                                                
-                  </ion-item>
-
-          </ion-list> 
->>>>>>> d01776df094767a398650a347adc557bf6227c28
               <ion-item>       
                   <ion-label color="white">מקומות נוספים בהם ביקרתם </ion-label>    
                     <ion-input type="text" [(ngModel)]="morePlaces"></ion-input>

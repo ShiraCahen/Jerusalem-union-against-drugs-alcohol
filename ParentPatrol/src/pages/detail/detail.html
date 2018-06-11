@@ -2,7 +2,7 @@
 <ion-header>
     
         <ion-navbar>
-                <ion-title text-center>
+                <ion-title text-right>
                 דו"ח סיור
                 </ion-title>
               </ion-navbar>
@@ -14,7 +14,7 @@
             <ion-grid  text-wrap>
                 <ion-row>
                 <ion-col>
-                    <ion-list radio-group [(ngModel)]="rates" >
+                    <ion-list radio-group [(ngModel)]="rates" text-right >
                             <ion-list-header>
                                 אנא בחר את הסיירת שלך:
                             </ion-list-header>
@@ -82,4 +82,3 @@
                     </span>
             </div>
   </ion-content>
-      
