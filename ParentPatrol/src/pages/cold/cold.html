@@ -17,14 +17,14 @@
                     אנא בחר את הסיירת שלך:
                 </ion-list-header>
                 <ion-item *ngFor="let key of keys; let i = index" >
-                    <ion-label> {{key}} </ion-label>
+                    <ion-label text-right> {{key}} </ion-label>
                     <ion-radio
                     name="theRadioGroupName"
                     value="{{key}}" ></ion-radio>         
                 </ion-item>
         </ion-list> 
             <ion-item>    
-                    <ion-label color="white">הערות:</ion-label>       
+                    <ion-label color="white" text-right>הערות:</ion-label>       
                     <ion-input  type="text" [(ngModel)]="notes"></ion-input>
             </ion-item>
             <button ion-button full (click)="storeInfoToDatabase()">שלח</button>
