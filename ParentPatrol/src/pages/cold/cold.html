@@ -12,13 +12,15 @@
   <ion-grid  text-wrap>
       <ion-row>
          <ion-col>
-            <ion-list radio-group>
+            <ion-list radio-group [(ngModel)]="place" >
                 <ion-list-header>
-                    איזורי סיור:
+                    אנא בחר את הסיירת שלך:
                 </ion-list-header>
-                <ion-item *ngFor="let key of keys" >
-                  <ion-label> {{key}} </ion-label>
-                  <ion-checkbox [(ngModel)]="key[i]"></ion-checkbox>
+                <ion-item *ngFor="let key of keys; let i = index" >
+                    <ion-label> {{key}} </ion-label>
+                    <ion-radio
+                    name="theRadioGroupName"
+                    value="{{key}}" ></ion-radio>         
                 </ion-item>
         </ion-list> 
             <ion-item>    
