@@ -23,6 +23,7 @@ export class ContactPage {
               false,false,false,false,false,false,false,false,false,false];  
   checked : boolean = false;
   msg: String;
+  place;
   str: String = "";
   team: String ="";
   morePlaces: string="";
@@ -112,6 +113,22 @@ export class ContactPage {
 
 
   storeInfoToDatabase(){
+    if(this.place==undefined){
+        let alert = this.alertCtrl.create({
+          title: 'שגיאה',
+          subTitle: 'נא למלא איזור סיור',
+          buttons: [
+            {
+              text: "אישור",
+              handler: () => {
+                this.navCtrl.pop();
+              }
+            }
+          ]
+        });
+        alert.present();
+    }
+
     let toSave= {
         Team: this.select,
         MyDate: this.navParams.get('myDate'),
