@@ -75,9 +75,9 @@
                   <ion-label color="white">הערות</ion-label>       
                     <ion-input  type="text" [(ngModel)]="notes"></ion-input>
               </ion-item>
-              
+              <button ion-button full (click)="captureImage()" >הוסף תמונה</button>
              <button ion-button full (click)="storeInfoToDatabase()" >שלח</button>
-             <button ion-button full (click)="captureImage()" >הוסף תמונה</button>
+            
     
               <ion-card>
                 <ion-card-header>תמונה:</ion-card-header>
@@ -90,8 +90,6 @@
     </ion-row>           
   </ion-grid>
 
- <!--> <button ion-button (click)="sendEmail()">         
-    שליחת מייל
-  </button><-->
+
 
 </ion-content>
