@@ -9,12 +9,12 @@
 </ion-header>
 
 
-<ion-content padding class="bg-color">
+<ion-content padding class="bg-img">
     <ion-grid  text-wrap>
         <ion-row>
            <ion-col>
              <ion-item>
-                <ion-label floating color="white" text-right>צוות:</ion-label>
+                <ion-label floating color="white" text-right>סיירת:</ion-label>
                  <ion-input type="text" [(ngModel)]="team"></ion-input>
               </ion-item>
       <ion-item>
@@ -29,10 +29,7 @@
               <ion-label color="white" text-right> שעת סגירת המועדון</ion-label>
               <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
             </ion-item>  
-            <ion-item>
-                  <ion-label floating color="white" text-right>מספר צוות</ion-label>
-                  <ion-input type="number" [(ngModel)]="teamNumber"></ion-input>
-                </ion-item>     
+   
                 <ion-item>
                       <ion-label floating color="white" text-right>שמות מתנדבים</ion-label>
                       <ion-input type="text" [(ngModel)]="volenteersName"></ion-input>

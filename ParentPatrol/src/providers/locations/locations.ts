@@ -5,22 +5,12 @@ import {locationItem} from '../../models/locationItem.interface'
 import * as firebase from 'firebase';
 import * as moment from 'moment';
 
-//import { File } from '@ionic-native/file';
-/*
-  Generated class for the LocationsProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-
 @Injectable()
 export class LocationsProvider {
   locitem={} as locationItem;
   locListRef: AngularFirestoreCollection<any>;
   locRef;
   objData;
-  
- 
   obj;
   db = firebase.firestore();
   
@@ -134,15 +124,12 @@ export class LocationsProvider {
   ConvertToCSV = function(objArray) {
       var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
       var str = '';
-
         for (var i = 0; i < array.length; i++) {
           var line = '';
         for (var index in array[i]) {
             if (line != '') line += ','
-
             line += array[i][index];
         }
-
           str += line + '\r\n';
       }
       return str;
