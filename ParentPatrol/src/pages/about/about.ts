@@ -4,7 +4,8 @@ import { DataProvider } from '../../providers/data/data';
 import firebase from 'firebase';
 import { AngularFireObject, AngularFireList } from "angularfire2/database"
 import { AngularFirestore } from 'angularfire2/firestore';
-
+import { LocationsProvider } from '../../providers/locations/locations';
+import {locationItem} from '../../models/locationItem.interface'
 
 @Component({
   selector: 'page-about',
@@ -20,8 +21,11 @@ export class AboutPage {
   hotSpotData:any[] = [];
   coldSpotData:any[] = [];
   d: string;
+  startDate;
+  endDate;
+  jsonStr="";
 
-  constructor(public navCtrl: NavController,private afDatabase : AngularFirestore,private loading: LoadingController) {
+  constructor(public navCtrl: NavController,private afDatabase : AngularFirestore,private loading: LoadingController, private lp:LocationsProvider) {
     const firestore = firebase.firestore();
     const settings = {timestampsInSnapshots: true};
     firestore.settings(settings);
@@ -52,8 +56,12 @@ export class AboutPage {
 }
 
   
+dataJson(){
 
-   
-   
+//console.log(check > from && check < to)
+  //console.log(this.startDate,this.endDate)
+  this.jsonStr=this.lp.dataJson(this.startDate,this.endDate);
+  console.log(this.jsonStr);
+}
 
 }

@@ -29,8 +29,13 @@
 
                     
                     <ion-item>
+<<<<<<< HEAD
                         <ion-label color="black" >תאריך</ion-label>
                         <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" required></ion-datetime>
+=======
+                        <ion-label color="black" text-right >*תאריך</ion-label>
+                        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate" required></ion-datetime>
+>>>>>>> c646403054bc9a9f57bc4bfbccc78c3866850c10
                     </ion-item>
 
                     <ion-item>
@@ -56,6 +61,10 @@
                         </ion-col>
                     </ion-row>     
                     </ion-grid>
+<<<<<<< HEAD
+=======
+
+>>>>>>> c646403054bc9a9f57bc4bfbccc78c3866850c10
                     <ion-item>
                             <button type="button" (click)="rem()" ion-button full >שמור פרטי סיור</button>
                     </ion-item>
@@ -70,6 +79,7 @@
                 </div>
                 <div *ngIf="x==1">
                     <span class="container"  text-center>
+                        
                         <button ion-button class="round" icon-left id = "hot" (click)="hotClicked()" >
                             <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
                             נקודה חמה
@@ -79,6 +89,16 @@
                             <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
                                 נקודה קרה
                             </button>
+                           
+                            
                     </span>
+                    <span class="container"  text-center>
+                            <button ion-button class="round" icon-left id = "document" (click)="function()">
+                                    <ion-icon ios="ios-document" md="md-document"></ion-icon>
+                                     שליחת דו"ח
+                            </button>
+                    </span>
+                        
+                    
             </div>
   </ion-content>

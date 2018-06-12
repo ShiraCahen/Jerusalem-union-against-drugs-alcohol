@@ -25,6 +25,8 @@
     "@ionic-native/core": "^4.7.0",
     "@ionic-native/email-composer": "^4.7.0",
     "@ionic-native/fcm": "^4.7.0",
+    "@ionic-native/file": "^4.7.0",
+    "@ionic-native/file-transfer": "^4.7.0",
     "@ionic-native/firebase": "^4.7.0",
     "@ionic-native/pedometer": "^4.7.0",
     "@ionic-native/splash-screen": "4.7.0",
@@ -37,6 +39,8 @@
     "cordova-plugin-camera": "^4.0.3",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-email-composer": "^0.8.15",
+    "cordova-plugin-file": "^6.0.1",
+    "cordova-plugin-file-transfer": "^1.7.1",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.19",
     "cordova-plugin-pedometer": "^0.4.1",
@@ -46,6 +50,7 @@
     "firebase": "^5.0.4",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "moment": "^2.22.2",
     "promise-polyfill": "^7.1.2",
     "rxjs": "5.5.10",
     "sw-toolbox": "3.6.0",
@@ -66,7 +71,8 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-pedometer": {},
       "cordova-plugin-camera": {},
-      "cordova-plugin-statusbar": {}
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-file-transfer": {}
     },
     "platforms": [
       "android"
