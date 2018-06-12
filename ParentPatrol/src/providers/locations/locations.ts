@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import {locationItem} from '../../models/locationItem.interface'
 import * as firebase from 'firebase';
+import * as moment from 'moment';
+
+//import { File } from '@ionic-native/file';
 /*
   Generated class for the LocationsProvider provider.
 
@@ -95,10 +98,59 @@ export class LocationsProvider {
             resolve(err);
           });
     }) 
-        
+     
   
   }
   
+
+  dataJson(start,finish){
+      let jsonArr:string;
+      jsonArr="";
+        var a = moment(start);
+        var b = moment(finish);
+        
+        
+        for (var m = moment(a); m.isSameOrBefore(b); m.add(1,'days')) {
+            this.db.collection("HotSpot").where("MyDate", "==",m.format('YYYY-MM-DD'))
+            .get()
+            .then(function(querySnapshot) {
+                querySnapshot.forEach(function(doc) {
+                    // doc.data() is never undefined for query doc snapshots
+                   
+                  // console.log(JSON.stringify(doc.data()))
+                  jsonArr=jsonArr+JSON.stringify(doc.data())+ '\r\n';
+                  console.log(jsonArr)
+                });
+            })
+            .catch(function(error) {
+                console.log("Error getting documents: ", error);
+            });
+        }
+        return jsonArr;
+  }
+
+
+/*
+  ConvertToCSV = function(objArray) {
+      var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+      var str = '';
+
+        for (var i = 0; i < array.length; i++) {
+          var line = '';
+        for (var index in array[i]) {
+            if (line != '') line += ','
+
+            line += array[i][index];
+        }
+
+          str += line + '\r\n';
+      }
+      return str;
+    }
+    */
+
+
+
 }
 /* LIST OF DOCS
 getList(locName: string):Promise<any>{

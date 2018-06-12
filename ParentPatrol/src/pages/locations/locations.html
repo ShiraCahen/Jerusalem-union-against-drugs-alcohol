@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ניהול איזורים</ion-title>
+    <ion-title text-right>ניהול איזורים</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,17 +17,18 @@
 
 
 <ion-item>
-    <button *ngIf = "userKind != 'team'" class = "a" ion-button icon-left [navPush]="addareas">
+    <button class = "a" ion-button icon-left [navPush]="addareas">
         <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
    הוספת איזור
     </button>
   </ion-item>
 
   <ion-item>
-      <button *ngIf = "userKind != 'team'" class = "a" ion-button icon-left [navPush]="delareas">
+      <button class = "a" ion-button icon-left [navPush]="delareas">
           <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
      הסרת איזור
       </button>
     </ion-item>
+
 
 </ion-content>

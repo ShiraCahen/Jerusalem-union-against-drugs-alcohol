@@ -6,10 +6,35 @@
         </ion-navbar>
       </ion-header>
       
-      <ion-content padding>
-
+      <ion-content padding class="bg-color"> 
+        <!--
           <button class = "a" ion-button icon-left (click)='getData()'>
             צפייה
           </button> 
+-->
+          
+        
       
+            <ion-item>
+                <ion-label color="black" text-right >תאריך התחלה</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="startDate" required></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-label color="black" text-right >תאריך סיום</ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="endDate" required></ion-datetime>
+            </ion-item>
+
+           
+              <ion-row center>  
+                  <ion-col text-center>   
+                      <button class = "a" ion-button icon-left (click)='dataJson()'>
+                          צפייה
+                        </button> 
+                  </ion-col> 
+              </ion-row>
+            <div class="data">
+              
+              
+            </div>
       </ion-content>
