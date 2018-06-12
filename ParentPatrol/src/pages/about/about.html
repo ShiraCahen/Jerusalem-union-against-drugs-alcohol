@@ -1,6 +1,6 @@
 <ion-header>
         <ion-navbar>
-          <ion-title text-right>
+          <ion-title>
 צפייה בדוחות
           </ion-title>
         </ion-navbar>
@@ -15,12 +15,12 @@
           
         
       
-            <ion-item>
+            <ion-item class="item"> 
                 <ion-label color="black" text-right >תאריך התחלה</ion-label>
                 <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="startDate" required></ion-datetime>
             </ion-item>
 
-            <ion-item>
+            <ion-item class="item">
                 <ion-label color="black" text-right >תאריך סיום</ion-label>
                 <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="endDate" required></ion-datetime>
             </ion-item>

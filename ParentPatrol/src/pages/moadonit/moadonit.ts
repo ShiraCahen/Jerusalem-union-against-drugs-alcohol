@@ -26,6 +26,7 @@ export class MoadonitPage {
   handle: string ="";
   notes: String ="";
   msg: String;
+  team:any;
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, private db:AngularFirestore,public emailComposer:EmailComposer) {
   }
@@ -48,7 +49,8 @@ export class MoadonitPage {
         YoungsterName: this.youngsterName,
         Handle: this.handle,
         Notes: this.notes,
-        Dilemmas: this.dilemmas
+        Dilemmas: this.dilemmas,
+  
 
     }
     this.presentAlert();
