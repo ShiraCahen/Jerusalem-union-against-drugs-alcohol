@@ -22,6 +22,13 @@ export class ContactPage {
   selected = [false,false,false,false,false,false,false,false,false,false,false,false,false,
               false,false,false,false,false,false,false,false,false,false];  
   checked : boolean = false;
+  place: string="";
+  violence:any;
+  vandalism: any;
+  drugss:any;
+  alcoholl:any;
+  police:any;
+  ambulance:any;
   msg: String;
   place;
   str: String = "";
