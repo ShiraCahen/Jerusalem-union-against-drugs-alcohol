@@ -141,7 +141,9 @@ rem(){
   this.x=1;
   this.lp.saveData(this.dataObj);
 }
-
+function() {
+  
+}
 delrem(){
   this.x=0;
 }
