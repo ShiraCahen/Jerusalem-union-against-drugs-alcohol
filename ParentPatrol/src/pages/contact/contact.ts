@@ -30,7 +30,6 @@ export class ContactPage {
   police:any;
   ambulance:any;
   msg: String;
-  place;
   str: String = "";
   team: String ="";
   morePlaces: string="";
