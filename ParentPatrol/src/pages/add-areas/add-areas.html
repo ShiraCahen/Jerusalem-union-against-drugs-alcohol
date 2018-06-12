@@ -18,22 +18,22 @@
   
     
     <ion-item text-center class="text">
-      -הוספת שכונה-
+      -הוספת סיירת-
     </ion-item>
     <ion-item>
-        <ion-label floating text-right >שם השכונה:</ion-label>
+        <ion-label floating text-right >שם הסיירת:</ion-label>
         <ion-input type="text" value="" [(ngModel)]="locName"></ion-input>
     </ion-item>            
     <ion-item>
-        <button type="button" (click)="addLoc(locName)" ion-button full >הוסף שכונה</button>
+        <button type="button" (click)="addLoc(locName)" ion-button full >הוסף סיירת</button>
     </ion-item>
 
     <ion-item text-center class="text"t>
-      -הוספת גן לשכונה-
+      -הוספת גן לסיירת-
     </ion-item>
     <ion-list>
         <ion-item>
-          <ion-label text-right>שכונה:</ion-label>
+          <ion-label text-right>סיירת:</ion-label>
           <ion-select [(ngModel)]="locName2">
             <ion-option *ngFor="let key of keys" [value] = "key">
             {{key}}

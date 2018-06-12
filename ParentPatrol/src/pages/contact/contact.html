@@ -3,7 +3,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-center>
+    <ion-title text-right>
      דו"ח סיור נקודה חמה
     </ion-title>
   </ion-navbar>
@@ -14,50 +14,90 @@
   <ion-grid  text-wrap>
       <ion-row>
          <ion-col>
-          <ion-list radio-group>
-                  <ion-list-header>
-                      איזורי סיור:
-                  </ion-list-header>
-                  <ion-item *ngFor="let key of keys" >
-                      <ion-label> {{key}} </ion-label>
-                      <ion-checkbox [(ngModel)]="key[i]"></ion-checkbox>
-                  </ion-item>
-
-          </ion-list> 
+          <ion-list radio-group [(ngModel)]="place" >
+                <ion-list-header>
+                    אנא בחר את הסיירת שלך:
+                </ion-list-header>
+                <ion-item *ngFor="let key of keys; let i = index" >
+                    <ion-label text-right> {{key}} </ion-label>
+                    <ion-radio
+                    name="theRadioGroupName"
+                    value="{{key}}" ></ion-radio>         
+                </ion-item>
+        </ion-list> 
               <ion-item>       
-                  <ion-label color="white">מקומות נוספים בהם ביקרתם </ion-label>    
+                  <ion-label color="white" text-right>מקומות נוספים בהם ביקרתם </ion-label>    
                     <ion-input type="text" [(ngModel)]="morePlaces"></ion-input>
               </ion-item>
              
               <ion-item>   
-                  <ion-label color="white">	מספר חבורות שנצפו</ion-label>        
+                  <ion-label color="white" text-right>	מספר חבורות שנצפו</ion-label>        
                     <ion-input [(ngModel)]="groupsNum" type="number" ></ion-input>
               </ion-item>
 
               <ion-item>     
-                  <ion-label color="white">מספר הנערים/ות בכל  חבורה </ion-label>      
+                  <ion-label color="white" text-right>מספר הנערים/ות בכל  חבורה </ion-label>      
                     <ion-input [(ngModel)]="membersInGroup" type="number" ></ion-input>
               </ion-item>
 
               <ion-item>  
-                  <ion-label color="white">ממוצע הגילאים </ion-label>         
+                  <ion-label color="white" text-right>ממוצע הגילאים </ion-label>         
                     <ion-input [(ngModel)]="averageAge" type="text" ></ion-input>
               </ion-item>
 
               <ion-item>     
-                  <ion-label color="white">מספר נערים תחת השפעה חריגה של אלכוהול: </ion-label>      
+                  <ion-label color="white" text-right>מספר נערים תחת השפעה חריגה של אלכוהול: </ion-label>      
                     <ion-input type="number" [(ngModel)]="alcohol"></ion-input>
               </ion-item>
 
               <ion-item>     
-                  <ion-label color="white">מספר נערים תחת השפעה חריגה של סמים: </ion-label>      
+                  <ion-label color="white" text-right>מספר נערים תחת השפעה חריגה של סמים: </ion-label>      
                     <ion-input type="number" [(ngModel)]="drugs"></ion-input>
               </ion-item>
 
+              
+              <ion-list-header>
+                 אירועים חריגים בהם נתקלתם:
+              </ion-list-header>
+              
+              <ion-item>
+                <ion-label text-right>אלימות</ion-label>
+                <ion-checkbox checked="false" [(ngModel)]="violence"></ion-checkbox>
+              </ion-item>
+
+              <ion-item>
+                <ion-label text-right>ונדליזם</ion-label>
+                <ion-checkbox checked="false" [(ngModel)]="vandalism"></ion-checkbox>
+              </ion-item>
+
+              <ion-item>
+                <ion-label text-right>סמים</ion-label>
+                <ion-checkbox checked="false" [(ngModel)]="drugss"></ion-checkbox>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label text-right>אלכוהול</ion-label>
+                  <ion-checkbox checked="false" [(ngModel)]="alcoholl"></ion-checkbox>
+                </ion-item>
+
+              <ion-item>
+                <ion-label text-right> משטרה</ion-label>
+                <ion-checkbox checked="false" [(ngModel)]="police"></ion-checkbox>
+              </ion-item>
+
+              <ion-item>
+                <ion-label text-right>אמבולנס</ion-label>
+                <ion-checkbox checked="false" [(ngModel)]="ambulance"></ion-checkbox>
+              </ion-item>
+
               <ion-item> 
-                  <ion-label color="white">אירועים חריגים </ion-label>          
+                  <ion-label color="white">
+                  אנא הרחיבו על מה שסימנתם:
+                  </ion-label>          
                     <ion-input  type="text" [(ngModel)]="exeptions"></ion-input>
               </ion-item>
+
+
 
               <ion-item>    
                   <ion-label color="white">פרטי הנער/ה ליצירת קשר או להעברה הלאה לגורמי טיפול </ion-label>       
@@ -73,10 +113,10 @@
                   <ion-label color="white">הערות</ion-label>       
                     <ion-input  type="text" [(ngModel)]="notes"></ion-input>
               </ion-item>
-              <button ion-button full (click)="captureImage()" >הוסף תמונה</button>
-             <button ion-button full (click)="storeInfoToDatabase()" >שלח</button>
-            
-    
+              
+             <button ion-button full (click)="captureImage()" >הוסף תמונה</button>
+     <button ion-button full (click)="storeInfoToDatabase()" >שלח</button>
+
               <ion-card>
                 <ion-card-header>תמונה:</ion-card-header>
                 <ion-card-content>

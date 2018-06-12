@@ -11,6 +11,7 @@ import { EmailComposer } from '@ionic-native/email-composer';
 import { IonicPage,LoadingController  } from 'ionic-angular';
 import { LocationsProvider } from '../../providers/locations/locations';
 import {locationItem} from '../../models/locationItem.interface'
+
 @Component({
   selector: 'page-detail',
   templateUrl: 'detail.html',
@@ -29,11 +30,12 @@ export class DetailPage {
   endTime: String ="";
   volenteersNum: Number = 0;
   volenteersName:String="";
-  str:any;
-  rates:any;
+  str:string;
+  rates:string;
   browserSize;
   keys: any[] = []
-
+  x=0;
+  dataObj: Object;
   constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, private lp:LocationsProvider,
                private dataProvider:DataProvider,private alertCtrl: AlertController,private loading:LoadingController,
               private db:AngularFireDatabase, public platform: Platform,public emailComposer:EmailComposer) {
@@ -53,6 +55,11 @@ export class DetailPage {
       }).catch(err => {
         load.dismiss()
       })
+      if(this.lp.objData!==undefined){
+        this.x=1;
+        
+      }
+      //console.log(this.lp.objData)
 }
 
   ionViewDidLoad() {
@@ -64,34 +71,22 @@ export class DetailPage {
   }
 
  hotClicked() {
-   this.str= this.rates;
-  if(this.str==undefined){   
-    this.str=this.keys[0];
+ 
+  if(this.x==1){
+    this.dataObj=this.lp.objData;
   }
  
- this.navCtrl.push(ContactPage, {
-    data: this.str,
-    myDate: this.myDate,
-    startTime: this.startTime,
-    endTime:this.endTime,
-    teamNumber:this.teamNumber,
-    volenteersName:this.volenteersName
-  });
+  console.log(this.dataObj)
+  this.navCtrl.push(ContactPage,this.dataObj);
  }
 coldClicked() {
-  this.str= this.rates;
-  if(this.str==undefined){   
-    this.str=this.keys[0];
- }
+ 
+  if(this.x==1){
+    this.dataObj=this.lp.objData;
+  }
 
-this.navCtrl.push(ColdPage, {
-   data: this.str,
-   myDate: this.myDate,
-   startTime: this.startTime,
-   endTime:this.endTime,
-   teamNumber:this.teamNumber,
-   volenteersName:this.volenteersName
- });
+
+  this.navCtrl.push(ColdPage,this.dataObj);
 }
 /*  storeInfoToDatabase(){
     let toSave= {
@@ -132,6 +127,36 @@ sendEmail() {
   this.emailComposer.open(email);
 }
 
+rem(){
+  if(this.checking()==1)
+    return;
+  this.dataObj={
+    data: this.rates,
+    myDate: this.myDate,
+    startTime: this.startTime,
+    endTime:this.endTime,
+    teamNumber:this.teamNumber,
+    volenteersName:this.volenteersName
+  }
+  this.x=1;
+  this.lp.saveData(this.dataObj);
+}
 
+delrem(){
+  this.x=0;
+}
+
+checking(){
+  if( this.rates==undefined||this.myDate==undefined||this.teamNumber==undefined||this.volenteersName==undefined){
+    let alert = this.alertCtrl.create({
+      title: 'שגיאה',
+      subTitle: 'נא למלא את כל הפרטים המסומנים בכוכבית',
+      buttons: ['אישור']
+    });
+    alert.present();
+    return 1;
+  }
+
+}
 
 }

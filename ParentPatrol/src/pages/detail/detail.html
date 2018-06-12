@@ -2,71 +2,84 @@
 <ion-header>
     
         <ion-navbar>
-                <ion-title text-center>
+                <ion-title text-right>
                 דו"ח סיור
                 </ion-title>
               </ion-navbar>
 </ion-header>
 
 <ion-content padding class="bg-color">
-    <ion-grid  text-wrap>
-        <ion-row>
-           <ion-col>
-              <ion-list radio-group [(ngModel)]="rates" >
-                      <ion-list-header>
-                          אנא בחר את הסיירת שלך:
-                      </ion-list-header>
-                      <ion-item *ngFor="let key of keys; let i = index" >
-                          <ion-label> {{key}} </ion-label>
-                          <ion-radio
-                           name="theRadioGroupName"
-                           value="{{key}}"></ion-radio>         
-                      </ion-item>
-               </ion-list> 
-              
+        <div *ngIf="x==0">
+                <ion-item text-center class="text" class="a">
+                       פריטים המסומנים בכוכבית הינם פרטי חובה**
+                 </ion-item>
+            <ion-grid  text-wrap>
+                <ion-row>
+                <ion-col>
+                    <ion-list radio-group [(ngModel)]="rates" text-right >
+                            <ion-list-header>
+                                *אנא בחר את הסיירת שלך:
+                            </ion-list-header>
+                            <ion-item *ngFor="let key of keys; let i = index" >
+                                <ion-label text-right> {{key}} </ion-label>
+                                <ion-radio
+                                name="theRadioGroupName"
+                                value="{{key}}" ></ion-radio>         
+                            </ion-item>
+                    </ion-list> 
 
-              
-            <ion-item>
-                <ion-label color="black" >תאריך</ion-label>
-                <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" required></ion-datetime>
-              </ion-item>
+                    <ion-item>
+                        <ion-label color="black" text-right >*תאריך</ion-label>
+                        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" required></ion-datetime>
+                    </ion-item>
 
-            <ion-item>
-                <ion-label color="black">שעת התחלה</ion-label>
-                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
-            </ion-item>     
+                    <ion-item>
+                        <ion-label color="black" text-right>שעת התחלה</ion-label>
+                        <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
+                    </ion-item>     
 
-            <ion-item>
-                    <ion-label color="black">שעת סיום</ion-label>
-                    <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
-            </ion-item>  
+                    <ion-item>
+                            <ion-label color="black" text-right>שעת סיום</ion-label>
+                            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
+                    </ion-item>  
 
-                  <ion-item>
-                        <ion-label floating color="black">מספר צוות</ion-label>
-                        <ion-input type="number" [(ngModel)]="teamNumber" ></ion-input>
-                      </ion-item>  
+                        <ion-item>
+                                <ion-label floating color="black" text-right>*מספר צוות</ion-label>
+                                <ion-input type="number" [(ngModel)]="teamNumber" ></ion-input>
+                            </ion-item>  
 
-                      <ion-item>
-                            <ion-label floating color="black">שמות מתנדבים</ion-label>
-                            <ion-input type="text" [(ngModel)]="volenteersName"></ion-input>
-                      </ion-item> 
-                  
-                </ion-col>
-              </ion-row>     
-            </ion-grid>
-
-
-            <span class="container"  text-center>
-                <button ion-button class="round" icon-left id = "hot" (click)="hotClicked()" >
-                    <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
-                    נקודה חמה
-                  </button>
-               
-                  <button ion-button class="round" icon-left id = "cold" (click)="coldClicked()">
-                      <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
-                        נקודה קרה
-                    </button>
-              </span>
-
+                            <ion-item>
+                                    <ion-label floating color="black" text-right>*שמות מתנדבים</ion-label>
+                                    <ion-input type="text" [(ngModel)]="volenteersName"></ion-input>
+                            </ion-item> 
+                        
+                        </ion-col>
+                    </ion-row>     
+                    </ion-grid>
+                    
+                    <ion-item>
+                            <button type="button" (click)="rem()" ion-button full >שמור פרטי סיור</button>
+                    </ion-item>
+                    <ion-item text-center class="text" class="a">
+                           ** לאחר השמירה יפתחו אופציות נק' חמה וקרה
+                    </ion-item>
+                </div>
+                <div *ngIf="x!=0">
+                        <ion-item>
+                                <button type="button" (click)="delrem()" ion-button full >שינוי פרטים</button>
+                        </ion-item>
+                </div>
+                <div *ngIf="x==1">
+                    <span class="container"  text-center>
+                        <button ion-button class="round" icon-left id = "hot" (click)="hotClicked()" >
+                            <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
+                            נקודה חמה
+                        </button>
+                    
+                        <button ion-button class="round" icon-left id = "cold" (click)="coldClicked()">
+                            <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
+                                נקודה קרה
+                            </button>
+                    </span>
+            </div>
   </ion-content>
-      

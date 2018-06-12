@@ -9,21 +9,27 @@ import * as firebase from 'firebase';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+
 @Injectable()
 export class LocationsProvider {
   locitem={} as locationItem;
   locListRef: AngularFirestoreCollection<any>;
   locRef;
+  objData;
   
  
   obj;
   db = firebase.firestore();
+  
   constructor(private afs: AngularFirestore) {
     afs.firestore.settings({ timestampsInSnapshots: true });
     this.locListRef = afs.collection('Locations');
     
   }
 
+  saveData(objData:Object){
+    this.objData=objData
+  }
 
   addLoc(locName:string){
     this.afs.collection('Locations').doc(locName).set(this.locitem);//שכונה חדשה
@@ -92,6 +98,7 @@ export class LocationsProvider {
         
   
   }
+  
 }
 /* LIST OF DOCS
 getList(locName: string):Promise<any>{

@@ -18,10 +18,10 @@
     
       
       <ion-item text-center class="text">
-        -מחיקת שכונה-
+        -מחיקת סיירת-
       </ion-item>
      <ion-item>
-            <ion-label text-right>שכונה:</ion-label>
+            <ion-label text-right>סיירת:</ion-label>
             <ion-select [(ngModel)]="locName">
               <ion-option *ngFor="let key of keys" [value] = "key">
               {{key}}
@@ -29,18 +29,18 @@
           </ion-select>
         </ion-item>           
       <ion-item>
-          <button type="button" (click)="deleteDoc()" ion-button full >מחק שכונה</button>
+          <button type="button" (click)="deleteDoc()" ion-button full >מחק סיירת</button>
       </ion-item>
   
       <ion-item text-center class="text">
-        -מחיקת גן משכונה-
+        -מחיקת גן מסיירת-
       </ion-item>
       <ion-item text-center class="text" class="a">
-         **אפשרות המחיקה תפתח לאחר בחירת שכונה
+         **אפשרות המחיקה תפתח לאחר בחירת סיירת
         </ion-item>
       <ion-list>
           <ion-item>
-            <ion-label text-right>שכונה:</ion-label>
+            <ion-label text-right>סיירת:</ion-label>
             <ion-select [(ngModel)]="locName2">
               <ion-option *ngFor="let key of keys" [value] = "key">
               {{key}}

@@ -14,13 +14,23 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
-
 })
+
 export class ContactPage {
   data : any;
-  selected= [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];  
+  rates:any;
+  selected = [false,false,false,false,false,false,false,false,false,false,false,false,false,
+              false,false,false,false,false,false,false,false,false,false];  
   checked : boolean = false;
+  place: string="";
+  violence:any;
+  vandalism: any;
+  drugss:any;
+  alcoholl:any;
+  police:any;
+  ambulance:any;
   msg: String;
+  place;
   str: String = "";
   team: String ="";
   morePlaces: string="";
@@ -39,7 +49,8 @@ export class ContactPage {
   keys: any[] = [];
   currentImage =null;
   constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
-              public postsProvider: ReproviderProvider, public emailComposer:EmailComposer, private camera : Camera,
+              public emailComposer:EmailComposer,
+              private camera : Camera,
               private db:AngularFirestore,public navParams: NavParams,
               private afs: AngularFirestore, private loading: LoadingController, private lp:LocationsProvider) {
               this.select = navParams.get('data');
@@ -56,8 +67,12 @@ export class ContactPage {
                   load.dismiss();
                 })
                 
-               
   }
+
+  ionViewDidLoad() {
+  
+  }
+
 
   getPlace(name: string): Promise<string[]>{
     return new Promise<any>((resolve, reject) => {
@@ -99,16 +114,28 @@ export class ContactPage {
   console.log ("heeeeeeeeyyyyyyy");
 }*/
 
-  ionViewDidLoad(){
-
-  }
-
   updateState(i) {
     console.log('Cucumbers new state:' + this.selected[i] +" "+i);
   }
 
 
   storeInfoToDatabase(){
+    if(this.place==undefined){
+        let alert = this.alertCtrl.create({
+          title: 'שגיאה',
+          subTitle: 'נא למלא איזור סיור',
+          buttons: [
+            {
+              text: "אישור",
+              handler: () => {
+                this.navCtrl.pop();
+              }
+            }
+          ]
+        });
+        alert.present();
+    }
+
     let toSave= {
         Team: this.select,
         MyDate: this.navParams.get('myDate'),
@@ -186,8 +213,10 @@ captureImage(){
 }
 sendEmail() {
  
-  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.navParams.get('volenteersName')
-  + "\r\n תאריך: " + this.navParams.get('myDate') + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
+  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team 
+  + " \r\n שמות המתנדבים: " + this.navParams.get('volenteersName')
+  + "\r\n תאריך: " + this.navParams.get('myDate') 
+  + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
   + "\r\n במידה והייתה היתקלות עם אלכוהול - כמה? " + this.alcohol
   + "\r\n במידה והייתה היתקלות עם סמים - כמה? " + this.drugs
   + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details

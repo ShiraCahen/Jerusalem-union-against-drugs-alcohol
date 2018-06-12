@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-center>
+    <ion-title text-right>
      הוספת משתמש
     </ion-title>
   </ion-navbar>
@@ -19,13 +19,10 @@
   <ion-list>
 
     <ion-item>
-<<<<<<< HEAD
-      <ion-label color="white">שם משתמש:</ion-label>
-      <ion-input type="text" [(ngModel)] = "profile.firstName" placeholder="שם משתמש"></ion-input>
-=======
+     <!-- <ion-label color="white">שם משתמש:</ion-label>
+      <ion-input type="text" [(ngModel)] = "profile.firstName" placeholder="שם משתמש"></ion-input>-->
       <ion-label color="white">* אימייל:</ion-label>
       <ion-input type="text" [(ngModel)] = "user.email"></ion-input>
->>>>>>> 6ec9e0f0cd4b51a953da5f5d47305192b1a7e34e
     </ion-item>
 
     <ion-item>
@@ -50,26 +47,18 @@
 
     <ion-list radio-group [(ngModel)]="profile.kind">
         <ion-item>
-          <ion-label>מנהל</ion-label>
+          <ion-label text-right>מנהל</ion-label>
           <ion-radio value= "admin"></ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>רכז</ion-label>
+          <ion-label text-right>רכז</ion-label>
           <ion-radio item-center value="coordinetor" color="white"></ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>צוות</ion-label>
+          <ion-label text-right>סיירת</ion-label>
           <ion-radio value = "team"></ion-radio>
         </ion-item>
     </ion-list>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <button ion-button  (click) ="register(user)" >הוסף משתמש</button>
     
 
