@@ -17,7 +17,7 @@
   
         <span class="container">
           <button ion-button class="round" icon-left id = "hot" [navPush]="detail">
-          <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
+            <ion-icon ios="ios-leaf" md="md-leaf"></ion-icon>
                ד"וח סיור
           </button>
          
@@ -39,13 +39,13 @@
     </button>
     
     <button *ngIf = "userKind == 'admin'" class = "a" ion-button icon-left [navPush]="locations">
-        <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
+        <ion-icon ios="ios-folder-open" md="md-folder-open"></ion-icon>
          ניהול
     </button>
     
     <div *ngIf=" isCordova == 1">
       <button class = "a" ion-button icon-left [navPush]="counter">
-        <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
+        <ion-icon ios="ios-walk" md="md-walk"></ion-icon>
           סופר צעדים
     </button>
     </div>
