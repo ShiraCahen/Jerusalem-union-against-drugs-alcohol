@@ -20,4 +20,22 @@ page-about{
         width: 80%;
         margin: auto;
     }
+    .data{
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+        height:20%;
+    }
+
+    .texter{
+        background: transparent;
+        width: 100%;
+        height:100rc;
+        border: 0 none;
+        color:black;
+        font-size: 10px;
+        overflow-y: scroll;
+        vertical-align: middle;
+    }
 }

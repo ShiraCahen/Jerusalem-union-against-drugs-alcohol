@@ -90,4 +90,5 @@
     <engine name="android" spec="7.0.0" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
+    <plugin name="cordova-clipboard" spec="^1.2.1" />
 </widget>
