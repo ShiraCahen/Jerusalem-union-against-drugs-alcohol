@@ -51,17 +51,16 @@
                         </ion-col>
                     </ion-row>     
                     </ion-grid>
-                    <ion-item>
+                    
                             <button type="button" (click)="rem()" ion-button full >שמור פרטי סיור</button>
-                    </ion-item>
+                    
                     <ion-item text-center class="text" class="a">
                            ** לאחר השמירה תפתחנה אופציות נק' חמה וקרה **
                     </ion-item>
                 </div>
                 <div *ngIf="x!=0">
-                        <ion-item>
                                 <button type="button" (click)="delrem()" ion-button full >שינוי פרטים</button>
-                        </ion-item>
+                        
                 </div>
                 <div *ngIf="x==1">
                     <span class="container"  text-center>

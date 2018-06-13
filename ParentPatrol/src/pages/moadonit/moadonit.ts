@@ -26,7 +26,7 @@ export class MoadonitPage {
   handle: string ="";
   notes: String ="";
   msg: String;
-  team:any;
+  team:String ="";
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController, private db:AngularFirestore,public emailComposer:EmailComposer) {
   }
@@ -37,6 +37,7 @@ export class MoadonitPage {
 
   storeInfoToDatabase(){
     let toSave= {
+      Team: this.team,
         MyDate: this.myDate,
         StartTime: this.startTime,
         EndTime: this.endTime,
@@ -50,8 +51,6 @@ export class MoadonitPage {
         Handle: this.handle,
         Notes: this.notes,
         Dilemmas: this.dilemmas,
-  
-
     }
     this.presentAlert();
     return this.db.collection('Moadonit').add(toSave);
