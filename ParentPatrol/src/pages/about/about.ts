@@ -43,11 +43,7 @@ export class AboutPage {
                      console.log("cold spot: "+ d)
                       this.coldSpotData = d// hold the array of all cold spot reports
                       load.dismiss();
-<<<<<<< HEAD
-               console.log( this.moadonitData);//try
-=======
                console.log(this.moadonitData[0]);//try
->>>>>>> 8043aab9c1aa13afa18e39474d9ef9559cba2fb8
                     });
               });
               
