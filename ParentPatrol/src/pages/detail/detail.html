@@ -2,23 +2,21 @@
 <ion-header>
     
         <ion-navbar>
-                <ion-title text-right>
+                <ion-title>
                 דו"ח סיור
                 </ion-title>
               </ion-navbar>
 </ion-header>
 
-<ion-content padding class="bg-color">
+<ion-content padding class="bg-img">
         <div *ngIf="x==0">
-                <ion-item text-center class="text" class="a">
-                       פריטים המסומנים בכוכבית הינם פרטי חובה**
-                 </ion-item>
+                
             <ion-grid  text-wrap>
                 <ion-row>
                 <ion-col>
                     <ion-list radio-group [(ngModel)]="rates" text-right >
                             <ion-list-header>
-                                *אנא בחר את הסיירת שלך:
+                                אנא בחר את הסיירת שלך:
                             </ion-list-header>
                             <ion-item *ngFor="let key of keys; let i = index" >
                                 <ion-label text-right> {{key}} </ion-label>
@@ -27,10 +25,12 @@
                                 value="{{key}}" ></ion-radio>         
                             </ion-item>
                     </ion-list> 
+                    
 
+                    
                     <ion-item>
                         <ion-label color="black" text-right >*תאריך</ion-label>
-                        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate" required></ion-datetime>
+                        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate" required></ion-datetime>
                     </ion-item>
 
                     <ion-item>
@@ -43,13 +43,8 @@
                             <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
                     </ion-item>  
 
-                        <ion-item>
-                                <ion-label floating color="black" text-right>*מספר צוות</ion-label>
-                                <ion-input type="number" [(ngModel)]="teamNumber" ></ion-input>
-                            </ion-item>  
-
                             <ion-item>
-                                    <ion-label floating color="black" text-right>*שמות מתנדבים</ion-label>
+                                    <ion-label floating color="black" text-right>שמות מתנדבים</ion-label>
                                     <ion-input type="text" [(ngModel)]="volenteersName"></ion-input>
                             </ion-item> 
                         
@@ -57,20 +52,19 @@
                     </ion-row>     
                     </ion-grid>
                     
-                    <ion-item>
-                            <button type="button" (click)="rem()" ion-button full >שמור פרטי סיור</button>
-                    </ion-item>
-                    <ion-item text-center class="text" class="a">
-                           ** לאחר השמירה יפתחו אופציות נק' חמה וקרה
-                    </ion-item>
+                            <button type="button" (click)="rem()" ion-button full text-right>שמור פרטי סיור</button>
+                    
+                    <p text-center class="text" class="a">
+                           ** לאחר השמירה תפתחנה אופציות נק' חמה וקרה **
+                    </p>
                 </div>
                 <div *ngIf="x!=0">
-                        <ion-item>
                                 <button type="button" (click)="delrem()" ion-button full >שינוי פרטים</button>
-                        </ion-item>
+                        
                 </div>
                 <div *ngIf="x==1">
                     <span class="container"  text-center>
+                        
                         <button ion-button class="round" icon-left id = "hot" (click)="hotClicked()" >
                             <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
                             נקודה חמה
@@ -80,6 +74,16 @@
                             <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
                                 נקודה קרה
                             </button>
+                           
+                            
                     </span>
+                    <span class="container"  text-center>
+                            <button ion-button icon-left id = "document" (click)="function()" >
+                                    <ion-icon ios="ios-document" md="md-document"></ion-icon>
+                                     שלח דו"ח
+                            </button>
+                    </span>
+                        
+                    
             </div>
   </ion-content>

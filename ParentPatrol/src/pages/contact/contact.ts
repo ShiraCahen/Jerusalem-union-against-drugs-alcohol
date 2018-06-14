@@ -23,14 +23,13 @@ export class ContactPage {
               false,false,false,false,false,false,false,false,false,false];  
   checked : boolean = false;
   place: string="";
-  violence:any;
-  vandalism: any;
-  drugss:any;
-  alcoholl:any;
-  police:any;
-  ambulance:any;
+  violence:boolean=false;
+  vandalism: boolean=false;
+  drugss:boolean=false;
+  alcoholl:boolean=false;
+  police:boolean=false;
+  ambulance:boolean=false;
   msg: String;
-  place;
   str: String = "";
   team: String ="";
   morePlaces: string="";
@@ -137,6 +136,7 @@ export class ContactPage {
     }
 
     let toSave= {
+      Place: this.place,
         Team: this.select,
         MyDate: this.navParams.get('myDate'),
         StartTime: this.navParams.get('startTime'),
@@ -144,7 +144,7 @@ export class ContactPage {
         TeamNumbe: this.navParams.get('teamNumber'),
         VolenteersName: this.navParams.get('volenteersName'),
         MorePlaces: this.morePlaces,
-        Description: this.description,
+        //Description: this.description,
         GroupNum: this.groupsNum,
         MembersInGroup: this.membersInGroup,
         AverageAge: this.averageAge,
@@ -153,29 +153,12 @@ export class ContactPage {
         Exeptions: this.exeptions,
         Handle: this.handle,
         Notes: this.notes,
-        One: this.selected[0],
-        Two: this.selected[1],
-        Three: this.selected[2],
-        Four: this.selected[3],
-        Five: this.selected[4],
-        Six: this.selected[5],
-        Seven: this.selected[6],
-        Eight: this.selected[7],
-        Nine: this.selected[8],
-        Ten: this.selected[9],
-        Eleven: this.selected[10],
-        Twelve: this.selected[11],
-        Thirteen: this.selected[12],
-        Fourteen: this.selected[13],
-        Fifteen: this.selected[14],
-        Sixteen: this.selected[15],
-        Seventeen: this.selected[16],
-        Eighteen: this.selected[17],
-        Nineteen:this.selected[18],
-        Twenty: this.selected[19],
-        TwentyOne: this.selected[20],
-        TwentyTwo: this.selected[21],
-        TwentyThree: this.selected[22]   
+        Police: this.police,
+        Drugs: this.drugss,
+        Alcohol: this.alcoholl,
+        Ambulance: this.ambulance,
+        Vandalism: this.vandalism,
+        Violence: this.violence 
     }
    
     this.sendEmail();

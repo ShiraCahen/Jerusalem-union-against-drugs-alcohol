@@ -15,6 +15,7 @@ import {locationItem} from '../../models/locationItem.interface'
 export class ColdPage {
   selected= [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
   home = HomePage;
+  place: string="";
   data = DataProvider;
   notes: String ="";
   msg;
@@ -70,30 +71,8 @@ export class ColdPage {
       EndTime: this.navParams.get('endTime'),
       TeamNumbe: this.navParams.get('teamNumber'),
       VolenteersName: this.navParams.get('volenteersName'),
+      Place:this.place,
       Notes: this.notes,
-      One: this.selected[0],
-      Two: this.selected[1],
-      Three: this.selected[2],
-      Four: this.selected[3],
-      Five: this.selected[4],
-      Six: this.selected[5],
-      Seven: this.selected[6],
-      Eight: this.selected[7],
-      Nine: this.selected[8],
-      Ten: this.selected[9],
-      Eleven: this.selected[10],
-      Twelve: this.selected[11],
-      Thirteen: this.selected[12],
-      Fourteen: this.selected[13],
-      Fifteen: this.selected[14],
-      Sixteen: this.selected[15],
-      Seventeen: this.selected[16],
-      Eighteen: this.selected[17],
-      Nineteen:this.selected[18],
-      Twenty: this.selected[19],
-      TwentyOne: this.selected[20],
-      TwentyTwo: this.selected[21],
-      TwentyThree: this.selected[22]   
     }
     this.presentAlert();
     return this.db.collection('ColdSpot').add(toSave);

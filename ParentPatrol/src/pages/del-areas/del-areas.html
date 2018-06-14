@@ -1,24 +1,16 @@
-<!--
-  Generated template for the AddAreasPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
     <ion-navbar>
-      <ion-title>מחיקה</ion-title>
+      <ion-title>הסרת סיירות וגנים</ion-title>
     </ion-navbar>
-  
   </ion-header>
   
   
   
-  <ion-content padding text-right class="bg-color">
+  <ion-content padding text-right class="bg-img">
     
       
       <ion-item text-center class="text">
-        -מחיקת סיירת-
+       הסרת סיירת
       </ion-item>
      <ion-item>
             <ion-label text-right>סיירת:</ion-label>
@@ -28,16 +20,15 @@
             </ion-option>
           </ion-select>
         </ion-item>           
-      <ion-item>
-          <button type="button" (click)="deleteDoc()" ion-button full >מחק סיירת</button>
-      </ion-item>
+          <button type="button" (click)="deleteDoc()" ion-button full >הסר סיירת</button>
+
   
       <ion-item text-center class="text">
-        -מחיקת גן מסיירת-
+        הסרת גן מסיירת
       </ion-item>
-      <ion-item text-center class="text" class="a">
+      <p text-center class="text" class="a">
          **אפשרות המחיקה תפתח לאחר בחירת סיירת
-        </ion-item>
+        </p>
       <ion-list>
           <ion-item>
             <ion-label text-right>סיירת:</ion-label>
@@ -60,7 +51,7 @@
               </ion-select>
             </ion-item>
             <ion-item>
-                <button type="button" (click)="deleteLoc()" ion-button full >מחק גן</button>
+                <button type="button" (click)="deleteLoc()" ion-button full >הסר גן</button>
             </ion-item>
         </div>
     

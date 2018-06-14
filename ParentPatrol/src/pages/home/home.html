@@ -1,13 +1,17 @@
-<ion-header>
+<ion-header transpert>
   <ion-navbar>
       <div *ngIf="browserSize == 'desktop-card'">
           <ion-title> 
-              <h1  class="textStyle1">סיירות הורים</h1>
+              <h1  class="textStyle1"> סיירות הורים ירושלים</h1>
           </ion-title>
       </div>
       <div *ngIf="browserSize == 'mobile-card'">
           <ion-title> 
-              <h1 class="textStyle2">סיירות הורים</h1>
+              <h1 class="textStyle2" text-center > 
+                  סיירות הורים
+                  <br>
+                   ירושלים
+                </h1>
           </ion-title>
       </div>
   </ion-navbar>
@@ -17,7 +21,7 @@
   
         <span class="container">
           <button ion-button class="round" icon-left id = "hot" [navPush]="detail">
-          <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
+            <ion-icon ios="ios-leaf" md="md-leaf"></ion-icon>
                ד"וח סיור
           </button>
          
@@ -32,22 +36,20 @@
         <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
       הוספת משתמש
     </button>
- 
-    <p>
       
     <button *ngIf = "userKind != 'team'" class = "a" ion-button icon-left [navPush]="about">
       <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
         צפייה בדו"חות
     </button>
     
-    <button *ngIf = "userKind != 'team'" class = "a" ion-button icon-left [navPush]="locations">
-        <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
+    <button *ngIf = "userKind == 'admin'" class = "a" ion-button icon-left [navPush]="locations">
+        <ion-icon ios="ios-folder-open" md="md-folder-open"></ion-icon>
          ניהול
     </button>
     
     <div *ngIf=" isCordova == 1">
       <button class = "a" ion-button icon-left [navPush]="counter">
-        <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
+        <ion-icon ios="ios-walk" md="md-walk"></ion-icon>
           סופר צעדים
     </button>
     </div>

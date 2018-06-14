@@ -4,75 +4,12 @@ page-locations{
         opacity: 0.6;
         //background-color: #2177c7;
     }
-    .titel
+    .title
     {
-        font-size: 30px;
+        text-align: center;
+        font-size: 25px;
     }
-    
-    
-        .gallery {
-            -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-        }
-       
-        h1{
-            text-align: center;
-            font-weight: bold;
-            padding-bottom: 10px;
-            color: #004381;
-            font-family: Segoe UI;
-            text-shadow: 1px 1px 1px grey; 
-            margin-left:18%;
-        }
-        .textStyle1{
-            margin-left:5.5%;
-            font-size: 40px;
-        }
-        .textStyle2{
-            margin-left:18%;
-            font-size: 30px;
-        }
         
-        .round {
-            text-align: center;
-            color: rgb(0, 0, 0);
-            border-radius: 30%;
-            height: 100px;
-            width: 110px;
-            font-size: 17px;
-            font-family: "David", Times, serif;
-            margin-right:4%;
-            margin-left:4%;
-        }
-    
-        #hot {
-            background-color:rgb(253, 124, 124);
-        }
-    
-        #hot:hover {
-            background-color:rgb(184, 178, 178);
-            color:rgb(253, 124, 124);;
-        }
-    
-        #cold {
-            background-color:rgb(157, 196, 255);
-    
-        }
-    
-        #cold:hover {
-            background-color:rgb(184, 178, 178);
-            color:rgb(157, 196, 255);
-        }
-    
-        #moadonit {
-            background-color:rgb(111, 255, 142);
-        }
-    
-        #moadonit:hover {
-            background-color:rgb(184, 178, 178);
-            color: rgb(111, 255, 142);
-        }
-    
         .a {
             margin-left: auto;
             margin-right: auto;
@@ -99,35 +36,5 @@ page-locations{
             border: 1px solid gray !important;
             border-radius: 5px !important;
         }
-        .desktop-card{
-       
-            width: 35% !important;
-            display: block !important;
-            margin: auto; 
-        }
-        .mobile-card{
-            display: block !important;      
-            width: 100%  !important;
-            margin: auto;  
-        }
-    
-        .hide {
-            display: none;
-        }
-        .container {
-            display: flex;
-            justify-content: center;
-          }
-    
-    .logOut{
-        border-radius: 10%;
-        background-color: rgb(161, 18, 18);
-        margin: auto;
-        font-size: 13px;
-        
-    }
-    .logOut:hover{
-        background-color: rgb(255, 255, 255)!important;
-        color:  rgb(161, 18, 18) !important;
-    }
+
     }

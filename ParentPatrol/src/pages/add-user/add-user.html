@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-right>
+    <ion-title>
      הוספת משתמש
     </ion-title>
   </ion-navbar>
@@ -10,11 +10,11 @@
 </ion-header>
 
 
-<ion-content padding class="bg-color">
+<ion-content padding class="bg-img">
 
-  <ion-item text-center class="text">
+  <p text-center class="text">
     *השדות המסומנים בכוכבית הינם שדות חובה
-  </ion-item>
+  </p>
 
   <ion-list>
 
@@ -35,10 +35,9 @@
       <ion-input type="number"></ion-input>
     </ion-item>
 
-    
     <ion-item>
       <ion-label color="white">תעודת זהות: </ion-label>
-      <ion-input type="number" [(ngModel)] = "profile.id" placeholder="תעודת זהות"></ion-input>
+      <ion-input type="number" [(ngModel)] = "profile.id"></ion-input>
     </ion-item>
   
     <ion-item text-right>

@@ -2,19 +2,21 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-right>
-      דו"ח סיור נקודה קרה
+    <ion-title>
+      דו"ח סיור
+      <br>
+      נקודה קרה
     </ion-title>
   </ion-navbar>
 
 </ion-header>
-<ion-content padding class="bg-color">
+<ion-content padding class="bg-img">
   <ion-grid  text-wrap>
       <ion-row>
          <ion-col>
             <ion-list radio-group [(ngModel)]="place" >
                 <ion-list-header>
-                    נא לבחור את איזור הסיור שלך:
+                   אנא סמן את הנקודה הקרה:
                 </ion-list-header>
                 <ion-item *ngFor="let key of keys; let i = index" >
                     <ion-label text-right> {{key}} </ion-label>

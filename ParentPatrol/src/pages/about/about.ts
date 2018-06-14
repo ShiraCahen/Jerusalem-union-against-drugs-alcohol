@@ -4,6 +4,11 @@ import { DataProvider } from '../../providers/data/data';
 import firebase from 'firebase';
 import { AngularFireObject, AngularFireList } from "angularfire2/database"
 import { AngularFirestore } from 'angularfire2/firestore';
+import { LocationsProvider } from '../../providers/locations/locations';
+import {locationItem} from '../../models/locationItem.interface'
+import * as moment from 'moment';
+//import { Clipboard } from '@ionic-native/clipboard';
+import { AlertController,Platform } from 'ionic-angular';
 
 
 @Component({
@@ -20,8 +25,11 @@ export class AboutPage {
   hotSpotData:any[] = [];
   coldSpotData:any[] = [];
   d: string;
+  startDate;
+  endDate;
+  jsonStr="";
 
-  constructor(public navCtrl: NavController,private afDatabase : AngularFirestore,private loading: LoadingController) {
+  constructor(private platform:Platform,private alertCtrl:AlertController,public navCtrl: NavController,private afDatabase : AngularFirestore,private loading: LoadingController, private lp:LocationsProvider) {
     const firestore = firebase.firestore();
     const settings = {timestampsInSnapshots: true};
     firestore.settings(settings);
@@ -51,9 +59,48 @@ export class AboutPage {
 
 }
 
+
   
+async dataJson(){
+  this.jsonStr="";
+  var a = moment(this.startDate);
+  var b = moment(this.endDate);
+  let load = this.loading.create();
+  load.present()
+  for (var m = moment(a); m.isSameOrBefore(b); m.add(1,'days')) {
+    let successData = await this.lp.dataJson(m.format('YYYY-MM-DD'));
+     this.lp.dataJson(m.format('YYYY-MM-DD')).then(res =>{
+      this.jsonStr=this.jsonStr+res;
+    }).catch(err=>{
+      console.log("Error")
+      load.dismiss()
+    })
+    
+  }
 
-   
-   
+  load.dismiss()
 
+  }
+
+  
+ 
 }
+
+
+
+
+/*
+  if(this.platform.is('core')){ 
+    console.log("this json"+this.jsonStr);
+   // Clipboard.copy("bla");
+  }
+  else{
+    /*
+    this.clipboard.copy(this.jsonStr)
+    let alert = this.alertCtrl.create({
+      title: '',
+      subTitle: 'הועתק',
+      buttons: ['אישור']
+    });
+    alert.present();
+    */

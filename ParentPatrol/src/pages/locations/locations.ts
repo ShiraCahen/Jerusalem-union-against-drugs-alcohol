@@ -4,12 +4,6 @@ import { LocationsProvider } from '../../providers/locations/locations';
 import {locationItem} from '../../models/locationItem.interface'
 import {AddAreasPage} from '../add-areas/add-areas';
 import {DelAreasPage} from '../del-areas/del-areas';
-/**
- * Generated class for the LocationsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -38,7 +32,6 @@ export class LocationsPage {
    this.lp.deleteLoc(this.locName,this.subLocName);
   }
 
-
   printList(){
     let load = this.loading.create();
     load.present()
@@ -50,5 +43,4 @@ export class LocationsPage {
       load.dismiss()
     })
   }
-  
 }

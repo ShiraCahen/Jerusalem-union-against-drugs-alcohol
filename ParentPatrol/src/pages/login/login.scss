@@ -24,10 +24,11 @@ h1{
     margin-left: auto;
     margin-right: auto;
     display: block !important;   
-    box-shadow: 4px 4px rgb(197, 197, 197);
-    border: 1px solid rgb(197, 197, 197);
-    opacity: 0.75;  
+    box-shadow: 4px 4px rgb(148, 148, 148);
+    border: 1px solid rgb(145, 145, 145);
+    //opacity: 0.75;  
     background-color: wheat;
+    color: black !important;
 }
 
 .list2{
@@ -38,10 +39,11 @@ h1{
     margin-left: auto;
     margin-right: auto;
     display: block !important;   
-    box-shadow: 4px 4px rgb(197, 197, 197);
-    border: 1px solid rgb(197, 197, 197);
-    opacity: 0.75;  
+    //box-shadow: 4px 4px rgb(94, 94, 94);
+    border: 1px solid rgb(209, 209, 209);
+   // opacity: 0.75;  
     background-color: wheat;
+    color: black !important;
 }
 
 .button {
@@ -72,7 +74,7 @@ h1{
 p{
     margin-top: 2%;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif; 
     font-size: 17px;
 }

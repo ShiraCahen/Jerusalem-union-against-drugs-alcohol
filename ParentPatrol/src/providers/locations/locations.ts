@@ -3,12 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import {locationItem} from '../../models/locationItem.interface'
 import * as firebase from 'firebase';
-/*
-  Generated class for the LocationsProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 
 @Injectable()
 export class LocationsProvider {
@@ -16,8 +11,6 @@ export class LocationsProvider {
   locListRef: AngularFirestoreCollection<any>;
   locRef;
   objData;
-  
- 
   obj;
   db = firebase.firestore();
   
@@ -95,11 +88,51 @@ export class LocationsProvider {
             resolve(err);
           });
     }) 
-        
+     
   
   }
   
+
+  dataJson(date):Promise<any>{
+    let jsonArr="";
+    return new Promise<any>((resolve, reject) => {
+      this.db.collection("HotSpot").where("MyDate", "==",date)
+          .get()
+          .then(function(querySnapshot) {
+              querySnapshot.forEach(function(doc) {
+                jsonArr=jsonArr+JSON.stringify(doc.data())+ '\r\n';
+              });
+              resolve(jsonArr);
+          })
+          .catch(function(error) {
+              console.log("Error getting documents: ", error);
+              resolve(error);
+          });
+    })  
+         
+       
+        
+        
+       
+  }
+
 }
+/*
+  ConvertToCSV = function(objArray) {
+      var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
+      var str = '';
+        for (var i = 0; i < array.length; i++) {
+          var line = '';
+        for (var index in array[i]) {
+            if (line != '') line += ','
+            line += array[i][index];
+        }
+          str += line + '\r\n';
+      }
+      return str;
+    }
+    */
+
 /* LIST OF DOCS
 getList(locName: string):Promise<any>{
       var citiesRef = this.db.collection('Locations');

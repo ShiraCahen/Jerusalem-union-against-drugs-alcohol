@@ -59,7 +59,7 @@ export class DetailPage {
         this.x=1;
         
       }
-      //console.log(this.lp.objData)
+      console.log(this.lp.objData)
 }
 
   ionViewDidLoad() {
@@ -141,16 +141,18 @@ rem(){
   this.x=1;
   this.lp.saveData(this.dataObj);
 }
-
+function() {
+  
+}
 delrem(){
   this.x=0;
 }
 
 checking(){
-  if( this.rates==undefined||this.myDate==undefined||this.teamNumber==undefined||this.volenteersName==undefined){
+  if( this.rates==undefined||this.myDate==undefined){
     let alert = this.alertCtrl.create({
       title: 'שגיאה',
-      subTitle: 'נא למלא את כל הפרטים המסומנים בכוכבית',
+      subTitle: 'נא למלא תאריך ושכונה',
       buttons: ['אישור']
     });
     alert.present();

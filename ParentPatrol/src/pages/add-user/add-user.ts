@@ -45,7 +45,7 @@ export class AddUserPage {
     if(user.email==undefined || user.password==undefined || !re.test(user.email)){
       let alert = this.alertCtrl.create({
         title: 'שגיאה',
-        subTitle: 'נא להזין אימייל תקין וסיסמה',
+        subTitle: 'נא להזין אימייל תקין וסיסמא',
         buttons: ['אישור']
       });
       alert.present();

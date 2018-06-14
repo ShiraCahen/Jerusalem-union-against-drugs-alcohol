@@ -7,13 +7,18 @@ page-detail{
     .title{
         text-align: center;
     }
-    h1{
-        text-align: center;
-        font-weight: bold;
-        font-family: Arial, Helvetica, sans-serif;
-        text-shadow: 3px 3px 3px rgb(187, 187, 187);
-        color: rgb(28, 56, 107);
-        align-items: center;
+    ion-header {
+        .toolbar-background {
+          background: transparent;
+        }
+        .toolbar-title {
+            font-weight: bold;
+            color: rgb(28, 56, 107);
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-shadow: 2px 2px 2px rgb(187, 187, 187);
+            padding-bottom: 10px;
+          }
     }
     h2{
         color: white;
@@ -33,7 +38,7 @@ page-detail{
         justify-content: center;
       }
     .item{
-        background-color: rgb(149, 168, 182) !important; 
+        background-color: rgba(255, 255, 255, 0.096)!important; 
         color:rgb(0, 0, 0) !important;
     }
 
@@ -58,7 +63,7 @@ page-detail{
     }
 
     .a{
-        font-size:13px;
+        font-size:15px;
     }
     #hot:hover {
         background-color:rgb(184, 178, 178);

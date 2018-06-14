@@ -30,6 +30,10 @@ import { LocationsProvider } from '../providers/locations/locations';
 import {LocationsPage} from '../pages/locations/locations';
 import {AddAreasPage} from '../pages/add-areas/add-areas';
 import {DelAreasPage} from '../pages/del-areas/del-areas';
+import { isMoment } from 'moment';
+//import { Clipboard } from '@ionic-native/clipboard';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -79,7 +83,7 @@ import {DelAreasPage} from '../pages/del-areas/del-areas';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider,
     DataProvider,
-    Pedometer,
+    Pedometer,    
     SettingsProvider,
     LocationsProvider,
   ]

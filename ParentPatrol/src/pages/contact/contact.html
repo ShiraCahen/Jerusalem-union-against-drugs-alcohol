@@ -3,20 +3,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-right>
-     דו"ח סיור נקודה חמה
+    <ion-title>
+     דו"ח סיור 
+     <br>
+     נקודה חמה
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="bg-color">
+<ion-content padding class="bg-img">
   
   <ion-grid  text-wrap>
       <ion-row>
          <ion-col>
           <ion-list radio-group [(ngModel)]="place" >
                 <ion-list-header>
-                    אנא בחר את הסיירת שלך:
+                  אנא סמן את הנקודה החמה:
                 </ion-list-header>
                 <ion-item *ngFor="let key of keys; let i = index" >
                     <ion-label text-right> {{key}} </ion-label>
@@ -31,7 +33,7 @@
               </ion-item>
              
               <ion-item>   
-                  <ion-label color="white" text-right>	מספר חבורות שנצפו</ion-label>        
+                  <ion-label color="white" text-right>מספר חבורות שנצפו</ion-label>        
                     <ion-input [(ngModel)]="groupsNum" type="number" ></ion-input>
               </ion-item>
 
@@ -96,14 +98,10 @@
                   </ion-label>          
                     <ion-input  type="text" [(ngModel)]="exeptions"></ion-input>
               </ion-item>
-
-
-
               <ion-item>    
-                  <ion-label color="white">פרטי הנער/ה ליצירת קשר או להעברה הלאה לגורמי טיפול </ion-label>       
+                  <ion-label floating color="white" text-right>פרטי הנער/ה, ליצירת קשר או להעברה הלאה לגורמי טיפול </ion-label>       
                     <ion-input type="text" [(ngModel)]="details"></ion-input>
-              </ion-item>
-
+               </ion-item>
               <ion-item>    
                 <ion-label color="white">דרכי טיפול</ion-label>       
                   <ion-input  type="text" [(ngModel)]="handle"></ion-input>
