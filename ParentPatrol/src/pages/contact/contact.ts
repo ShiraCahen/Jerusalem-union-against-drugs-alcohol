@@ -10,6 +10,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { LocationsProvider } from '../../providers/locations/locations';
 import {locationItem} from '../../models/locationItem.interface'
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-contact',
@@ -29,7 +30,7 @@ export class ContactPage {
   alcoholl:boolean=false;
   police:boolean=false;
   ambulance:boolean=false;
-  msg: String;
+  msg: String="";
   str: String = "";
   team: String ="";
   morePlaces: string="";
@@ -47,11 +48,14 @@ export class ContactPage {
   insidePlaces: string[];
   keys: any[] = [];
   currentImage =null;
-  constructor(public navCtrl: NavController,private alertCtrl: AlertController, 
-              public emailComposer:EmailComposer,
-              private camera : Camera,
-              private db:AngularFirestore,public navParams: NavParams,
-              private afs: AngularFirestore, private loading: LoadingController, private lp:LocationsProvider) {
+  constructor(public navCtrl: NavController,
+              private alertCtrl: AlertController,             
+              private storage: Storage,
+              private db:AngularFirestore,
+              public navParams: NavParams,
+              private afs: AngularFirestore,
+               private loading: LoadingController, 
+               private lp:LocationsProvider) {
               this.select = navParams.get('data');
                 const settings = { timestampsInSnapshots: true };
                 afs.firestore.settings(settings);
@@ -84,34 +88,7 @@ export class ContactPage {
     })
   }
 
-  /*makeMessage() {
-      for(var i = 0 ; i < this.postsProvider.posts.length ; i++) {
-        if(this.selected[i] == true) {
-            this.str +="\r\n"+ this.postsProvider.posts[i].title;
-        }
-      }
-      this.msg = "דוח נקודה חמה \r\n צוות: " + this.team + " \r\n שמות המתנדבים: " + this.volenteersName
-      + "\r\n תאריך: " + this.myDate + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
-      + "\r\n במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
-      + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
-      + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes;
-      //console.log(this.msg);
-      return this.msg;
-    }
-  send() {
-  //  this.str= this.makeMessage();
-    console.log (this.str);
-    
-    let email = {
-      to: "parentspatroljer@gmail.com",
-      subject: "",
-      body:"" + this.str,
-      isHtml: true,
-      app:"Gmail"
-  }
-  this.emailComposer.open(email);
-  console.log ("heeeeeeeeyyyyyyy");
-}*/
+
 
   updateState(i) {
     console.log('Cucumbers new state:' + this.selected[i] +" "+i);
@@ -160,10 +137,20 @@ export class ContactPage {
         Vandalism: this.vandalism,
         Violence: this.violence 
     }
+    this.storage.get('mail').then((val) =>{
+      if(val != null){
+        this.msg+=val;         
+      }
+      else{
+      console.log(" nul"+ this.msg);
+      }
+      this.sendEmail();
+     
+      this.storage.set('mail',this.msg);
+       this.presentAlert();
+       return this.db.collection('HotSpot').add(toSave);
+    });
    
-    this.sendEmail();
-    this.presentAlert();
-    return this.db.collection('HotSpot').add(toSave);
     
 }
 
@@ -182,40 +169,22 @@ presentAlert() {
   });
   alert.present();
 }
-captureImage(){
-  const option: CameraOptions ={
-    sourceType: this.camera.PictureSourceType.CAMERA,
-    destinationType: this.camera.DestinationType.FILE_URI
-  }
-  this.camera.getPicture(option).then((imageData) => {
- 
-    this.currentImage= imageData;
-  },err =>{
-    console.log('Image error:',err);
-  });
-}
+
 sendEmail() {
  
-  this.msg = "דוח נקודה חמה \r\n צוות: " + this.team 
-  + " \r\n שמות המתנדבים: " + this.navParams.get('volenteersName')
-  + "\r\n תאריך: " + this.navParams.get('myDate') 
-  + "\r\n מיקום: "+this.str+ "\r\n תיאור כללי: " + this.description 
+  this.msg += "דוח נקודה חמה  " + this.place
+  +"\r\nמקומות נוספים שביקרו בהם"+this.morePlaces
   + "\r\n במידה והייתה היתקלות עם אלכוהול - כמה? " + this.alcohol
-  + "\r\n במידה והייתה היתקלות עם סמים - כמה? " + this.drugs
-  + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
-  + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes;
-  let email = {
-    to: 'parentspatroljer@gmail.com',
-    cc: '',
-    attachments: [
-      this.currentImage
-    ],
-    subject: 'Test',
-    body: this.msg+ '' ,
-    isHtml: true
-  };
+  + "\r\n במידה והייתה היתקלות עם סמים - כמה? " + this.drugs 
+  + "\r\n אירועים חריגים: " ;
+  if(this.vandalism==true){this.msg+="ונדליזם \r\n"}
+  if(this.drugss==true){this.msg+="סמים \r\n"}
+  if(this.alcoholl==true){this.msg+="אלכוהול \r\n"}
+  if(this.police==true){this.msg+="משטרה \r\n"}
+  if(this.ambulance==true){this.msg+="אמבולנס \r\n"}
+  this.msg+="\r\nפירוט : " +this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
+  + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes+"\r\n\r\n";
 
-  this.emailComposer.open(email);
 }
 
 

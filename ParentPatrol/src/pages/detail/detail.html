@@ -55,7 +55,7 @@
                             <button type="button" (click)="rem()" ion-button full text-right>שמור פרטי סיור</button>
                     
                     <p text-center class="text" class="a">
-                           ** לאחר השמירה תפתחנה אופציות נק' חמה וקרה **
+                           ** לאחר השמירה תפתחנה אופציות לבחירת נקודה חמה וקרה **
                     </p>
                 </div>
                 <div *ngIf="x!=0">
@@ -77,12 +77,20 @@
                            
                             
                     </span>
-                    <span class="container"  text-center>
-                            <button ion-button icon-left id = "document" (click)="function()" >
+                  
+                            <button ion-button full  id = "document" (click)="captureImage()" >הוסף תמונה</button>
+                           
+                            <button ion-button full icon-left id = "document" (click)="function()" >
                                     <ion-icon ios="ios-document" md="md-document"></ion-icon>
-                                     שלח דו"ח
+                                     שלח דו"ח סופי
                             </button>
-                    </span>
+                            <ion-card>
+                                    <ion-card-header>תמונה:</ion-card-header>
+                                    <ion-card-content>
+                                        <img [src]="currentImage" *ngIf="currentImage"/>
+                                    </ion-card-content>
+                            </ion-card>  
+                       
                         
                     
             </div>

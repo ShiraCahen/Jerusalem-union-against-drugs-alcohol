@@ -10,7 +10,10 @@ import { AlertController,Platform  } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { IonicPage,LoadingController  } from 'ionic-angular';
 import { LocationsProvider } from '../../providers/locations/locations';
-import {locationItem} from '../../models/locationItem.interface'
+import {locationItem} from '../../models/locationItem.interface';
+import { Storage } from '@ionic/storage';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
 
 @Component({
   selector: 'page-detail',
@@ -32,13 +35,22 @@ export class DetailPage {
   volenteersName:String="";
   str:string;
   rates:string;
+  mail:string;
   browserSize;
   keys: any[] = []
   x=0;
   dataObj: Object;
-  constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, private lp:LocationsProvider,
-               private dataProvider:DataProvider,private alertCtrl: AlertController,private loading:LoadingController,
-              private db:AngularFireDatabase, public platform: Platform,public emailComposer:EmailComposer) {
+  currentImage =null;
+  constructor(public navCtrl: NavController, 
+              private storage:Storage,
+              public postsProvider: ReproviderProvider,
+               private lp:LocationsProvider,
+               private dataProvider:DataProvider,
+               private alertCtrl: AlertController,
+               private loading:LoadingController,
+              private db:AngularFireDatabase,
+              private camera : Camera,
+               public platform: Platform,public emailComposer:EmailComposer) {
 
       if(this.platform.is('core')){ 
         this.browserSize = "desktop-card"
@@ -79,6 +91,19 @@ export class DetailPage {
   console.log(this.dataObj)
   this.navCtrl.push(ContactPage,this.dataObj);
  }
+ 
+captureImage(){
+  const option: CameraOptions ={
+    sourceType: this.camera.PictureSourceType.CAMERA,
+    destinationType: this.camera.DestinationType.FILE_URI
+  }
+  this.camera.getPicture(option).then((imageData) => {
+ 
+    this.currentImage= imageData;
+  },err =>{
+    console.log('Image error:',err);
+  });
+}
 coldClicked() {
  
   if(this.x==1){
@@ -88,39 +113,17 @@ coldClicked() {
 
   this.navCtrl.push(ColdPage,this.dataObj);
 }
-/*  storeInfoToDatabase(){
-    let toSave= {
-        Team: this.team,
-        MyDate: this.myDate,
-        StartTime: this.startTime,
-        EndTime: this.endTime,
-        TeamNumbe: this.teamNumber,
-
-        Notes: this.notes,
-        One: this.selected[0],
-        Two: this.selected[1],
-        Three: this.selected[2],
-        Four: this.selected[3],
-        Five: this.selected[4],
-        Six: this.selected[5],
-        Seven: this.selected[6],
-        Eight: this.selected[7],
-        Nine: this.selected[8],
-        Ten: this.selected[9],    
-    }
-
-    return this.db.list('details:').push(toSave);
-}*/
 
 sendEmail() {
+  console.log("in send mail"+this.mail);
   let email = {
     to: 'parentspatroljer@gmail.com',
     cc: '',
     attachments: [
-      //this.currentImage
+      this.currentImage
     ],
-    subject: 'Test',
-    body: 'testing',
+    subject: 'דו"ח סיור',
+    body: this.mail,
     isHtml: true
   };
 
@@ -139,10 +142,31 @@ rem(){
     volenteersName:this.volenteersName
   }
   this.x=1;
-  this.lp.saveData(this.dataObj);
+  this.lp.saveData(this.dataObj);  
+  this.mail="סיירת : "+this.rates+   "\r\nתאריך: "+this.myDate+"\r\n שעת התחלת הסיור: "+this.startTime+"\r\n שעת סיום הסיור: "+this.endTime+ "\r\n שמות משתתפי הסיור: "+this.volenteersName+"\r\n";
+
 }
-function() {
+function() {//when send file was pushed
+  this.storage.get('mail').then((val) =>{
+    if(val != null){
+      this.mail+=val;     
+    }
+    else{
+      let alert = this.alertCtrl.create({
+        title: 'שגיאה',
+        subTitle: 'נא למלא לפחות נקודה אחת',
+        buttons: ['אישור']
+      });
+      alert.present();
+    }
+
+    this.storage.set('mail',"");
+     this.sendEmail();   
+   
+  }); 
+ 
   
+
 }
 delrem(){
   this.x=0;

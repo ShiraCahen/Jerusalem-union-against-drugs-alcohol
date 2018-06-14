@@ -6,7 +6,7 @@ import { Profile } from '../../models/profile';
 import { AngularFireAuth } from "angularfire2/auth"
 import { isEmpty } from 'rxjs/operator/isEmpty';
 import { AngularFireDatabase, AngularFireObject } from "angularfire2/database"
-
+import { Storage } from '@ionic/storage';
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -23,7 +23,7 @@ export class LoginPage {
   profileDeta: AngularFireObject<Profile>
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams , public platform: Platform, private afAuth: AngularFireAuth, private alertCtrl: AlertController,private toastCtrl: ToastController,private afDatabase : AngularFireDatabase) {
+  constructor(private storage: Storage,public navCtrl: NavController, public navParams: NavParams , public platform: Platform, private afAuth: AngularFireAuth, private alertCtrl: AlertController,private toastCtrl: ToastController,private afDatabase : AngularFireDatabase) {
     if(this.platform.is('core')){ 
       //if it's from computer web browser, not a mobile web/native.
       this.browserSize = "desktop-card"
@@ -34,6 +34,7 @@ export class LoginPage {
   }
 
   async login(user1: User){
+    this.storage.set('mail',"");
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if(user1.email==undefined || user1.password==undefined || !re.test(user1.email) && user1.password==undefined ){
       let alert = this.alertCtrl.create({
