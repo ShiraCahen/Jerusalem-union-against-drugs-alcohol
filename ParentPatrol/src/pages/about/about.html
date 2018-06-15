@@ -12,9 +12,6 @@
             צפייה
           </button> 
 -->
-          
-        
-      
             <ion-item class="item"> 
                 <ion-label color="black" text-right >תאריך התחלה</ion-label>
                 <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="startDate" required></ion-datetime>
@@ -33,8 +30,11 @@
                         </button> 
                   </ion-col> 
               </ion-row>
-            <div class="data">
               
-              
-            </div>
+            <ion-item class="data" id="val"> 
+                <textarea class="texter" rows="5">
+                  {{jsonStr}}
+                </textarea>
+            </ion-item>
+
       </ion-content>

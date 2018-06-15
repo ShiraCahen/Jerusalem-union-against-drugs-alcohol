@@ -13,6 +13,7 @@ import { Pedometer } from '@ionic-native/pedometer';
 import {LocationsPage} from '../locations/locations';
 import { LoginPage } from '../login/login';
 
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

@@ -7,7 +7,8 @@ import { HomePage } from '../home/home';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { LocationsProvider } from '../../providers/locations/locations';
-import {locationItem} from '../../models/locationItem.interface'
+import {locationItem} from '../../models/locationItem.interface';
+import { Storage } from '@ionic/storage';
 @Component({
   selector: 'page-cold',
   templateUrl: 'cold.html',
@@ -18,13 +19,13 @@ export class ColdPage {
   place: string="";
   data = DataProvider;
   notes: String ="";
-  msg;
+  msg: String ="";
   select: any;
   insidePlaces: string[];
   keys: any[] = [];
   constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, 
               public navParams: NavParams,private alertCtrl: AlertController,private lp: LocationsProvider,
-              private db:AngularFirestore,public emailComposer:EmailComposer,private afs: AngularFirestore, private loading: LoadingController) {
+              private db:AngularFirestore,private storage: Storage,public emailComposer:EmailComposer,private afs: AngularFirestore, private loading: LoadingController) {
                 this.select = navParams.get('data');
                 console.log(this.select)
 
@@ -74,8 +75,26 @@ export class ColdPage {
       Place:this.place,
       Notes: this.notes,
     }
-    this.presentAlert();
-    return this.db.collection('ColdSpot').add(toSave);
+    this.storage.get('mail').then((val) =>{
+      if(val != null){
+        this.msg+=val;         
+      }
+      else{
+      console.log(" nul"+ this.msg);
+      }
+      this.sendEmail();
+     
+      this.storage.set('mail',this.msg);
+       this.presentAlert();
+       return this.db.collection('ColdSpot').add(toSave);
+    });
+
+    
+}
+sendEmail() { 
+  this.msg += "דוח נקודה קרה  " + this.place
+ "\r\n הערות: " + this.notes+"\r\n\r\n";
+
 }
 
 presentAlert() {
@@ -98,20 +117,6 @@ presentAlert() {
 
 
 
-sendEmail() {
-  this.msg = "הערות: " + this.notes;
-  let email = {
-    to: 'parentspatroljer@gmail.com',
-    cc: '',
-    attachments: [
-      //this.currentImage
-    ],
-    subject: 'Test',
-    body: this.msg+ '' ,
-    isHtml: true
-  };
 
-  this.emailComposer.open(email);
-}
 
 }

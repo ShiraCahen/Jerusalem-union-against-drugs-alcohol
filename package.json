@@ -21,6 +21,7 @@
     "@ionic-native/firebase": "^4.7.0",
     "angularfire2": "^5.0.0-rc.6",
     "firebase": "^5.0.4",
+    "moment": "^2.22.2",
     "promise-polyfill": "^7.1.2"
   }
 }

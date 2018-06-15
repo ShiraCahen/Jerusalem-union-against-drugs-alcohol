@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { IonicStorageModule } from "@ionic/storage";
 import { AngularFireModule } from "angularfire2"
 import { AngularFireDatabaseModule } from "angularfire2/database"
 import { AngularFireStorageModule } from "angularfire2/storage"
@@ -30,6 +31,10 @@ import { LocationsProvider } from '../providers/locations/locations';
 import {LocationsPage} from '../pages/locations/locations';
 import {AddAreasPage} from '../pages/add-areas/add-areas';
 import {DelAreasPage} from '../pages/del-areas/del-areas';
+import { isMoment } from 'moment';
+import { Storage } from '@ionic/storage';
+//import { Clipboard } from '@ionic-native/clipboard';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +61,7 @@ import {DelAreasPage} from '../pages/del-areas/del-areas';
     AddUserPageModule,
     LoginPageModule,
     MoadonitPageModule,
+    IonicStorageModule.forRoot()
 
   ],
   bootstrap: [IonicApp],
@@ -80,10 +86,9 @@ import {DelAreasPage} from '../pages/del-areas/del-areas';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ReproviderProvider,
     DataProvider,
-    Pedometer,
+    Pedometer,    
     SettingsProvider,
     LocationsProvider,
-
   ]
 })
 export class AppModule {}
