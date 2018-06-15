@@ -4,6 +4,7 @@ import { AlertController } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { Storage } from '@ionic/storage';
 
 
 @IonicPage()
@@ -28,38 +29,18 @@ export class MoadonitPage {
   notes: String ="";
   msg: String;
   team:String ="";
+  kind: string="moadonit";
   currentImage =null;
 
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private db:AngularFirestore,public emailComposer:EmailComposer) {
+  constructor(private storage: Storage,public navCtrl: NavController, private alertCtrl: AlertController, private db:AngularFirestore,public emailComposer:EmailComposer) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MoadonitPage');
   }
 
-  storeInfoToDatabase(){
-    let toSave= {
-      Team: this.team,
-        MyDate: this.myDate,
-        StartTime: this.startTime,
-        EndTime: this.endTime,
-        TeamNumbe: this.teamNumber,
-        VolenteersName: this.volenteersName,
-        NumOfYoungsters: this.numOfYoungsters,
-        AverageAge: this.averageAge,
-        AlcoholOrDrugs: this.alcoholOrDrugs,
-        Exeptions: this.exeptions,
-        YoungsterName: this.youngsterName,
-        Handle: this.handle,
-        Notes: this.notes,
-        Dilemmas: this.dilemmas,
-    }
+  captureImage(){}
 
-    this.presentAlert();
-    
-    return this.db.collection('Moadonit').add(toSave);
-  
-}
   presentAlert() {
     let alert = this.alertCtrl.create({
       title: 'דוח מועדונית',
@@ -96,4 +77,40 @@ sendEmail() {
 
   this.emailComposer.open(email);
 }
+
+  storeInfoToDatabase(){
+    let toSave= {
+      Team: this.team,
+        MyDate: this.myDate,
+        StartTime: this.startTime,
+        EndTime: this.endTime,
+        TeamNumbe: this.teamNumber,
+        VolenteersName: this.volenteersName,
+        NumOfYoungsters: this.numOfYoungsters,
+        AverageAge: this.averageAge,
+        AlcoholOrDrugs: this.alcoholOrDrugs,
+        Exeptions: this.exeptions,
+        YoungsterName: this.youngsterName,
+        Handle: this.handle,
+        Notes: this.notes,
+        Dilemmas: this.dilemmas,
+        Kind:this.kind
+    }
+
+    this.storage.get('mail').then((val) =>{
+      if(val != null){
+        this.msg+=val;         
+      }
+      else{
+      console.log(" nul"+ this.msg);
+      }
+      this.sendEmail();
+     
+      this.storage.set('mail',this.msg);
+       this.presentAlert();
+       return this.db.collection('Reports').add(toSave);
+    });
+  
+}
+
 }

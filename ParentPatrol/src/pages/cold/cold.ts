@@ -21,6 +21,7 @@ export class ColdPage {
   notes: String ="";
   msg: String ="";
   select: any;
+  kind: string="cold spot";
   insidePlaces: string[];
   keys: any[] = [];
   constructor(public navCtrl: NavController, public postsProvider: ReproviderProvider, 
@@ -74,6 +75,7 @@ export class ColdPage {
       VolenteersName: this.navParams.get('volenteersName'),
       Place:this.place,
       Notes: this.notes,
+      Kind: this.kind
     }
     this.storage.get('mail').then((val) =>{
       if(val != null){
@@ -86,7 +88,7 @@ export class ColdPage {
      
       this.storage.set('mail',this.msg);
        this.presentAlert();
-       return this.db.collection('ColdSpot').add(toSave);
+       return this.db.collection('Reports').add(toSave);
     });
 
     
