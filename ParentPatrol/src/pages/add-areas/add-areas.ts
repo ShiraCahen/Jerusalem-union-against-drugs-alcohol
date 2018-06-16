@@ -40,6 +40,11 @@ export class AddAreasPage {
     })
   }
   addLoc(){
+   
+   if(this.strErr(this.locName)==1){
+     return
+   }
+
     let i=0,x=0;
     this.keys.forEach(key => {
         if(this.keys[i]===this.locName){
@@ -67,9 +72,18 @@ export class AddAreasPage {
     }
     this.lp.addLoc(this.locName);
     this.loadlist();
+    let alert = this.alertCtrl.create({
+      title: '',
+      subTitle: 'שכונה נוספה בהצלחה',
+      buttons: ['אישור']
+    });
+    alert.present();
   }
 
   addLocSub(){
+    if(this.strErr(this.subLocName)==1){
+      return
+    }
     if(this.locName===undefined || this.subLocName===undefined){
       let alert = this.alertCtrl.create({
         title: 'שגיאה',
@@ -80,6 +94,14 @@ export class AddAreasPage {
       return;
     }
     this.lp.addSubLocs(this.locName2,this.subLocName);
+    this.lp.addLoc(this.locName);
+    this.loadlist();
+    let alert = this.alertCtrl.create({
+      title: '',
+      subTitle: 'גן התווסף בהצלחה',
+      buttons: ['אישור']
+    });
+    alert.present();
   }
 
   deleteLoc(){
@@ -97,5 +119,22 @@ export class AddAreasPage {
     }).catch(err => {
       load.dismiss()
     })
+  }
+
+  strErr(name){
+    if(name.indexOf('*') >-1 ||
+    name.indexOf('~') > -1 ||
+    name.indexOf('/') > -1 ||
+    name.indexOf('[') >-1 ||
+    name.indexOf(']') >-1 ){
+      let alert = this.alertCtrl.create({
+        title: 'שגיאה',
+        subTitle: 'שגיאה, תווים לא חוקיים (*,~,/,],[)',
+        buttons: ['אישור']
+      });
+      alert.present();
+      return 1
+    }
+    return 0
   }
 }

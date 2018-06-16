@@ -33,6 +33,7 @@ import {AddAreasPage} from '../pages/add-areas/add-areas';
 import {DelAreasPage} from '../pages/del-areas/del-areas';
 import { isMoment } from 'moment';
 import { Storage } from '@ionic/storage';
+import firebase from 'firebase/app'
 //import { Clipboard } from '@ionic-native/clipboard';
 
 

@@ -77,11 +77,11 @@ export class DetailPage {
   ionViewDidLoad() {
 
   }
-
+/*
   updateState(i) {
     console.log('Cucumbers new state:' + this.selected[i] +" "+i);
   }
-
+*/
  hotClicked() {
  
   if(this.x==1){
@@ -131,8 +131,16 @@ sendEmail() {
 }
 
 rem(){
-  if(this.checking()==1)
-    return;
+  if( this.rates==undefined||this.myDate==undefined || this.myDate==""){
+    let alert = this.alertCtrl.create({
+      title: 'שגיאה',
+      subTitle: 'נא למלא תאריך ושכונה',
+      buttons: ['אישור']
+    });
+    alert.present();
+    return
+  }
+  
   this.dataObj={
     data: this.rates,
     myDate: this.myDate,
@@ -158,8 +166,9 @@ function() {//when send file was pushed
         buttons: ['אישור']
       });
       alert.present();
+      return;
     }
-
+    this.x=0;
     this.storage.set('mail',"");
      this.sendEmail();   
    
@@ -172,17 +181,5 @@ delrem(){
   this.x=0;
 }
 
-checking(){
-  if( this.rates==undefined||this.myDate==undefined){
-    let alert = this.alertCtrl.create({
-      title: 'שגיאה',
-      subTitle: 'נא למלא תאריך ושכונה',
-      buttons: ['אישור']
-    });
-    alert.present();
-    return 1;
-  }
-
-}
 
 }

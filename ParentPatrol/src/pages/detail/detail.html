@@ -64,34 +64,28 @@
                 </div>
                 <div *ngIf="x==1">
                     <span class="container"  text-center>
-                        
                         <button ion-button class="round" icon-left id = "hot" (click)="hotClicked()" >
                             <ion-icon ios="ios-flame" md="md-flame"></ion-icon>
                             נקודה חמה
                         </button>
-                    
                         <button ion-button class="round" icon-left id = "cold" (click)="coldClicked()">
                             <ion-icon ios="ios-snow" md="md-snow"></ion-icon>
                                 נקודה קרה
-                            </button>
-                           
-                            
+                        </button>    
                     </span>
                   
-                            <button ion-button full  id = "document" (click)="captureImage()" >הוסף תמונה</button>
-                           
-                            <button ion-button full icon-left id = "document" (click)="function()" >
-                                    <ion-icon ios="ios-document" md="md-document"></ion-icon>
-                                     שלח דו"ח סופי
-                            </button>
-                            <ion-card>
-                                    <ion-card-header>תמונה:</ion-card-header>
-                                    <ion-card-content>
-                                        <img [src]="currentImage" *ngIf="currentImage"/>
-                                    </ion-card-content>
-                            </ion-card>  
-                       
-                        
+                    <button ion-button full  id = "document" (click)="captureImage()" >הוסף תמונה</button>
+                
+                    <button ion-button full icon-left id = "document" (click)="function()" >
+                            <ion-icon ios="ios-document" md="md-document"></ion-icon>
+                            שלח דו"ח סופי
+                    </button>
+                    <ion-card>
+                            <ion-card-header>תמונה:</ion-card-header>
+                            <ion-card-content>
+                                <img [src]="currentImage" *ngIf="currentImage"/>
+                            </ion-card-content>
+                    </ion-card>         
                     
             </div>
   </ion-content>

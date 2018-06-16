@@ -79,6 +79,15 @@ sendEmail() {
 }
 
   storeInfoToDatabase(){
+    if(this.myDate==undefined || this.myDate==""|| this.team==undefined || this.team==""){
+      let alert = this.alertCtrl.create({
+        title: 'שגיאה',
+        subTitle: 'נא למלא תאריך וסיירת',
+        buttons: ['אישור']
+      });
+      alert.present();
+      return
+    }
     let toSave= {
       Team: this.team,
         MyDate: this.myDate,
