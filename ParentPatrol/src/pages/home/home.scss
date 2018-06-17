@@ -137,4 +137,39 @@ ion-header {
 .h{
     background-color: rgba(255, 255, 255, 0.103) !important;
 }
+
+
+
+.round2 {
+    text-align: center;
+    color: white;
+    border-radius: 30%;
+    height: 60px;
+    width: 70px;
+    font-size: 13px;
+    font-family: "David", Times, serif;
+    margin-right:1%;
+    margin-left:1%;
+}
+
+#police {
+    background-color:blue;
+}
+
+#police:hover {
+    background-color:rgb(184, 178, 178);
+    color:rgb(0, 81, 255);;
+}
+
+#ambulance{
+    background-color:red;
+
+}
+
+#ambulance:hover {
+    background-color:rgb(184, 178, 178);
+    color:rgb(255, 0, 0);
+}
+
+
 }
