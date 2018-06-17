@@ -163,6 +163,8 @@ function() {//when send file was pushed
     this.storage.set('mail',"");
      this.sendEmail();   
    
+  }).catch((error) => {
+    console.log('Promise error');
   }); 
  
   

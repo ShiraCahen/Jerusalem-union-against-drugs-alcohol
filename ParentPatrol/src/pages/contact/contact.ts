@@ -149,6 +149,8 @@ export class ContactPage {
       this.storage.set('mail',this.msg);
        this.presentAlert();
        return this.db.collection('HotSpot').add(toSave);
+    }) .catch((error) => {
+      console.log('Promise error');
     });
    
     
@@ -173,17 +175,17 @@ presentAlert() {
 sendEmail() {
  
   this.msg += "דוח נקודה חמה  " + this.place
-  +"\r\nמקומות נוספים שביקרו בהם"+this.morePlaces
-  + "\r\n במידה והייתה היתקלות עם אלכוהול - כמה? " + this.alcohol
-  + "\r\n במידה והייתה היתקלות עם סמים - כמה? " + this.drugs 
-  + "\r\n אירועים חריגים: " ;
-  if(this.vandalism==true){this.msg+="ונדליזם \r\n"}
-  if(this.drugss==true){this.msg+="סמים \r\n"}
-  if(this.alcoholl==true){this.msg+="אלכוהול \r\n"}
-  if(this.police==true){this.msg+="משטרה \r\n"}
-  if(this.ambulance==true){this.msg+="אמבולנס \r\n"}
-  this.msg+="\r\nפירוט : " +this.exeptions + "\r\n פרטי הנער או הנערה: " + this.details
-  + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes+"\r\n\r\n";
+  +"<br/>מקומות נוספים שביקרו בהם"+this.morePlaces
+  + "<br/> במידה והייתה היתקלות עם אלכוהול - כמה? " + this.alcohol
+  + "<br/> במידה והייתה היתקלות עם סמים - כמה? " + this.drugs 
+  + "<br/> אירועים חריגים: " ;
+  if(this.vandalism==true){this.msg+="ונדליזם <br/>"}
+  if(this.drugss==true){this.msg+="סמים <br/>"}
+  if(this.alcoholl==true){this.msg+="אלכוהול <br/>"}
+  if(this.police==true){this.msg+="משטרה <br/>"}
+  if(this.ambulance==true){this.msg+="אמבולנס <br/>"}
+  this.msg+="<br/>פירוט : " +this.exeptions + "<br/> פרטי הנער או הנערה: " + this.details
+  + "<br/> דרכי טיפול: " + this.handle + "<br/> הערות: " + this.notes+"<br/><br/>";
 
 }
 

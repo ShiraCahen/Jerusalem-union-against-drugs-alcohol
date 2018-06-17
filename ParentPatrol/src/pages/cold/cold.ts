@@ -93,7 +93,7 @@ export class ColdPage {
 }
 sendEmail() { 
   this.msg += "דוח נקודה קרה  " + this.place
- "\r\n הערות: " + this.notes+"\r\n\r\n";
+ "<br/> הערות: " + this.notes+"<br/><br/>";
 
 }
 
