@@ -61,7 +61,7 @@ export class AddAreasPage {
       alert.present();
       return;
     }
-    if(this.locName===undefined){
+    if(this.locName===undefined||this.locName===""){
       let alert = this.alertCtrl.create({
         title: 'שגיאה',
         subTitle: 'שכונה ריקה',
@@ -84,7 +84,7 @@ export class AddAreasPage {
     if(this.strErr(this.subLocName)==1){
       return
     }
-    if(this.locName===undefined || this.subLocName===undefined){
+    if(this.locName===undefined||this.locName=="" || this.subLocName===undefined||this.subLocName==""){
       let alert = this.alertCtrl.create({
         title: 'שגיאה',
         subTitle: 'שכונה/גן ריקים',
