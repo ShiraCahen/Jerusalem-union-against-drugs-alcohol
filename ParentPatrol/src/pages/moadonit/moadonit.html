@@ -14,58 +14,58 @@
         <ion-row>
            <ion-col>
              <ion-item>
-                <ion-label floating color="white" text-right>סיירת:</ion-label>
+                <ion-label floating color="black" text-right>סיירת:</ion-label>
                  <ion-input type="text" [(ngModel)]="team"></ion-input>
               </ion-item>
       <ion-item>
-          <ion-label color="white" text-right >תאריך</ion-label>
+          <ion-label color="black" text-right >תאריך</ion-label>
           <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="myDate"></ion-datetime>
         </ion-item>
       <ion-item>
-          <ion-label color="white" text-right>שעת פתיחת המועדון</ion-label>
+          <ion-label color="black" text-right>שעת פתיחת המועדון</ion-label>
           <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="startTime"></ion-datetime>
         </ion-item>       
           <ion-item>
-              <ion-label color="white" text-right> שעת סגירת המועדון</ion-label>
+              <ion-label color="black" text-right> שעת סגירת המועדון</ion-label>
               <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="endTime"></ion-datetime>
             </ion-item>  
    
                 <ion-item>
-                      <ion-label floating color="white" text-right>שמות מתנדבים</ion-label>
+                      <ion-label floating color="black" text-right>שמות מתנדבים</ion-label>
                       <ion-input type="text" [(ngModel)]="volenteersName"></ion-input>
                  </ion-item>           
    
          <ion-item>   
-            <ion-label floating color="white" text-right>מספר הנערים\ות שהגיעו:</ion-label>        
+            <ion-label floating color="black" text-right>מספר הנערים\ות שהגיעו:</ion-label>        
               <ion-input type="number" [(ngModel)]="numOfYoungsters"></ion-input>
          </ion-item>
          <ion-item>     
-            <ion-label floating color="white" text-right>ממוצע הגילאים</ion-label>      
+            <ion-label floating color="black" text-right>ממוצע הגילאים</ion-label>      
               <ion-input type="number" [(ngModel)]="averageAge"></ion-input>
          </ion-item>
          <ion-item>  
-            <ion-label floating color="white" text-right>מספר בני נוער שיכורים או מעשנים:</ion-label>         
+            <ion-label floating color="black" text-right>מספר בני נוער שיכורים או מעשנים:</ion-label>         
               <ion-input  type="number" [(ngModel)]="alcoholOrDrugs"></ion-input>
          </ion-item>
          
          <ion-item> 
-            <ion-label floating color="white" text-right>אירועים חריגים - יש להודיע לרכז בנוסף</ion-label>          
+            <ion-label floating color="black" text-right>אירועים חריגים - יש להודיע לרכז בנוסף</ion-label>          
               <ion-input  type="text" [(ngModel)]="exeptions"></ion-input>
          </ion-item>
          <ion-item>    
-            <ion-label floating color="white" text-right>פרטי הנער/ה, ליצירת קשר או להעברה הלאה לגורמי טיפול </ion-label>       
+            <ion-label floating color="black" text-right>פרטי הנער/ה, ליצירת קשר או להעברה הלאה לגורמי טיפול </ion-label>       
               <ion-input type="text" [(ngModel)]="youngsterName"></ion-input>
          </ion-item>
          <ion-item>    
-            <ion-label floating color="white" text-right>דילמות שעלו</ion-label>       
+            <ion-label floating color="black" text-right>דילמות שעלו</ion-label>       
               <ion-input  type="text" [(ngModel)]="dilemmas"></ion-input>
          </ion-item>
          <ion-item>    
-          <ion-label floating color="white" text-right>דרכי טיפול</ion-label>       
+          <ion-label floating color="black" text-right>דרכי טיפול</ion-label>       
             <ion-input  type="text" [(ngModel)]="handle"></ion-input>
        </ion-item>
          <ion-item>    
-            <ion-label floating color="white" text-right>הערות</ion-label>       
+            <ion-label floating color="black" text-right>הערות</ion-label>       
               <ion-input  type="text" [(ngModel)]="notes"></ion-input>
          </ion-item>
          <button ion-button full  id = "document" (click)="captureImage()" >הוסף תמונה</button>
@@ -83,7 +83,5 @@
       </ion-row>   
           
     </ion-grid>
-
-    <button ion-button (click)="sendEmail()">שלח מייל</button>
 
 </ion-content>

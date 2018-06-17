@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import {locationItem} from '../../models/locationItem.interface'
 import * as firebase from 'firebase';
-
+//import firebase from 'firebase/app'
 
 @Injectable()
 export class LocationsProvider {
@@ -96,7 +96,7 @@ export class LocationsProvider {
   dataJson(date):Promise<any>{
     let jsonArr="";
     return new Promise<any>((resolve, reject) => {
-      this.db.collection("HotSpot").where("MyDate", "==",date)
+      this.db.collection("Reports").where("MyDate", "==",date)
           .get()
           .then(function(querySnapshot) {
               querySnapshot.forEach(function(doc) {

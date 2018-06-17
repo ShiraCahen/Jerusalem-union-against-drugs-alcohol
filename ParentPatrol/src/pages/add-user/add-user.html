@@ -19,29 +19,29 @@
   <ion-list>
 
     <ion-item>
-     <!-- <ion-label color="white">שם משתמש:</ion-label>
+     <!-- <ion-label color="black">שם משתמש:</ion-label>
       <ion-input type="text" [(ngModel)] = "profile.firstName" placeholder="שם משתמש"></ion-input>-->
-      <ion-label color="white">* אימייל:</ion-label>
+      <ion-label color="black">* אימייל:</ion-label>
       <ion-input type="text" [(ngModel)] = "user.email"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label color="white">* סיסמא:</ion-label>
+      <ion-label color="black">* סיסמא:</ion-label>
       <ion-input type="text" [(ngModel)] = "user.password"></ion-input>
     </ion-item>
   
     <ion-item>
-      <ion-label color="white">מספר פלאפון: </ion-label>
+      <ion-label color="black">מספר פלאפון: </ion-label>
       <ion-input type="number"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label color="white">תעודת זהות: </ion-label>
+      <ion-label color="black">תעודת זהות: </ion-label>
       <ion-input type="number" [(ngModel)] = "profile.id"></ion-input>
     </ion-item>
   
     <ion-item text-right>
-        <ion-label color="white">*סוג המשתמש:</ion-label>
+        <ion-label color="black">*סוג המשתמש:</ion-label>
     </ion-item>  
 
     <ion-list radio-group [(ngModel)]="profile.kind">
@@ -51,10 +51,10 @@
         </ion-item>
         <ion-item>
           <ion-label text-right>רכז</ion-label>
-          <ion-radio item-center value="coordinetor" color="white"></ion-radio>
+          <ion-radio item-center value="coordinetor" color="black"></ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label text-right>סיירת</ion-label>
+          <ion-label text-right color="black">סיירת</ion-label>
           <ion-radio value = "team"></ion-radio>
         </ion-item>
     </ion-list>

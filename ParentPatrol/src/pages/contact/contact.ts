@@ -45,6 +45,7 @@ export class ContactPage {
   handle: string ="";
   notes: String ="";
   select: any;
+  kind: string="hot spot";
   insidePlaces: string[];
   keys: any[] = [];
   currentImage =null;
@@ -135,7 +136,8 @@ export class ContactPage {
         Alcohol: this.alcoholl,
         Ambulance: this.ambulance,
         Vandalism: this.vandalism,
-        Violence: this.violence 
+        Violence: this.violence ,
+        Kind: this.kind
     }
     this.storage.get('mail').then((val) =>{
       if(val != null){
@@ -148,9 +150,13 @@ export class ContactPage {
      
       this.storage.set('mail',this.msg);
        this.presentAlert();
+<<<<<<< HEAD
        return this.db.collection('HotSpot').add(toSave);
     }) .catch((error) => {
       console.log('Promise error');
+=======
+       return this.db.collection('Reports').add(toSave);
+>>>>>>> 6b7f52a03b98b5929ce985734f05c3da498b3b32
     });
    
     

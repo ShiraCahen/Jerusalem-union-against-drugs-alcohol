@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>ParentsPatrol</name>
+    <name>סיירות הורים ירושלים</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
@@ -88,10 +88,5 @@
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
     <plugin name="cordova-plugin-email-composer" spec="^0.8.15" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
-<<<<<<< HEAD
     <engine name="android" spec="7.0.0" />
-=======
-    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
-    <plugin name="cordova-clipboard" spec="^1.2.1" />
->>>>>>> b7944ee2dd38d41e66a0148e07cab59e202e0e9c
 </widget>
