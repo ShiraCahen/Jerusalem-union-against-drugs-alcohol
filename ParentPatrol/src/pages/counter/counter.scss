@@ -1,5 +1,144 @@
 page-counter {
     text-align: center;
+
+    .navbar{
+        background-image: url('../assets/imgs/bg4.jpg');
+        opacity: 0.6;
+    }
+    .titel
+    {
+        font-size: 30px;
+    }
+    ion-header {
+          .toolbar-background {
+            background: transparent;
+          }
+      }
+    
+    
+        .gallery {
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+       
+        h1{
+            text-align: center;
+            font-weight: bold;
+            padding-bottom: 10px;
+            color: #004381;
+            font-family: Segoe UI;
+            text-shadow: 1px 1px 1px grey; 
+            margin-left:18%;
+        }
+        .textStyle1{
+            margin-left:5.5%;
+            font-size: 40px;
+        }
+        .textStyle2{
+    
+            font-size:20px;
+        }
+        
+        .round {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            border-radius: 30%;
+            height: 100px;
+            width: 110px;
+            font-size: 17px;
+            font-family: "David", Times, serif;
+            margin-right:4%;
+            margin-left:4%;
+        }
+    
+        #hot {
+            background-color:rgb(253, 124, 124);
+        }
+    
+        #hot:hover {
+            background-color:rgb(184, 178, 178);
+            color:rgb(253, 124, 124);;
+        }
+    
+        #cold {
+            background-color:rgb(157, 196, 255);
+    
+        }
+    
+        #cold:hover {
+            background-color:rgb(184, 178, 178);
+            color:rgb(157, 196, 255);
+        }
+    
+        #moadonit {
+            background-color:rgb(111, 255, 142);
+        }
+    
+        #moadonit:hover {
+            background-color:rgb(184, 178, 178);
+            color: rgb(111, 255, 142);
+        }
+    
+        .a {
+            margin-left: auto;
+            margin-right: auto;
+            display: block !important;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            font-size: 15px;
+            height: 50px;
+            width: 40%; 
+            padding: 10px;
+            background-color: #004381;
+            color: white;
+            border-radius: 5px;
+            border: 1px solid gray;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            font-size: 13.5px;
+        }
+        
+        .a:hover{
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19) !important;
+            color: #004381 !important;
+            padding: 10px !important;
+            background-color: gainsboro !important;
+            border: 1px solid gray !important;
+            border-radius: 5px !important;
+        }
+        .desktop-card{
+       
+            width: 35% !important;
+            display: block !important;
+            margin: auto; 
+        }
+        .mobile-card{
+            display: block !important;      
+            width: 100%  !important;
+            margin: auto;  
+        }
+    
+        .hide {
+            display: none;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+          }
+    
+    .logOut{
+        border-radius: 10%;
+        background-color: rgb(161, 18, 18);
+        margin: auto;
+        font-size: 13px;
+        
+    }
+    .logOut:hover{
+        background-color: rgb(255, 255, 255)!important;
+        color:  rgb(161, 18, 18) !important;
+    }
+    .h{
+        background-color: rgba(255, 255, 255, 0.103) !important;
+    }
 }
 
 .container {

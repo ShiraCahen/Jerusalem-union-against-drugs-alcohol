@@ -59,18 +59,18 @@ export class MoadonitPage {
 
   
 sendEmail() {
-  this.msg = "דוח מועדונית  "+this.team+ "\r\nתאריך : "+this.myDate+"\r\n המועדון פעל מהשעה- " +this.startTime+
-  "\r\n עד-"+this.endTime+"\r\nשמות המתנדבים :"+this.volenteersName+"\r\nמספר הנערים שהגיעו "+this.numOfYoungsters
-  + "\r\n במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
-  + "\r\n אירועים חריגים: " + this.exeptions + "\r\n פרטי הנער או הנערה: "+this.youngsterName
-  + "\r\n דרכי טיפול: " + this.handle + "\r\n הערות: " + this.notes+"\r\n\r\n";
+  this.msg = "דוח מועדונית  "+this.team+ "<br/>תאריך : "+this.myDate+"<br/> המועדון פעל מהשעה- " +this.startTime+
+  "<br/> עד-"+this.endTime+"<br/> שמות המתנדבים :"+this.volenteersName+"<br/>מספר הנערים שהגיעו "+this.numOfYoungsters
+  + "<br/> במידה והייתה היתקלות עם אלכוהול וסמים - כמה? " + this.alcoholOrDrugs
+  + "<br/> אירועים חריגים: " + this.exeptions + "<br/> פרטי הנער או הנערה: "+this.youngsterName
+  + "<br/> דרכי טיפול: " + this.handle + "<br/> הערות: " + this.notes+"<br/><br/>";
   let email = {
     to: 'parentspatroljer@gmail.com',
     cc: '',
     attachments: [
       this.currentImage
     ],
-    subject: 'Test',
+    subject: 'Moadonit',
     body: this.msg+ '' ,
     isHtml: true
   };
@@ -79,6 +79,15 @@ sendEmail() {
 }
 
   storeInfoToDatabase(){
+    if(this.myDate==undefined || this.myDate==""|| this.team==undefined || this.team==""){
+      let alert = this.alertCtrl.create({
+        title: 'שגיאה',
+        subTitle: 'נא למלא תאריך וסיירת',
+        buttons: ['אישור']
+      });
+      alert.present();
+      return
+    }
     let toSave= {
       Team: this.team,
         MyDate: this.myDate,
