@@ -33,11 +33,7 @@ import {AddAreasPage} from '../pages/add-areas/add-areas';
 import {DelAreasPage} from '../pages/del-areas/del-areas';
 import { isMoment } from 'moment';
 import { Storage } from '@ionic/storage';
-<<<<<<< HEAD
-import { NativeStorage } from '@ionic-native/native-storage';
-=======
 import firebase from 'firebase/app'
->>>>>>> 6b7f52a03b98b5929ce985734f05c3da498b3b32
 //import { Clipboard } from '@ionic-native/clipboard';
 
 
@@ -93,7 +89,6 @@ import firebase from 'firebase/app'
     DataProvider,
     Pedometer,    
     SettingsProvider,
-    NativeStorage,
     LocationsProvider,
   ]
 })

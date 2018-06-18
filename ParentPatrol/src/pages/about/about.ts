@@ -124,7 +124,6 @@ async dataJson(){
     "Police",
     "StartTime",
     "Team",
-    "TeamNumbe",
     "Vandalism",
     "Violence",
     "VolenteersName",
@@ -132,13 +131,9 @@ async dataJson(){
     "underDrugs",
     "Dilemmas",
     "NumOfYoungsters",
-    "YoungsterNamee",
+    "YoungsterName"
     ]
-   // let csvContent = "data:text/csv;charset=utf-8,";
- 
-   //let csvContent =Bom+ "data:text/csv;charset=utf-8,";
-  
-   
+
     
     let row = "";
     let row2= "";
@@ -155,7 +150,8 @@ async dataJson(){
 
         if(kind=="hot spot"){
           for(let key in obj){
-            row2 += obj[key] + ","
+            if(key!="TeamNumbe")
+              row2 += obj[key] + ","
           }
           row2+='\r\n'
         }
@@ -163,13 +159,15 @@ async dataJson(){
         if(kind=="cold spot"){
           
           row2+=",,,,"+this.getVal(obj,"EndTime")+",,,,"+this.getVal(obj,"Kind")+",,,"+this.getVal(obj,"MyDate")+
-          ","+this.getVal(obj,"Notes")+",,,"+this.getVal(obj,"StartTime")+",,"+this.getVal(obj,"TeamNumbe")+",,,"+this.getVal(obj,"VolenteersName")+",,"
+          ","+this.getVal(obj,"Notes")+",,,"+this.getVal(obj,"StartTime")+",,"+",,,"+this.getVal(obj,"VolenteersName")+",,"
           row2+='\r\n'
         }
 
         
         if(kind=="moadonit"){
-          row2+=this.getVal(obj,"AlcoholOrDrugs")+",,"+this.getVal(obj,"AverageAge")+",,"+this.getVal(obj,"EndTime")+","+this.getVal(obj,"Exeptions")+",,"+this.getVal(obj,"Handle")+","+this.getVal(obj,"Kind")+",,,"+this.getVal(obj,"MyDate")+","+this.getVal(obj,"Notes")+",,,"+this.getVal(obj,"StartTime")+","+this.getVal(obj,"Team")+","+this.getVal(obj,"TeamNumbe")+",,,"+this.getVal(obj,"VolenteersName")+",,,"+this.getVal(obj,"Dilemmas")+","+this.getVal(obj,"NumOfYoungsters")+","+this.getVal(obj,"YoungsterName")
+          row2+=this.getVal(obj,"AlcoholOrDrugs")+",,"+this.getVal(obj,"AverageAge")+",,"+this.getVal(obj,"EndTime")+","+this.getVal(obj,"Exeptions")+",,"+this.getVal(obj,"Handle")+","+this.getVal(obj,"Kind")+
+          ",,,"+this.getVal(obj,"MyDate")+","+this.getVal(obj,"Notes")+",,,"+this.getVal(obj,"StartTime")+","+this.getVal(obj,"Team")+","
+          +",,,"+this.getVal(obj,"VolenteersName")+",,,"+this.getVal(obj,"Dilemmas")+","+this.getVal(obj,"NumOfYoungsters")+","+this.getVal(obj,"YoungsterName")
           row2+='\r\n'
         }
 
@@ -178,7 +176,7 @@ async dataJson(){
     }  
 
  
-    let csvContent = row.slice(0, row.length-2) + "\r\n" + row2 + "\n\r"
+    let csvContent = row + "\r\n" + row2 + "\n\r"
     var link = window.document.createElement("a");
     link.setAttribute("href", "data:text/csv;charset=utf-8,%EF%BB%BF" + encodeURI(csvContent));
     link.setAttribute("download", this.startDate+"-"+this.endDate+".csv");
