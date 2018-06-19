@@ -150,13 +150,9 @@ export class ContactPage {
      
       this.storage.set('mail',this.msg);
        this.presentAlert();
-<<<<<<< HEAD
-       return this.db.collection('HotSpot').add(toSave);
+       return this.db.collection('Reports').add(toSave);
     }) .catch((error) => {
       console.log('Promise error');
-=======
-       return this.db.collection('Reports').add(toSave);
->>>>>>> 3e3564c1372687a1a2ba3f47b1fc9656bbfe6cb8
     });
    
     
