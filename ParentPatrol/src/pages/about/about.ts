@@ -167,7 +167,7 @@ async dataJson(){
         if(kind=="moadonit"){
           row2+=this.getVal(obj,"AlcoholOrDrugs")+",,"+this.getVal(obj,"AverageAge")+",,"+this.getVal(obj,"EndTime")+","+this.getVal(obj,"Exeptions")+",,"+this.getVal(obj,"Handle")+","+this.getVal(obj,"Kind")+
           ",,,"+this.getVal(obj,"MyDate")+","+this.getVal(obj,"Notes")+",,,"+this.getVal(obj,"StartTime")+","+this.getVal(obj,"Team")+","
-          +",,,"+this.getVal(obj,"VolenteersName")+",,,"+this.getVal(obj,"Dilemmas")+","+this.getVal(obj,"NumOfYoungsters")+","+this.getVal(obj,"YoungsterName")
+          +",,"+this.getVal(obj,"VolenteersName")+",,,"+this.getVal(obj,"Dilemmas")+","+this.getVal(obj,"NumOfYoungsters")+","+this.getVal(obj,"YoungsterName")
           row2+='\r\n'
         }
 
