@@ -68,6 +68,7 @@ export class ColdPage {
   storeInfoToDatabase(){
     
     let toSave= {
+      Team: this.select,
       MyDate: this.navParams.get('myDate'),
       StartTime: this.navParams.get('startTime'),
       EndTime: this.navParams.get('endTime'),
