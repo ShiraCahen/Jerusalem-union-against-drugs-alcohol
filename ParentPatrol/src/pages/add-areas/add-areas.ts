@@ -84,7 +84,7 @@ export class AddAreasPage {
     if(this.strErr(this.subLocName)==1){
       return
     }
-    if(this.locName===undefined||this.locName=="" || this.subLocName===undefined||this.subLocName==""){
+    if(this.locName2==""||this.subLocName==""){
       let alert = this.alertCtrl.create({
         title: 'שגיאה',
         subTitle: 'שכונה/גן ריקים',
@@ -94,7 +94,7 @@ export class AddAreasPage {
       return;
     }
     this.lp.addSubLocs(this.locName2,this.subLocName);
-    this.lp.addLoc(this.locName);
+
     this.loadlist();
     let alert = this.alertCtrl.create({
       title: '',
