@@ -159,7 +159,7 @@ async dataJson(){
         if(kind=="cold spot"){
           
           row2+=",,,,"+this.getVal(obj,"EndTime")+",,,,"+this.getVal(obj,"Kind")+",,,"+this.getVal(obj,"MyDate")+
-          ","+this.getVal(obj,"Notes")+",,,"+this.getVal(obj,"StartTime")+",,"+",,,"+this.getVal(obj,"VolenteersName")+",,"
+          ","+this.getVal(obj,"Notes")+","+this.getVal(obj,"Place")+",,"+this.getVal(obj,"StartTime")+",,"+",,"+this.getVal(obj,"VolenteersName")+",,"
           row2+='\r\n'
         }
 
@@ -204,19 +204,3 @@ async dataJson(){
 }
 
 
-
-/*
-  if(this.platform.is('core')){ 
-    console.log("this json"+this.jsonStr);
-   // Clipboard.copy("bla");
-  }
-  else{
-    /*
-    this.clipboard.copy(this.jsonStr)
-    let alert = this.alertCtrl.create({
-      title: '',
-      subTitle: 'הועתק',
-      buttons: ['אישור']
-    });
-    alert.present();
-    */
