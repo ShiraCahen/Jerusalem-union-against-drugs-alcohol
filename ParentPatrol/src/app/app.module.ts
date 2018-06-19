@@ -34,7 +34,6 @@ import {DelAreasPage} from '../pages/del-areas/del-areas';
 import { isMoment } from 'moment';
 import { Storage } from '@ionic/storage';
 import { NativeStorage } from '@ionic-native/native-storage';
-//import { Clipboard } from '@ionic-native/clipboard';
 
 
 @NgModule({
