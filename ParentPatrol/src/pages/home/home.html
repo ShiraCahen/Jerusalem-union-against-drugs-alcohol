@@ -32,20 +32,22 @@
         </span>
     
 <p>
+    <div>
     <button *ngIf = "userKind == 'admin'" class = "a" ion-button icon-left [navPush]="addUser">
         <ion-icon ios="ios-contact" md="md-contact"></ion-icon>
       הוספת משתמש
-    </button>
-      
-    <button *ngIf = "userKind != 'team'" class = "a" ion-button icon-left [navPush]="about">
-      <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
-        נתוני דו"חות
-    </button>
-    
+    </button></div>
+    <div *ngIf=" isCordova != 1">
+        <button *ngIf = "userKind != 'team'" class = "a" ion-button icon-left [navPush]="about">
+        <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
+            נתוני דו"חות
+        </button>
+    </div>  
+    <div>
     <button *ngIf = "userKind == 'admin'" class = "a" ion-button icon-left [navPush]="locations">
         <ion-icon ios="ios-folder-open" md="md-folder-open"></ion-icon>
          ניהול
-    </button>
+    </button></div>
     <div *ngIf=" isCordova == 1">
       <button class = "a" ion-button icon-left [navPush]="counter">
         <ion-icon ios="ios-walk" md="md-walk"></ion-icon>

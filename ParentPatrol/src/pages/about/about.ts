@@ -7,7 +7,6 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { LocationsProvider } from '../../providers/locations/locations';
 import {locationItem} from '../../models/locationItem.interface'
 import * as moment from 'moment';
-//import { Clipboard } from '@ionic-native/clipboard';
 import { AlertController,Platform } from 'ionic-angular';
 
 
@@ -90,8 +89,6 @@ async dataJson(){
 
   load.dismiss()
   this.x=1;
- 
-
   }
 
   download(){
@@ -181,6 +178,7 @@ async dataJson(){
     link.setAttribute("href", "data:text/csv;charset=utf-8,%EF%BB%BF" + encodeURI(csvContent));
     link.setAttribute("download", this.startDate+"-"+this.endDate+".csv");
     link.click();
+    
     this.x=0;
 
   }
