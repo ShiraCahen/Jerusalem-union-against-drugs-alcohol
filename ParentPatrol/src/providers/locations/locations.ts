@@ -100,7 +100,7 @@ export class LocationsProvider {
           .get()
           .then(function(querySnapshot) {
               querySnapshot.forEach(function(doc) {
-                jsonArr=jsonArr+JSON.stringify(doc.data())+ '%';
+                jsonArr=jsonArr+JSON.stringify(doc.data())+ "%split%";
               });
               resolve(jsonArr);
           })

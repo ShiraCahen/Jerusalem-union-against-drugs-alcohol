@@ -136,19 +136,27 @@ async dataJson(){
     let row2= "";
     let obj:Object
     let kind;
+    let str:String
+    let pos
     for (let key in title){
       row += title[key] + ","
     }
     let j=0,i=0
-    let data=this.jsonStr.split('%');
+    let data=this.jsonStr.split("%split%");
     for(let i=0;i<data.length-1;i++){
         obj = JSON.parse(data[i]);
         kind=this.kind(obj);
 
         if(kind=="hot spot"){
           for(let key in obj){
-            if(key!="TeamNumbe")
-              row2 += obj[key] + ","
+            if(key!="TeamNumbe"){
+              str=obj[key]+""
+              while((pos=str.indexOf(','))!=-1){
+                str=str.replace(',', '.');
+              }
+              row2 += str + ","
+
+            }
           }
           row2+='\r\n'
         }
@@ -156,7 +164,7 @@ async dataJson(){
         if(kind=="cold spot"){
           
           row2+=",,,,"+this.getVal(obj,"EndTime")+",,,,"+this.getVal(obj,"Kind")+",,,"+this.getVal(obj,"MyDate")+
-          ","+this.getVal(obj,"Notes")+","+this.getVal(obj,"Place")+",,"+this.getVal(obj,"StartTime")+","+this.getVal(obj,"Team")+",,"+this.getVal(obj,"VolenteersName")+",,"
+          ","+this.getVal(obj,"Notes")+","+this.getVal(obj,"Place")+",,"+this.getVal(obj,"StartTime")+","+this.getVal(obj,"Team")+",,,"+this.getVal(obj,"VolenteersName")+",,"
           row2+='\r\n'
         }
 
@@ -184,11 +192,21 @@ async dataJson(){
   }
 
   getVal(obj,string){
+    let pos
+    let str=""
     for(let key in obj){
-      if(key==string)
-      return obj[key]
+      if(key==string){
+        str=obj[key]+""
+        while((pos=str.indexOf(','))!=-1){
+          str=str.replace(',', '.');
+          return str
+        }
+      }
     }
+    return str
   }
+
+
   kind(obj){
     for(let key in obj){
       if(key=="Kind"){
